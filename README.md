@@ -10,4 +10,6 @@ The models relate to a variety of projects. Most were meant to be printed, other
 
 #### [Dovetailed end table](./dovetailed_end_table)
 
+#### [Knockoff match striker](./match_striker)
+
 #### [Misting nozzle holder](./mister_holder)
