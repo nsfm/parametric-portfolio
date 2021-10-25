@@ -1,0 +1,2401 @@
+{
+    "nodes": [
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "20",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('-r++qXqYqZf20',float('-20.000000'),float('-20.000000'),float('-20.000000'),float('20.000000'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -780.793027152434,
+                -183.64311649042907
+            ],
+            "name": "body",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Sphere (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.sphere(x, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, z)",
+                "    for i in range(36)], close=True)",
+                "sb.ui.wireframe([(x,y,z-r), (x,y,z+r)])",
+                "",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x, y, z + r, drag=(None, None, r))",
+                "sb.ui.point(x, y, z - r, drag=(None, None, r))",
+                ""
+            ],
+            "uid": 0
+        },
+        {
+            "datums": [
+                {
+                    "expr": "body.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "body.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "body.z",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "body.r*2 * 1.15",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "body.r*2 * 1",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "2*(clasp_hole.zmax - clasp_hole.zmin) + 2*(.5) # 2x magnet depth, plus 2x clearance",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "1",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2',float('-23.000000'),float('-20.000000'),float('-1.800000'),float('23.000000'),float('20.000000'),float('1.800000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -234.41803915587045,
+                -449.9423444746366
+            ],
+            "name": "clasp",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "",
+                "import fab",
+                "",
+                "title('Rounded cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "input('r', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "# This is the circle's radius in actual units (not a 0-1 fraction)",
+                "r_ = r * min([width, height, depth])/2",
+                "",
+                "output('shape', fab.shapes.rounded_cube(xmin, xmax, ymin, ymax, zmin, zmax, r))",
+                "",
+                "def drag_hwd(this, dx, dy, dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "# UI",
+                "def drag_r(this, x, y, z):",
+                "    if abs(this.width) < abs(this.height):",
+                "        d = abs(this.width)",
+                "        mid = this.ymax + this.height/2 - d / 2",
+                "    else:",
+                "        d = abs(this.height)",
+                "        mid = this.y",
+                "    r = 1 - (y - mid) / (d/2)",
+                "    this.r = float(min(1, max(0, r)))",
+                "",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2, y + height/2, z + depth/2, drag=drag_hwd)",
+                "sb.ui.point(xmax, ymax - r_, zmax, drag=drag_r, relative=False)",
+                ""
+            ],
+            "uid": 1
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "clasp.x + clasp.width/2",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "clasp.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "clasp.z",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "3",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('a-r+q-Yf0q-Zf0f3a-f0X-Xf23',float('0.000000'),float('-3.000000'),float('-3.000000'),float('23.000000'),float('3.000000'),float('3.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                -2276.8696224294918,
+                240.56293999476895
+            ],
+            "name": "stem",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Cylinder (X)')",
+                "",
+                "input('xmin', float)",
+                "input('xmax', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.cylinder_x(xmin, xmax, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(xmin, y, z), (xmax, y, z)])",
+                "sb.ui.wireframe([(xmin, y, z), (xmin, y, z + r)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (xmin, math.cos(i/36. * 2*math.pi) * r + y,",
+                "     math.sin(i/36. * 2*math.pi) * r + z)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (xmax, math.cos(i/36. * 2*math.pi) * r + y,",
+                "     math.sin(i/36. * 2*math.pi) * r + z)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(xmin, y, z)",
+                "sb.ui.point(xmax, y, z)",
+                "sb.ui.point(xmin, y, z + r, drag=(None, None, r))",
+                ""
+            ],
+            "uid": 2
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__13.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23',float('-25.207277'),float('-5.207277'),float('-5.207277'),float('25.207277'),float('5.207277'),float('5.207277'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                -422.64895861371707,
+                384.45861544146203
+            ],
+            "name": "c0",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 3
+        },
+        {
+            "datums": [
+                {
+                    "expr": "clasp.x + clasp.width/2 - self.r -1",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "clasp.y+clasp.height/2 - self.r-1",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "clasp.z",
+                    "name": "zmin",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "clasp.z + 1 + .3 # Magnet thickness + clearance",
+                    "name": "zmax",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "1.5 + .15# Magnet radius + clearance",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3',float('18.700001'),float('15.700000'),float('0.000000'),float('22.000000'),float('19.000000'),float('1.300000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                727.0770456117843,
+                990.5621382929864
+            ],
+            "name": "clasp_hole",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Cylinder (Z)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('zmin', float)",
+                "input('zmax', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.cylinder(x, y, zmin, zmax, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x, y, zmin), (x, y, zmax)])",
+                "sb.ui.wireframe([(x, y, zmin), (x+r, y, zmin)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmin)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmax)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(x, y, zmin)",
+                "sb.ui.point(x, y, zmax)",
+                "sb.ui.point(x + r, y, zmin, drag=(r, None, None))",
+                ""
+            ],
+            "uid": 8
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__8.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "2",
+                    "name": "i",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "2",
+                    "name": "j",
+                    "type": "int",
+                    "uid": 4
+                },
+                {
+                    "expr": "-2*clasp_hole.x",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "-2*clasp_hole.y",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im-Xf0-Yf-0-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf0-Yf-34.7-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3',float('-22.000000'),float('-19.000000'),float('0.000000'),float('22.000000'),float('19.000000'),float('1.300000'))",
+                    "name": "array",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                1200.1642319154905,
+                1017.1309574470768
+            ],
+            "name": "a0",
+            "script": [
+                "import fab",
+                "",
+                "title('Array (2D)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('i', int)",
+                "input('j', int)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "",
+                "output('array', fab.shapes.iterate3d(shape, i, j, 1, dx, dy, 0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (_x + dx, _y, 0), (_x, _y, 0), (_x, _y + dy, 0)], color=sb.color.teal)",
+                "sb.ui.wireframe([",
+                "    (_x + dx, _y - 0.3, 0), (_x + dx, _y + 0.3, 0)], color=sb.color.teal)",
+                "sb.ui.wireframe([",
+                "    (_x + 0.3, _y + dy, 0), (_x - 0.3, _y + dy, 0)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, 0, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y, 0, color=sb.color.teal, drag=(dx, None, None))",
+                "sb.ui.point(_x, _y + dy, 0, color=sb.color.teal, drag=(None, dy, None))",
+                ""
+            ],
+            "uid": 9
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0",
+                    "name": "z0",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "1.1",
+                    "name": "sx",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "0.8 # TODO Formula to match shell thickness...",
+                    "name": "sy",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "0.8",
+                    "name": "sz",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0011[__3.__1]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m+f0/-Xf0f1.1+f0/-Yf0f0.8+f0/-Zf0f0.8im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23',float('-27.728006'),float('-4.165822'),float('-4.165822'),float('27.728006'),float('4.165822'),float('4.165822'))",
+                    "name": "scaled",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -84.56128307482959,
+                489.31844842942473
+            ],
+            "name": "s2",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 5/13/15",
+                "",
+                "import fab",
+                "",
+                "title('Scale (3D)')",
+                "",
+                "input('x0', float)",
+                "input('y0', float)",
+                "input('z0', float)",
+                "input('sx', float)",
+                "input('sy', float)",
+                "input('sz', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('scaled', fab.shapes.scale_xyz(",
+                "    shape, x0, y0, z0, sx, sy, sz))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x0 + sx, y0, z0), (x0, y0, z0), (x0, y0 + sy, z0)],",
+                "                 color=sb.color.teal)",
+                "sb.ui.wireframe([(x0, y0, z0), (x0, y0, z0 + sz)],",
+                "                 color=sb.color.teal)",
+                "sb.ui.wireframe([(x0 + sx, y0 + sx/10, z0), (x0 + sx, y0 - sx/10, z0)],",
+                "                 color=sb.color.teal)",
+                "sb.ui.wireframe([(x0 + sy/10, y0 + sy, z0), (x0 - sy/10, y0 + sy, z0)],",
+                "                 color=sb.color.teal)",
+                "sb.ui.wireframe([(x0 + sz/10, y0, z0 + sz), (x0 - sz/10, y0, z0 + sz)],",
+                "                 color=sb.color.teal)",
+                "",
+                "sb.ui.point(x0, y0, z0, color=sb.color.teal)",
+                "sb.ui.point(x0 + sx, y0, z0, color=sb.color.teal, drag=(sx, None, None))",
+                "sb.ui.point(x0, y0 + sy, z0, color=sb.color.teal, drag=(None, sy, None))",
+                "sb.ui.point(x0, y0, z0 + sz, color=sb.color.teal, drag=(None, None, sz))",
+                ""
+            ],
+            "uid": 10
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__7.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__9.__7]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20aii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1-+rbaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20rbaii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1f0.9nm+f0/-Xf0f1.1+f0/-Yf0f0.8+f0/-Zf0f0.8im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23nm-Xf0-Yf0-Zf0im-Xf0-Yf-0-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf0-Yf-34.7-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3',float('-25.207277'),float('-20.000000'),float('-20.000000'),float('25.207277'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1654.595417110068,
+                987.245598211756
+            ],
+            "name": "d0",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 4
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__14.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23',float('-2.207277'),float('-5.207277'),float('-5.207277'),float('25.207277'),float('5.207277'),float('5.207277'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                -1545.8081453105926,
+                397.82454532860095
+            ],
+            "name": "c1",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 11
+        },
+        {
+            "datums": [
+                {
+                    "expr": "stem.xmin",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0011[__11.__1]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23',float('-25.207277'),float('-5.207277'),float('-5.207277'),float('2.207277'),float('5.207277'),float('5.207277'))",
+                    "name": "reflected",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -1221.8084825718404,
+                529.9764751422059
+            ],
+            "name": "r0",
+            "script": [
+                "import fab",
+                "",
+                "title('Reflect (X)')",
+                "",
+                "input('x0', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('reflected', fab.shapes.reflect_x(shape, x0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (x0, _y - 1, _z + 1),",
+                "    (x0, _y + 1, _z + 1),",
+                "    (x0, _y + 1, _z - 1),",
+                "    (x0, _y - 1, _z - 1)], color=sb.color.teal, close=True)",
+                "",
+                "sb.ui.point(x0, _y, _z, color=sb.color.teal)",
+                ""
+            ],
+            "uid": 12
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__11.__0]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__12.__4]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23',float('-25.207277'),float('-5.207277'),float('-5.207277'),float('25.207277'),float('5.207277'),float('5.207277'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                -806.4883481047674,
+                406.85880437866297
+            ],
+            "name": "u0",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 13
+        },
+        {
+            "datums": [
+                {
+                    "expr": "stem.xmax",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "stem.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "stem.z",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "6",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__2.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23',float('-2.207277'),float('-5.207277'),float('-5.207277'),float('25.207277'),float('5.207277'),float('5.207277'))",
+                    "name": "repelled",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                -1919.2699151028014,
+                252.1875657291033
+            ],
+            "name": "r1",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Repel')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "input('shape', fab.types.Shape)",
+                "",
+                "output('repelled', fab.shapes.repel(shape, x, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, z)",
+                "    for i in range(36)], close=True, color=sb.color.teal)",
+                "",
+                "sb.ui.wireframe([(x,y,z-r), (x,y,z - 0.2*r)])",
+                "sb.ui.wireframe([(x,y,z+r), (x,y,z + 0.2*r)], color=sb.color.teal)",
+                "sb.ui.wireframe([(x, y + 0.2*r, z - 0.8*r), (x, y, z-r),",
+                "                  (x, y - 0.2*r, z - 0.8*r)], color=sb.color.teal)",
+                "sb.ui.wireframe([(x, y + 0.2*r, z + 0.8*r), (x, y, z+r),",
+                "                  (x, y - 0.2*r, z + 0.8*r)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, z, color=sb.color.teal)",
+                "sb.ui.point(x, y, z + r, drag=(None, None, r), color=sb.color.teal)",
+                "sb.ui.point(x, y, z - r, drag=(None, None, r), color=sb.color.teal)",
+                ""
+            ],
+            "uid": 14
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__6.__3]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "1",
+                    "name": "s",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1',float('-25.207277'),float('-20.000000'),float('-20.000000'),float('25.207277'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                344.4320273115361,
+                136.48899284557524
+            ],
+            "name": "shell",
+            "script": [
+                "import fab.types",
+                "import fab.shapes",
+                "",
+                "title('Shell')",
+                "input('a', fab.types.Shape)",
+                "input('s', float)",
+                "",
+                "output('shape', fab.shapes.shell(a, s))",
+                ""
+            ],
+            "uid": 5
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__0.__4]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('-r++qXqYqZf20',float('-20.000000'),float('-20.000000'),float('-20.000000'),float('20.000000'),float('20.000000'),float('20.000000'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                -426.2823719305493,
+                -73.12392175549579
+            ],
+            "name": "c2",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 15
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__1.__7]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__15.__0]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20',float('-23.000000'),float('-20.000000'),float('-1.800000'),float('23.000000'),float('20.000000'),float('1.800000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                351.2235093736091,
+                -107.94771622528793
+            ],
+            "name": "d1",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 16
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__15.__1]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__3.__0]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.9",
+                    "name": "q",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9',float('-25.207277'),float('-20.000000'),float('-20.000000'),float('25.207277'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                }
+            ],
+            "inspector": [
+                -83.34536525815815,
+                122.95719311639115
+            ],
+            "name": "b0",
+            "script": [
+                "import fab.types",
+                "import fab.shapes",
+                "",
+                "title('Blend')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "input('q', float)",
+                "",
+                "output('shape', fab.shapes.blend(a, b, q))",
+                ""
+            ],
+            "uid": 6
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__17.__3]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__10.__7]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20aii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1-+rbaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20rbaii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1f0.9nm+f0/-Xf0f1.1+f0/-Yf0f0.8+f0/-Zf0f0.8im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23',float('-25.207277'),float('-20.000000'),float('-20.000000'),float('25.207277'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1199.1753594934105,
+                759.5620508939093
+            ],
+            "name": "d2",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 7
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__16.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__5.__2]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.9",
+                    "name": "q",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20aii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1-+rbaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20rbaii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1f0.9',float('-25.207277'),float('-20.000000'),float('-20.000000'),float('25.207277'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                }
+            ],
+            "inspector": [
+                772.1300797321827,
+                43.5375605693102
+            ],
+            "name": "b1",
+            "script": [
+                "import fab.types",
+                "import fab.shapes",
+                "",
+                "title('Blend')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "input('q', float)",
+                "",
+                "output('shape', fab.shapes.blend(a, b, q))",
+                ""
+            ],
+            "uid": 17
+        },
+        {
+            "datums": [
+                {
+                    "expr": "clasp.x + clasp.width/2 + self.width/2",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "clasp.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "clasp.z",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "5",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "clasp.height",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "clasp.height",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20',float('23.000000'),float('-20.000000'),float('-20.000000'),float('28.000000'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                }
+            ],
+            "inspector": [
+                -172.0434108481404,
+                1347.032181569176
+            ],
+            "name": "square_ends",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 5/22/15",
+                "",
+                "import fab",
+                "",
+                "title('Cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "output('shape', fab.shapes.cube(xmin, xmax, ymin, ymax, zmin, zmax))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "",
+                "def drag_hwd(this, dx,dy,dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2.0, y + height/2.0, z + depth/2.0,",
+                "             drag=drag_hwd)",
+                "",
+                ""
+            ],
+            "uid": 18
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__18.__6]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20',float('23.000000'),float('-20.000000'),float('-20.000000'),float('28.000000'),float('20.000000'),float('20.000000'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                291.18295401575506,
+                1455.3321725656642
+            ],
+            "name": "c4",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 19
+        },
+        {
+            "datums": [
+                {
+                    "expr": "clasp.x",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0011[__19.__1]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-*f2f0X__am__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20',float('-28.000000'),float('-20.000000'),float('-20.000000'),float('-23.000000'),float('20.000000'),float('20.000000'))",
+                    "name": "reflected",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                750.5328979466472,
+                1639.250003779281
+            ],
+            "name": "r2",
+            "script": [
+                "import fab",
+                "",
+                "title('Reflect (X)')",
+                "",
+                "input('x0', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('reflected', fab.shapes.reflect_x(shape, x0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (x0, _y - 1, _z + 1),",
+                "    (x0, _y + 1, _z + 1),",
+                "    (x0, _y + 1, _z - 1),",
+                "    (x0, _y - 1, _z - 1)], color=sb.color.teal, close=True)",
+                "",
+                "sb.ui.point(x0, _y, _z, color=sb.color.teal)",
+                ""
+            ],
+            "uid": 20
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__19.__0]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__20.__4]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iam__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20m-*f2f0X__am__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20',float('-28.000000'),float('-20.000000'),float('-20.000000'),float('28.000000'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1245.553757542822,
+                1454.5530715339537
+            ],
+            "name": "u1",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 21
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__4.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__29.__2]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaaiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20aii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1-+rbaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20rbaii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1f0.9nm+f0/-Xf0f1.1+f0/-Yf0f0.8+f0/-Zf0f0.8im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23nm-Xf0-Yf0-Zf0im-Xf0-Yf-0-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf0-Yf-34.7-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3niiam__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20m-*f2f0X__am__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20im+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8m-*f2f0X__m+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8',float('-25.207277'),float('-20.000000'),float('-20.000000'),float('25.207277'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                2075.2762805915236,
+                1419.0597291935883
+            ],
+            "name": "d3",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 22
+        },
+        {
+            "datums": [
+                {
+                    "expr": "stem.xmax + 2",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "stem.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "stem.z",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "stem.r*1.6",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('-r++q-Xf25qYqZf4.8',float('20.200001'),float('-4.800000'),float('-4.800000'),float('29.799999'),float('4.800000'),float('4.800000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -660.6710325094464,
+                1859.7530687735234
+            ],
+            "name": "chamfer_openings",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Sphere (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.sphere(x, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, z)",
+                "    for i in range(36)], close=True)",
+                "sb.ui.wireframe([(x,y,z-r), (x,y,z+r)])",
+                "",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x, y, z + r, drag=(None, None, r))",
+                "sb.ui.point(x, y, z - r, drag=(None, None, r))",
+                ""
+            ],
+            "uid": 23
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__28.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8',float('17.320002'),float('-4.800000'),float('-4.800000'),float('32.680000'),float('4.800000'),float('4.800000'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                286.10664227929874,
+                1949.6586870993328
+            ],
+            "name": "c3",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 24
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__24.__0]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__26.__4]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('im+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8m-*f2f0X__m+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8',float('-32.680000'),float('-4.800000'),float('-4.800000'),float('32.680000'),float('4.800000'),float('4.800000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1240.4774458063657,
+                1948.8795860676223
+            ],
+            "name": "u2",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 25
+        },
+        {
+            "datums": [
+                {
+                    "expr": "clasp.x",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0011[__24.__1]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-*f2f0X__m+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8',float('-32.680000'),float('-4.800000'),float('-4.800000'),float('-17.320002'),float('4.800000'),float('4.800000'))",
+                    "name": "reflected",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                745.4565862101908,
+                2133.5765183129497
+            ],
+            "name": "r3",
+            "script": [
+                "import fab",
+                "",
+                "title('Reflect (X)')",
+                "",
+                "input('x0', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('reflected', fab.shapes.reflect_x(shape, x0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (x0, _y - 1, _z + 1),",
+                "    (x0, _y + 1, _z + 1),",
+                "    (x0, _y + 1, _z - 1),",
+                "    (x0, _y - 1, _z - 1)], color=sb.color.teal, close=True)",
+                "",
+                "sb.ui.point(x0, _y, _z, color=sb.color.teal)",
+                ""
+            ],
+            "uid": 26
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__23.__0]",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "1.6",
+                    "name": "s",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__23.__4]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8',float('17.320002'),float('-4.800000'),float('-4.800000'),float('32.680000'),float('4.800000'),float('4.800000'))",
+                    "name": "scaled",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                -150.76244100106624,
+                1875.516304584894
+            ],
+            "name": "s0",
+            "script": [
+                "import fab",
+                "",
+                "title('Scale (X)')",
+                "",
+                "input('x0', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "input('s', float)",
+                "input('shape', fab.types.Shape)",
+                "output('scaled', fab.shapes.scale_x(shape, x0, s))",
+                "",
+                "# UI",
+                "kwargs = {'color':sb.color.teal}",
+                "sb.ui.wireframe([(x0, _y + 0.2*s, _z), (x0, _y - 0.2*s, _z)], **kwargs)",
+                "sb.ui.wireframe([(x0, _y, _z), (x0 + s, _y, _z)], **kwargs)",
+                "sb.ui.wireframe([(x0 + 0.9*s, _y - 0.1*s, _z), (x0 + s, _y, _z),",
+                "                  (x0 + 0.9*s, _y + 0.1*s, _z)], **kwargs)",
+                "",
+                "sb.ui.point(x0, _y, _z, **kwargs)",
+                "sb.ui.point(x0 + s, _y, _z, color=sb.color.teal, drag=(s,None,None))",
+                ""
+            ],
+            "uid": 28
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__21.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__25.__2]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiam__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20m-*f2f0X__am__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20im+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8m-*f2f0X__m+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8',float('-32.680000'),float('-20.000000'),float('-20.000000'),float('32.680000'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1629.6549397136746,
+                1644.13080910282
+            ],
+            "name": "u3",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 29
+        },
+        {
+            "datums": [
+                {
+                    "expr": "clasp.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "clasp.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "clasp.z - self.depth/2",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "clasp.width*1.1",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "clasp.height * 1.1",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "body.r*1.1",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f-25.3X-Xf25.3a-f-22Y-Yf22a-f-22Z-Zf0',float('-25.299999'),float('-22.000000'),float('-22.000000'),float('25.299999'),float('22.000000'),float('0.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                }
+            ],
+            "inspector": [
+                2071.668539146561,
+                1717.2005381519025
+            ],
+            "name": "slice",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 5/22/15",
+                "",
+                "import fab",
+                "",
+                "title('Cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "output('shape', fab.shapes.cube(xmin, xmax, ymin, ymax, zmin, zmax))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "",
+                "def drag_hwd(this, dx,dy,dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2.0, y + height/2.0, z + depth/2.0,",
+                "             drag=drag_hwd)",
+                "",
+                ""
+            ],
+            "uid": 27
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__22.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__27.__6]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaaaiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20aii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1-+rbaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20rbaii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1f0.9nm+f0/-Xf0f1.1+f0/-Yf0f0.8+f0/-Zf0f0.8im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23nm-Xf0-Yf0-Zf0im-Xf0-Yf-0-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf0-Yf-34.7-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3niiam__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20m-*f2f0X__am__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20im+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8m-*f2f0X__m+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8nam__f1aa-f-25.3X-Xf25.3a-f-22Y-Yf22a-f-22Z-Zf0',float('-25.207277'),float('-20.000000'),float('-20.000000'),float('25.207277'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                2455.9873145084766,
+                1584.770106979328
+            ],
+            "name": "d4",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 30
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__33.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__33.__0]",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0011[__33.__2]",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "12",
+                    "name": "n",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('-40.000000'),float('-40.000000'),float('9.500000'),float('40.000000'),float('40.000000'),float('10.500000'))",
+                    "name": "array",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                646.6429765379062,
+                2572.176256795434
+            ],
+            "name": "a1",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Array (polar)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "input('x', float)",
+                "input('y', float)",
+                "input('n', int)",
+                "",
+                "output('array', fab.shapes.iterate_polar(shape, x, y, n))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * 0.3 + x,",
+                "     math.sin(i/36. * 2*math.pi) * 0.3 + y, 0)",
+                "    for i in range(36)], close=True, color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, 0, color=sb.color.teal)",
+                ""
+            ],
+            "uid": 32
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "body.r*2",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "body.r/2",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": ".5",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('0.000000'),float('-0.500000'),float('9.500000'),float('40.000000'),float('0.500000'),float('10.500000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                290.5394940045089,
+                2534.3364140136473
+            ],
+            "name": "nanopore",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Cylinder (X)')",
+                "",
+                "input('xmin', float)",
+                "input('xmax', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.cylinder_x(xmin, xmax, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(xmin, y, z), (xmax, y, z)])",
+                "sb.ui.wireframe([(xmin, y, z), (xmin, y, z + r)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (xmin, math.cos(i/36. * 2*math.pi) * r + y,",
+                "     math.sin(i/36. * 2*math.pi) * r + z)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (xmax, math.cos(i/36. * 2*math.pi) * r + y,",
+                "     math.sin(i/36. * 2*math.pi) * r + z)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(xmin, y, z)",
+                "sb.ui.point(xmax, y, z)",
+                "sb.ui.point(xmin, y, z + r, drag=(None, None, r))",
+                ""
+            ],
+            "uid": 33
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__32.__1]",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__32.__2]",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "nanopore.z-20",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "20",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__32.__4]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('-47.357590'),float('-47.357590'),float('2.142411'),float('47.357590'),float('47.357590'),float('17.857590'))",
+                    "name": "attracted",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                1010.9316851428057,
+                2534.09907277651
+            ],
+            "name": "a2",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Attract')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "input('shape', fab.types.Shape)",
+                "",
+                "output('attracted', fab.shapes.attract(shape, x, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, z)",
+                "    for i in range(36)], close=True, color=sb.color.teal)",
+                "",
+                "# Draw little arrows pointing inwards",
+                "sb.ui.wireframe([(x,y,z-r), (x,y,z - 0.2*r)])",
+                "sb.ui.wireframe([(x,y,z+r), (x,y,z + 0.2*r)], color=sb.color.teal)",
+                "sb.ui.wireframe([(x, y + 0.2*r, z - 0.4*r), (x, y, z - 0.2*r),",
+                "                  (x, y - 0.2*r, z - 0.4*r)], color=sb.color.teal)",
+                "sb.ui.wireframe([(x, y + 0.2*r, z + 0.4*r), (x, y, z + 0.2*r),",
+                "                  (x, y - 0.2*r, z + 0.4*r)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, z, color=sb.color.teal)",
+                "sb.ui.point(x, y, z + r, drag=(None, None, r), color=sb.color.teal)",
+                "sb.ui.point(x, y, z - r, drag=(None, None, r), color=sb.color.teal)",
+                ""
+            ],
+            "uid": 31
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__31.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('-47.357590'),float('-47.357590'),float('2.142411'),float('47.357590'),float('47.357590'),float('17.857590'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                1383.3145368734822,
+                2648.8605801707
+            ],
+            "name": "c5",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 34
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "45",
+                    "name": "a",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__34.__0]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('-66.973770'),float('-66.973770'),float('2.142411'),float('66.973770'),float('66.973770'),float('17.857590'))",
+                    "name": "rotated",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                1734.7626006423416,
+                2444.4575519846567
+            ],
+            "name": "r4",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Rotate (Z)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('_z', float)",
+                "input('a', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('rotated', fab.shapes.rotate_z(shape, a, x, y))",
+                "",
+                "# UI",
+                "rad = math.radians(a)",
+                "sb.ui.wireframe([(x + math.cos(rad), y + math.sin(rad), _z),",
+                "                  (x, y, _z),",
+                "                  (x + 1, y, _z)], color=sb.color.teal)",
+                "",
+                "# Draw a semi-circular arc showing the rotation",
+                "if int(a) % 360 != 0:",
+                "    sb.ui.wireframe([",
+                "        (x + math.cos(math.radians(a_)) * 0.3,",
+                "         y + math.sin(math.radians(a_)) * 0.3, _z)",
+                "        for a_ in range(int(a) % 360)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, _z, color=sb.color.teal)",
+                "",
+                "def drag_pt(this, x, y, z):",
+                "    this.a = math.degrees(math.atan2(y - this.y, x - this.x))",
+                "sb.ui.point(x + math.cos(rad), y + math.sin(rad), _z,",
+                "             color=sb.color.teal, drag=drag_pt, relative=False)",
+                "",
+                ""
+            ],
+            "uid": 35
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "0",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "1",
+                    "name": "dz",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0011[__34.__1]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('-47.357590'),float('-47.357590'),float('3.142411'),float('47.357590'),float('47.357590'),float('18.857590'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                1741.2030291400297,
+                2740.6333683358607
+            ],
+            "name": "t0",
+            "script": [
+                "import fab",
+                "",
+                "title('Translate')",
+                "",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "input('dz', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', fab.shapes.translate(shape, dx, dy, dz))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(_x, _y, _z),",
+                "                  (_x + dx, _y + dy, _z + dz)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y - 0.3, _z),",
+                "                  (_x, _y + 0.3, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x - 0.3, _y, _z),",
+                "                  (_x + 0.3, _y, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y, _z - 0.3),",
+                "                  (_x, _y, _z + 0.3)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, _z, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y + dy, _z + dz, color=sb.color.teal, drag=(dx, dy, dz))",
+                ""
+            ],
+            "uid": 36
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__35.__5]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__36.__7]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('-66.973770'),float('-66.973770'),float('2.142411'),float('66.973770'),float('66.973770'),float('18.857590'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                2134.735298588166,
+                2645.2683402143066
+            ],
+            "name": "u4",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 37
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__37.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "1",
+                    "name": "i",
+                    "type": "int",
+                    "uid": 4
+                },
+                {
+                    "expr": "1",
+                    "name": "j",
+                    "type": "int",
+                    "uid": 5
+                },
+                {
+                    "expr": "8",
+                    "name": "k",
+                    "type": "int",
+                    "uid": 6
+                },
+                {
+                    "expr": "0",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 7
+                },
+                {
+                    "expr": "0",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "2",
+                    "name": "dz",
+                    "type": "float",
+                    "uid": 9
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiim-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf2m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf4m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf6m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf8m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf10m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf12m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf14m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('-66.973770'),float('-66.973770'),float('2.142411'),float('66.973770'),float('66.973770'),float('32.857590'))",
+                    "name": "array",
+                    "type": "_fabtypes.Shape",
+                    "uid": 10
+                }
+            ],
+            "inspector": [
+                2490.6510620068693,
+                2638.1081605192358
+            ],
+            "name": "a3",
+            "script": [
+                "import fab",
+                "",
+                "title('Array (3D)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "input('i', int)",
+                "input('j', int)",
+                "input('k', int)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "input('dz', float)",
+                "",
+                "output('array', fab.shapes.iterate3d(shape, i, j, k, dx, dy, dz))",
+                "",
+                "# UI",
+                "fab.ui.wireframe([(_x, _y, _z), (_x + dx, _y, _z)], color=fab.color.teal)",
+                "fab.ui.wireframe([(_x, _y, _z), (_x, _y + dy, _z)], color=fab.color.teal)",
+                "fab.ui.wireframe([(_x, _y, _z), (_x, _y, _z + dz)], color=fab.color.teal)",
+                "",
+                "fab.ui.wireframe([",
+                "    (_x + dx, _y - 0.3, 0), (_x + dx, _y + 0.3, 0)], color=fab.color.teal)",
+                "fab.ui.wireframe([",
+                "    (_x + 0.3, _y + dy, 0), (_x - 0.3, _y + dy, 0)], color=fab.color.teal)",
+                "fab.ui.wireframe([",
+                "\t(_x, _y - 0.3, _z + dz), (_x, _y + 0.3, _z + dz)], color=fab.color.teal)",
+                "",
+                "",
+                "fab.ui.point(_x, _y, 0, color=fab.color.teal)",
+                "fab.ui.point(_x + dx, _y, 0, color=fab.color.teal, drag=(dx, None, None))",
+                "fab.ui.point(_x, _y + dy, 0, color=fab.color.teal, drag=(None, dy, None))",
+                "fab.ui.point(_x, _y, _z + dz, color=fab.color.teal, drag=(None, None, dz))",
+                ""
+            ],
+            "uid": 38
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__30.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__38.__10]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaaaaiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20aii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1-+rbaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20rbaii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1f0.9nm+f0/-Xf0f1.1+f0/-Yf0f0.8+f0/-Zf0f0.8im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23nm-Xf0-Yf0-Zf0im-Xf0-Yf-0-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf0-Yf-34.7-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3niiam__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20m-*f2f0X__am__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20im+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8m-*f2f0X__m+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8nam__f1aa-f-25.3X-Xf25.3a-f-22Y-Yf22a-f-22Z-Zf0niiiiiiim-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf2m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf4m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf6m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf8m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf10m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf12m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf14m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('-25.207277'),float('-20.000000'),float('-20.000000'),float('25.207277'),float('20.000000'),float('20.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                3029.777643263644,
+                2174.37594070287
+            ],
+            "name": "d5",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 39
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__39.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaaaaiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20aii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1-+rbaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-21.2X-Xf21.2a-f-18.2Y-Yf18.2a-f-1.8Z-Zf1.8am__f1iaa-f-23X-Xf23a-f-18.2Y-Yf18.2aa-f-21.2X-Xf21.2a-f-20Y-Yf20a-f0Z-Zf0-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8-r++q-Xf21.2q-Yf18.2qZf1.8-r++q-Xf-21.2q-Yf18.2qZf1.8-r++q-Xf21.2q-Yf-18.2qZf1.8-r++q-Xf-21.2q-Yf-18.2qZf1.8am__f1-r+q-Xf21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf21.2q-Zf0f1.8a-f-18.2Y-Yf18.2am__f1-r+q-Xf-21.2q-Yf-18.2f1.8a-f0Z-Zf0a-r+q-Yf-18.2q-Zf0f1.8a-f-21.2X-Xf21.2a-r+q-Xf-21.2q-Zf0f1.8a-f-18.2Y-Yf18.2n-r++qXqYqZf20rbaii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9n-ii-r++qXqYqZf20im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23-+rb-r++qXqYqZf20rbim-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23f0.9f-1f0.9nm+f0/-Xf0f1.1+f0/-Yf0f0.8+f0/-Zf0f0.8im-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23m-*f2f0X__m-Xf23-Yf0-Zf0m*X-f1xn/r++qXqYqZf6*Y-f1xn/r++qXqYqZf6*Z-f1xn/r++qXqYqZf6m-Xf-23-Yf-0-Zf-0a-r+q-Yf0q-Zf0f3a-f0X-Xf23nm-Xf0-Yf0-Zf0im-Xf0-Yf-0-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf0-Yf-34.7-Zf0im-Xf-0-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3m-Xf-40.7-Yf0-Zf0am__f1-r+q-Xf20.35q-Yf17.35f1.65a-f0Z-Zf1.3niiam__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20m-*f2f0X__am__f1aa-f23X-Xf28a-f-20Y-Yf20a-f-20Z-Zf20im+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8m-*f2f0X__m+f25/-Xf25f1.6Y_-r++q-Xf25qYqZf4.8nam__f1aa-f-25.3X-Xf25.3a-f-22Y-Yf22a-f-22Z-Zf0niiiiiiim-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf2m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf4m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf6m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf8m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf10m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf12m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf14m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf1m-Xf0-Yf0-Zf-10m*X+f1xn/r++qXqYqZf20*Y+f1xn/r++qXqYqZf20*Z+f1xn/r++qXqYqZf20m-Xf-0-Yf-0-Zf10iiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf10f0.5a-f0X-Xf40',float('-25.207277'),float('-20.000000'),float('-20.000000'),float('25.207277'),float('20.000000'),float('20.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                3430.5469659528803,
+                2156.031903820824
+            ],
+            "name": "m0",
+            "script": [
+                "import fab",
+                "",
+                "title('Mesh (.stl)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', shape)",
+                "",
+                "sb.export.stl(shape)",
+                ""
+            ],
+            "uid": 40
+        }
+    ],
+    "protocol": 6,
+    "type": "sb"
+}
