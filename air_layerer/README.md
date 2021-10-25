@@ -6,6 +6,8 @@ To use this model, you must print two copies. Each side takes four small neodymi
 
 Pack each half with spaghnum moss, and clip it to the plant. Keep moist.
 
-[Top view](./airlayer_front.jpg)
-[Back view](./airlayer_back.jpg)
-[Graph](./airlayer_graph.jpg)
+![Top view](./airlayer_front.jpg)
+
+![Back view](./airlayer_back.jpg)
+
+![Graph](./airlayer_graph.jpg)
