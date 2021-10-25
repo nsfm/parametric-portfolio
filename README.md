@@ -6,8 +6,10 @@ The models relate to a variety of projects. Most were meant to be printed, other
 
 ## Contents
 
+### [3D printer dial indicator mount](./dial_indicator_mount)
+
 ### [Air layering pod](./air_layerer)
 
-### [3D printer dial indicator mount](./dial_indicator_mount)
+### [Dovetailed end table](./dovetailed_end_table)
 
 ### [Misting nozzle holder](./mister_holder)
