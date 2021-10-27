@@ -11,3 +11,5 @@ This repo contains a collection of parametric models I designed using [Antimony]
 #### [Knockoff match striker](./match_striker)
 
 #### [Misting nozzle holder](./mister_holder)
+
+#### [Sphere candle holder](./sphere_candle_holder)
