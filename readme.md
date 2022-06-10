@@ -6,6 +6,8 @@ This repo contains a collection of parametric models I designed using [Antimony]
 
 #### [Air layering pod](./air_layerer)
 
+#### [Darkfield Filter](./darkfield_filter)
+
 #### [Dovetailed end table](./dovetailed_end_table)
 
 #### [Knockoff match striker](./match_striker)
