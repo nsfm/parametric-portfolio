@@ -1,0 +1,1763 @@
+{
+    "nodes": [
+        {
+            "datums": [
+                {
+                    "expr": "0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "g.slab_width+g.overhang",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "g.slab_height+g.overhang",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "1.5",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "0.25",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.8125X-Xf19.8125a-f-24.8125Y-Yf24.8125a-f-0.75Z-Zf0.75am__f1iaa-f-20X-Xf20a-f-24.8125Y-Yf24.8125aa-f-19.8125X-Xf19.8125a-f-25Y-Yf25a-f-0.5625Z-Zf0.5625-r++q-Xf19.8125q-Yf24.8125q-Zf0.5625f0.1875-r++q-Xf-19.8125q-Yf24.8125q-Zf0.5625f0.1875-r++q-Xf19.8125q-Yf-24.8125q-Zf0.5625f0.1875-r++q-Xf-19.8125q-Yf-24.8125q-Zf0.5625f0.1875-r++q-Xf19.8125q-Yf24.8125q-Zf-0.5625f0.1875-r++q-Xf-19.8125q-Yf24.8125q-Zf-0.5625f0.1875-r++q-Xf19.8125q-Yf-24.8125q-Zf-0.5625f0.1875-r++q-Xf-19.8125q-Yf-24.8125q-Zf-0.5625f0.1875am__f1-r+q-Xf19.8125q-Yf24.8125f0.1875a-f-0.5625Z-Zf0.5625a-r+q-Yf24.8125q-Zf0.5625f0.1875a-f-19.8125X-Xf19.8125a-r+q-Xf19.8125q-Zf0.5625f0.1875a-f-24.8125Y-Yf24.8125am__f1-r+q-Xf-19.8125q-Yf24.8125f0.1875a-f-0.5625Z-Zf0.5625a-r+q-Yf-24.8125q-Zf0.5625f0.1875a-f-19.8125X-Xf19.8125a-r+q-Xf-19.8125q-Zf0.5625f0.1875a-f-24.8125Y-Yf24.8125am__f1-r+q-Xf19.8125q-Yf-24.8125f0.1875a-f-0.5625Z-Zf0.5625a-r+q-Yf24.8125q-Zf-0.5625f0.1875a-f-19.8125X-Xf19.8125a-r+q-Xf19.8125q-Zf-0.5625f0.1875a-f-24.8125Y-Yf24.8125am__f1-r+q-Xf-19.8125q-Yf-24.8125f0.1875a-f-0.5625Z-Zf0.5625a-r+q-Yf-24.8125q-Zf-0.5625f0.1875a-f-19.8125X-Xf19.8125a-r+q-Xf-19.8125q-Zf-0.5625f0.1875a-f-24.8125Y-Yf24.8125',float('-20.000000'),float('-25.000000'),float('-0.750000'),float('20.000000'),float('25.000000'),float('0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -664.9901904512911,
+                1860.8031435430084
+            ],
+            "name": "slab",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "",
+                "import fab",
+                "",
+                "title('Rounded cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "input('r', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "# This is the circle's radius in actual units (not a 0-1 fraction)",
+                "r_ = r * min([width, height, depth])/2",
+                "",
+                "output('shape', fab.shapes.rounded_cube(xmin, xmax, ymin, ymax, zmin, zmax, r))",
+                "",
+                "def drag_hwd(this, dx, dy, dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "# UI",
+                "def drag_r(this, x, y, z):",
+                "    if abs(this.width) < abs(this.height):",
+                "        d = abs(this.width)",
+                "        mid = this.ymax + this.height/2 - d / 2",
+                "    else:",
+                "        d = abs(this.height)",
+                "        mid = this.y",
+                "    r = 1 - (y - mid) / (d/2)",
+                "    this.r = float(min(1, max(0, r)))",
+                "",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2, y + height/2, z + depth/2, drag=drag_hwd)",
+                "sb.ui.point(xmax, ymax - r_, zmax, drag=drag_r, relative=False)",
+                ""
+            ],
+            "uid": 0
+        },
+        {
+            "datums": [
+                {
+                    "expr": "slab.x-g.slab_width/2+self.width/2+self.width",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "slab.z-slab.depth/2-self.depth/2",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "g.two_by_four_width",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "g.long_apron-self.width*2",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "g.two_by_four_height",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "0.25",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125',float('-16.500000'),float('-21.500000'),float('-2.250000'),float('-13.000000'),float('21.500000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -151.5092736716805,
+                240.0099417699202
+            ],
+            "name": "long_apron",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "",
+                "import fab",
+                "",
+                "title('Rounded cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "input('r', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "# This is the circle's radius in actual units (not a 0-1 fraction)",
+                "r_ = r * min([width, height, depth])/2",
+                "",
+                "output('shape', fab.shapes.rounded_cube(xmin, xmax, ymin, ymax, zmin, zmax, r))",
+                "",
+                "def drag_hwd(this, dx, dy, dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "# UI",
+                "def drag_r(this, x, y, z):",
+                "    if abs(this.width) < abs(this.height):",
+                "        d = abs(this.width)",
+                "        mid = this.ymax + this.height/2 - d / 2",
+                "    else:",
+                "        d = abs(this.height)",
+                "        mid = this.y",
+                "    r = 1 - (y - mid) / (d/2)",
+                "    this.r = float(min(1, max(0, r)))",
+                "",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2, y + height/2, z + depth/2, drag=drag_hwd)",
+                "sb.ui.point(xmax, ymax - r_, zmax, drag=drag_r, relative=False)",
+                ""
+            ],
+            "uid": 1
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__1.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125',float('-16.500000'),float('-21.500000'),float('-2.250000'),float('-13.000000'),float('21.500000'),float('-0.750000'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                395.1060419120204,
+                544.7920734316488
+            ],
+            "name": "c0",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 2
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0011[__2.__1]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-*f2f0X__iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125',float('13.000000'),float('-21.500000'),float('-2.250000'),float('16.500000'),float('21.500000'),float('-0.750000'))",
+                    "name": "reflected",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                774.9640710646119,
+                658.6064918814413
+            ],
+            "name": "r0",
+            "script": [
+                "import fab",
+                "",
+                "title('Reflect (X)')",
+                "",
+                "input('x0', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('reflected', fab.shapes.reflect_x(shape, x0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (x0, _y - 1, _z + 1),",
+                "    (x0, _y + 1, _z + 1),",
+                "    (x0, _y + 1, _z - 1),",
+                "    (x0, _y - 1, _z - 1)], color=sb.color.teal, close=True)",
+                "",
+                "sb.ui.point(x0, _y, _z, color=sb.color.teal)",
+                ""
+            ],
+            "uid": 3
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__2.__0]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__3.__4]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125m-*f2f0X__iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125',float('-16.500000'),float('-21.500000'),float('-2.250000'),float('16.500000'),float('21.500000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1193.5819035138138,
+                538.1160274055769
+            ],
+            "name": "u0",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 4
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "slab.y-g.slab_height/2+self.height/2",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "slab.z-slab.depth/2-self.depth/2",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "g.short_apron",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "g.two_by_four_width",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "g.two_by_four_height",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "0.25",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875',float('-16.500000'),float('-25.000000'),float('-2.250000'),float('16.500000'),float('-21.500000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -1347.5553201091193,
+                625.0872814049885
+            ],
+            "name": "short_apron",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "",
+                "import fab",
+                "",
+                "title('Rounded cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "input('r', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "# This is the circle's radius in actual units (not a 0-1 fraction)",
+                "r_ = r * min([width, height, depth])/2",
+                "",
+                "output('shape', fab.shapes.rounded_cube(xmin, xmax, ymin, ymax, zmin, zmax, r))",
+                "",
+                "def drag_hwd(this, dx, dy, dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "# UI",
+                "def drag_r(this, x, y, z):",
+                "    if abs(this.width) < abs(this.height):",
+                "        d = abs(this.width)",
+                "        mid = this.ymax + this.height/2 - d / 2",
+                "    else:",
+                "        d = abs(this.height)",
+                "        mid = this.y",
+                "    r = 1 - (y - mid) / (d/2)",
+                "    this.r = float(min(1, max(0, r)))",
+                "",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2, y + height/2, z + depth/2, drag=drag_hwd)",
+                "sb.ui.point(xmax, ymax - r_, zmax, drag=drag_r, relative=False)",
+                ""
+            ],
+            "uid": 5
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__7.__0]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__8.__4]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875',float('-16.500000'),float('-25.000000'),float('-2.250000'),float('16.500000'),float('25.000000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                -21.09634368160414,
+                948.8817650241858
+            ],
+            "name": "u1",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 6
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__5.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875',float('-16.500000'),float('-25.000000'),float('-2.250000'),float('16.500000'),float('-21.500000'),float('-0.750000'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                -791.5625894860805,
+                951.3711551560259
+            ],
+            "name": "c1",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 7
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0011[__7.__1]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875',float('-16.500000'),float('21.500000'),float('-2.250000'),float('16.500000'),float('25.000000'),float('-0.750000'))",
+                    "name": "reflected",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -423.13284997376195,
+                1075.840661748025
+            ],
+            "name": "r1",
+            "script": [
+                "import fab",
+                "",
+                "title('Reflect (Y)')",
+                "",
+                "input('_x', float)",
+                "input('y0', float)",
+                "input('_z', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('reflected', fab.shapes.reflect_y(shape, y0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (_x - 1, y0, _z + 1),",
+                "    (_x + 1, y0, _z + 1),",
+                "    (_x + 1, y0, _z - 1),",
+                "    (_x - 1, y0, _z - 1)], color=sb.color.teal, close=True)",
+                "",
+                "sb.ui.point(_x, y0, _z, color=sb.color.teal)",
+                "",
+                ""
+            ],
+            "uid": 8
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "slab.z-slab.depth/2-self.depth/2",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "g.stretcher-g.two_by_four_width*2",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "g.two_by_four_width",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "g.two_by_four_height",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "0.25",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-12.8125X-Xf12.8125a-f-1.5625Y-Yf1.5625a-f-2.25Z-Zf-0.75am__f1iaa-f-13X-Xf13a-f-1.5625Y-Yf1.5625aa-f-12.8125X-Xf12.8125a-f-1.75Y-Yf1.75a-f-2.0625Z-Zf-0.9375-r++q-Xf12.8125q-Yf1.5625q-Zf-0.9375f0.1875-r++q-Xf-12.8125q-Yf1.5625q-Zf-0.9375f0.1875-r++q-Xf12.8125q-Yf-1.5625q-Zf-0.9375f0.1875-r++q-Xf-12.8125q-Yf-1.5625q-Zf-0.9375f0.1875-r++q-Xf12.8125q-Yf1.5625q-Zf-2.0625f0.1875-r++q-Xf-12.8125q-Yf1.5625q-Zf-2.0625f0.1875-r++q-Xf12.8125q-Yf-1.5625q-Zf-2.0625f0.1875-r++q-Xf-12.8125q-Yf-1.5625q-Zf-2.0625f0.1875am__f1-r+q-Xf12.8125q-Yf1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf1.5625q-Zf-0.9375f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf12.8125q-Zf-0.9375f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf-12.8125q-Yf1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-1.5625q-Zf-0.9375f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf-12.8125q-Zf-0.9375f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf12.8125q-Yf-1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf1.5625q-Zf-2.0625f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf12.8125q-Zf-2.0625f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf-12.8125q-Yf-1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-1.5625q-Zf-2.0625f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf-12.8125q-Zf-2.0625f0.1875a-f-1.5625Y-Yf1.5625',float('-13.000000'),float('-1.750000'),float('-2.250000'),float('13.000000'),float('1.750000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                2094.806580166769,
+                1870.0735135620753
+            ],
+            "name": "center_stretcher",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "",
+                "import fab",
+                "",
+                "title('Rounded cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "input('r', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "# This is the circle's radius in actual units (not a 0-1 fraction)",
+                "r_ = r * min([width, height, depth])/2",
+                "",
+                "output('shape', fab.shapes.rounded_cube(xmin, xmax, ymin, ymax, zmin, zmax, r))",
+                "",
+                "def drag_hwd(this, dx, dy, dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "# UI",
+                "def drag_r(this, x, y, z):",
+                "    if abs(this.width) < abs(this.height):",
+                "        d = abs(this.width)",
+                "        mid = this.ymax + this.height/2 - d / 2",
+                "    else:",
+                "        d = abs(this.height)",
+                "        mid = this.y",
+                "    r = 1 - (y - mid) / (d/2)",
+                "    this.r = float(min(1, max(0, r)))",
+                "",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2, y + height/2, z + depth/2, drag=drag_hwd)",
+                "sb.ui.point(xmax, ymax - r_, zmax, drag=drag_r, relative=False)",
+                ""
+            ],
+            "uid": 9
+        },
+        {
+            "datums": [
+                {
+                    "expr": "slab.x-g.slab_width/2+self.width/2",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "slab.y-g.slab_height/2+self.height/2",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "slab.z-slab.depth/2-self.depth/2",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "g.four_by_four_width",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "g.four_by_four_height",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "g.leg_length",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "0.1",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675',float('-20.000000'),float('-25.000000'),float('-17.250000'),float('-16.500000'),float('-21.500000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                1127.1394923646349,
+                1454.3774189440958
+            ],
+            "name": "leg",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "",
+                "import fab",
+                "",
+                "title('Rounded cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "input('r', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "# This is the circle's radius in actual units (not a 0-1 fraction)",
+                "r_ = r * min([width, height, depth])/2",
+                "",
+                "output('shape', fab.shapes.rounded_cube(xmin, xmax, ymin, ymax, zmin, zmax, r))",
+                "",
+                "def drag_hwd(this, dx, dy, dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "# UI",
+                "def drag_r(this, x, y, z):",
+                "    if abs(this.width) < abs(this.height):",
+                "        d = abs(this.width)",
+                "        mid = this.ymax + this.height/2 - d / 2",
+                "    else:",
+                "        d = abs(this.height)",
+                "        mid = this.y",
+                "    r = 1 - (y - mid) / (d/2)",
+                "    this.r = float(min(1, max(0, r)))",
+                "",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2, y + height/2, z + depth/2, drag=drag_hwd)",
+                "sb.ui.point(xmax, ymax - r_, zmax, drag=drag_r, relative=False)",
+                ""
+            ],
+            "uid": 10
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__10.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "2",
+                    "name": "i",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "2",
+                    "name": "j",
+                    "type": "int",
+                    "uid": 4
+                },
+                {
+                    "expr": "g.slab_width - leg.width",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "g.slab_height-leg.height",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf0-Yf46.5-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675',float('-20.000000'),float('-25.000000'),float('-17.250000'),float('20.000000'),float('25.000000'),float('-0.750000'))",
+                    "name": "array",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                1643.6885451635667,
+                1532.1189151847377
+            ],
+            "name": "a0",
+            "script": [
+                "import fab",
+                "",
+                "title('Array (2D)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('i', int)",
+                "input('j', int)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "",
+                "output('array', fab.shapes.iterate3d(shape, i, j, 1, dx, dy, 0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (_x + dx, _y, 0), (_x, _y, 0), (_x, _y + dy, 0)], color=sb.color.teal)",
+                "sb.ui.wireframe([",
+                "    (_x + dx, _y - 0.3, 0), (_x + dx, _y + 0.3, 0)], color=sb.color.teal)",
+                "sb.ui.wireframe([",
+                "    (_x + 0.3, _y + dy, 0), (_x - 0.3, _y + dy, 0)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, 0, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y, 0, color=sb.color.teal, drag=(dx, None, None))",
+                "sb.ui.point(_x, _y + dy, 0, color=sb.color.teal, drag=(None, dy, None))",
+                ""
+            ],
+            "uid": 11
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__6.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875',float('-16.500000'),float('-25.000000'),float('-2.250000'),float('16.500000'),float('25.000000'),float('-0.750000'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                411.8137981291061,
+                962.4039906124258
+            ],
+            "name": "short_stretcher",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 12
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "0",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "-leg.depth+short_apron.depth",
+                    "name": "dz",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0011[__12.__1]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf-15iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875',float('-16.500000'),float('-25.000000'),float('-17.250000'),float('16.500000'),float('25.000000'),float('-15.750000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                816.0695785804437,
+                1062.6041413225862
+            ],
+            "name": "t0",
+            "script": [
+                "import fab",
+                "",
+                "title('Translate')",
+                "",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "input('dz', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', fab.shapes.translate(shape, dx, dy, dz))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(_x, _y, _z),",
+                "                  (_x + dx, _y + dy, _z + dz)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y - 0.3, _z),",
+                "                  (_x, _y + 0.3, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x - 0.3, _y, _z),",
+                "                  (_x + 0.3, _y, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y, _z - 0.3),",
+                "                  (_x, _y, _z + 0.3)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, _z, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y + dy, _z + dz, color=sb.color.teal, drag=(dx, dy, dz))",
+                ""
+            ],
+            "uid": 13
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__12.__0]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__13.__7]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf-15iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875',float('-16.500000'),float('-25.000000'),float('-17.250000'),float('16.500000'),float('25.000000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1185.773582924829,
+                964.1315794177735
+            ],
+            "name": "u2",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 14
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "slab.z-slab.depth/2+self.depth/2-leg.depth",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "g.two_by_four_width",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "g.long_stretcher",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "g.two_by_four_height",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "0.25",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-1.5625X-Xf1.5625a-f-21.3125Y-Yf21.3125a-f-17.25Z-Zf-15.75am__f1iaa-f-1.75X-Xf1.75a-f-21.3125Y-Yf21.3125aa-f-1.5625X-Xf1.5625a-f-21.5Y-Yf21.5a-f-17.0625Z-Zf-15.9375-r++q-Xf1.5625q-Yf21.3125q-Zf-15.9375f0.1875-r++q-Xf-1.5625q-Yf21.3125q-Zf-15.9375f0.1875-r++q-Xf1.5625q-Yf-21.3125q-Zf-15.9375f0.1875-r++q-Xf-1.5625q-Yf-21.3125q-Zf-15.9375f0.1875-r++q-Xf1.5625q-Yf21.3125q-Zf-17.0625f0.1875-r++q-Xf-1.5625q-Yf21.3125q-Zf-17.0625f0.1875-r++q-Xf1.5625q-Yf-21.3125q-Zf-17.0625f0.1875-r++q-Xf-1.5625q-Yf-21.3125q-Zf-17.0625f0.1875am__f1-r+q-Xf1.5625q-Yf21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf21.3125q-Zf-15.9375f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf1.5625q-Zf-15.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-1.5625q-Yf21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf-21.3125q-Zf-15.9375f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf-1.5625q-Zf-15.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf1.5625q-Yf-21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf21.3125q-Zf-17.0625f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf1.5625q-Zf-17.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-1.5625q-Yf-21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf-21.3125q-Zf-17.0625f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf-1.5625q-Zf-17.0625f0.1875a-f-21.3125Y-Yf21.3125',float('-1.750000'),float('-21.500000'),float('-17.250000'),float('1.750000'),float('21.500000'),float('-15.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                2602.481179397521,
+                2341.4251702044853
+            ],
+            "name": "long_stretcher",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "",
+                "import fab",
+                "",
+                "title('Rounded cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "input('r', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "# This is the circle's radius in actual units (not a 0-1 fraction)",
+                "r_ = r * min([width, height, depth])/2",
+                "",
+                "output('shape', fab.shapes.rounded_cube(xmin, xmax, ymin, ymax, zmin, zmax, r))",
+                "",
+                "def drag_hwd(this, dx, dy, dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "# UI",
+                "def drag_r(this, x, y, z):",
+                "    if abs(this.width) < abs(this.height):",
+                "        d = abs(this.width)",
+                "        mid = this.ymax + this.height/2 - d / 2",
+                "    else:",
+                "        d = abs(this.height)",
+                "        mid = this.y",
+                "    r = 1 - (y - mid) / (d/2)",
+                "    this.r = float(min(1, max(0, r)))",
+                "",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2, y + height/2, z + depth/2, drag=drag_hwd)",
+                "sb.ui.point(xmax, ymax - r_, zmax, drag=drag_r, relative=False)",
+                ""
+            ],
+            "uid": 15
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__4.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__14.__2]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125m-*f2f0X__iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125iiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf-15iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875',float('-16.500000'),float('-25.000000'),float('-17.250000'),float('16.500000'),float('25.000000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1622.678855966589,
+                804.9104309311285
+            ],
+            "name": "u3",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 16
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__16.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__11.__7]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125m-*f2f0X__iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125iiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf-15iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf0-Yf46.5-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675',float('-20.000000'),float('-25.000000'),float('-17.250000'),float('20.000000'),float('25.000000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                2169.9538208461613,
+                1283.2054504814955
+            ],
+            "name": "u4",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 17
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__17.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__9.__7]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125m-*f2f0X__iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125iiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf-15iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf0-Yf46.5-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-12.8125X-Xf12.8125a-f-1.5625Y-Yf1.5625a-f-2.25Z-Zf-0.75am__f1iaa-f-13X-Xf13a-f-1.5625Y-Yf1.5625aa-f-12.8125X-Xf12.8125a-f-1.75Y-Yf1.75a-f-2.0625Z-Zf-0.9375-r++q-Xf12.8125q-Yf1.5625q-Zf-0.9375f0.1875-r++q-Xf-12.8125q-Yf1.5625q-Zf-0.9375f0.1875-r++q-Xf12.8125q-Yf-1.5625q-Zf-0.9375f0.1875-r++q-Xf-12.8125q-Yf-1.5625q-Zf-0.9375f0.1875-r++q-Xf12.8125q-Yf1.5625q-Zf-2.0625f0.1875-r++q-Xf-12.8125q-Yf1.5625q-Zf-2.0625f0.1875-r++q-Xf12.8125q-Yf-1.5625q-Zf-2.0625f0.1875-r++q-Xf-12.8125q-Yf-1.5625q-Zf-2.0625f0.1875am__f1-r+q-Xf12.8125q-Yf1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf1.5625q-Zf-0.9375f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf12.8125q-Zf-0.9375f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf-12.8125q-Yf1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-1.5625q-Zf-0.9375f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf-12.8125q-Zf-0.9375f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf12.8125q-Yf-1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf1.5625q-Zf-2.0625f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf12.8125q-Zf-2.0625f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf-12.8125q-Yf-1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-1.5625q-Zf-2.0625f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf-12.8125q-Zf-2.0625f0.1875a-f-1.5625Y-Yf1.5625',float('-20.000000'),float('-25.000000'),float('-17.250000'),float('20.000000'),float('25.000000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                2805.787194235909,
+                1727.3723882880934
+            ],
+            "name": "u5",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 18
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__18.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__15.__7]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125m-*f2f0X__iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125iiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf-15iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf0-Yf46.5-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-12.8125X-Xf12.8125a-f-1.5625Y-Yf1.5625a-f-2.25Z-Zf-0.75am__f1iaa-f-13X-Xf13a-f-1.5625Y-Yf1.5625aa-f-12.8125X-Xf12.8125a-f-1.75Y-Yf1.75a-f-2.0625Z-Zf-0.9375-r++q-Xf12.8125q-Yf1.5625q-Zf-0.9375f0.1875-r++q-Xf-12.8125q-Yf1.5625q-Zf-0.9375f0.1875-r++q-Xf12.8125q-Yf-1.5625q-Zf-0.9375f0.1875-r++q-Xf-12.8125q-Yf-1.5625q-Zf-0.9375f0.1875-r++q-Xf12.8125q-Yf1.5625q-Zf-2.0625f0.1875-r++q-Xf-12.8125q-Yf1.5625q-Zf-2.0625f0.1875-r++q-Xf12.8125q-Yf-1.5625q-Zf-2.0625f0.1875-r++q-Xf-12.8125q-Yf-1.5625q-Zf-2.0625f0.1875am__f1-r+q-Xf12.8125q-Yf1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf1.5625q-Zf-0.9375f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf12.8125q-Zf-0.9375f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf-12.8125q-Yf1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-1.5625q-Zf-0.9375f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf-12.8125q-Zf-0.9375f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf12.8125q-Yf-1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf1.5625q-Zf-2.0625f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf12.8125q-Zf-2.0625f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf-12.8125q-Yf-1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-1.5625q-Zf-2.0625f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf-12.8125q-Zf-2.0625f0.1875a-f-1.5625Y-Yf1.5625iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-1.5625X-Xf1.5625a-f-21.3125Y-Yf21.3125a-f-17.25Z-Zf-15.75am__f1iaa-f-1.75X-Xf1.75a-f-21.3125Y-Yf21.3125aa-f-1.5625X-Xf1.5625a-f-21.5Y-Yf21.5a-f-17.0625Z-Zf-15.9375-r++q-Xf1.5625q-Yf21.3125q-Zf-15.9375f0.1875-r++q-Xf-1.5625q-Yf21.3125q-Zf-15.9375f0.1875-r++q-Xf1.5625q-Yf-21.3125q-Zf-15.9375f0.1875-r++q-Xf-1.5625q-Yf-21.3125q-Zf-15.9375f0.1875-r++q-Xf1.5625q-Yf21.3125q-Zf-17.0625f0.1875-r++q-Xf-1.5625q-Yf21.3125q-Zf-17.0625f0.1875-r++q-Xf1.5625q-Yf-21.3125q-Zf-17.0625f0.1875-r++q-Xf-1.5625q-Yf-21.3125q-Zf-17.0625f0.1875am__f1-r+q-Xf1.5625q-Yf21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf21.3125q-Zf-15.9375f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf1.5625q-Zf-15.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-1.5625q-Yf21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf-21.3125q-Zf-15.9375f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf-1.5625q-Zf-15.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf1.5625q-Yf-21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf21.3125q-Zf-17.0625f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf1.5625q-Zf-17.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-1.5625q-Yf-21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf-21.3125q-Zf-17.0625f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf-1.5625q-Zf-17.0625f0.1875a-f-21.3125Y-Yf21.3125',float('-20.000000'),float('-25.000000'),float('-17.250000'),float('20.000000'),float('25.000000'),float('-0.750000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                3337.440040512122,
+                2142.117434804478
+            ],
+            "name": "u6",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 19
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__0.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "168",
+                    "name": "r",
+                    "type": "int",
+                    "uid": 1
+                },
+                {
+                    "expr": "168",
+                    "name": "g",
+                    "type": "int",
+                    "uid": 2
+                },
+                {
+                    "expr": "168",
+                    "name": "b",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.8125X-Xf19.8125a-f-24.8125Y-Yf24.8125a-f-0.75Z-Zf0.75am__f1iaa-f-20X-Xf20a-f-24.8125Y-Yf24.8125aa-f-19.8125X-Xf19.8125a-f-25Y-Yf25a-f-0.5625Z-Zf0.5625-r++q-Xf19.8125q-Yf24.8125q-Zf0.5625f0.1875-r++q-Xf-19.8125q-Yf24.8125q-Zf0.5625f0.1875-r++q-Xf19.8125q-Yf-24.8125q-Zf0.5625f0.1875-r++q-Xf-19.8125q-Yf-24.8125q-Zf0.5625f0.1875-r++q-Xf19.8125q-Yf24.8125q-Zf-0.5625f0.1875-r++q-Xf-19.8125q-Yf24.8125q-Zf-0.5625f0.1875-r++q-Xf19.8125q-Yf-24.8125q-Zf-0.5625f0.1875-r++q-Xf-19.8125q-Yf-24.8125q-Zf-0.5625f0.1875am__f1-r+q-Xf19.8125q-Yf24.8125f0.1875a-f-0.5625Z-Zf0.5625a-r+q-Yf24.8125q-Zf0.5625f0.1875a-f-19.8125X-Xf19.8125a-r+q-Xf19.8125q-Zf0.5625f0.1875a-f-24.8125Y-Yf24.8125am__f1-r+q-Xf-19.8125q-Yf24.8125f0.1875a-f-0.5625Z-Zf0.5625a-r+q-Yf-24.8125q-Zf0.5625f0.1875a-f-19.8125X-Xf19.8125a-r+q-Xf-19.8125q-Zf0.5625f0.1875a-f-24.8125Y-Yf24.8125am__f1-r+q-Xf19.8125q-Yf-24.8125f0.1875a-f-0.5625Z-Zf0.5625a-r+q-Yf24.8125q-Zf-0.5625f0.1875a-f-19.8125X-Xf19.8125a-r+q-Xf19.8125q-Zf-0.5625f0.1875a-f-24.8125Y-Yf24.8125am__f1-r+q-Xf-19.8125q-Yf-24.8125f0.1875a-f-0.5625Z-Zf0.5625a-r+q-Yf-24.8125q-Zf-0.5625f0.1875a-f-19.8125X-Xf19.8125a-r+q-Xf-19.8125q-Zf-0.5625f0.1875a-f-24.8125Y-Yf24.8125',float('-20.000000'),float('-25.000000'),float('-0.750000'),float('20.000000'),float('25.000000'),float('0.750000'),color=(168,168,168))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -192.5644931802624,
+                2029.8210922288242
+            ],
+            "name": "s0",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Set color (RGB)')",
+                "",
+                "input(\"shape\", fab.types.Shape)",
+                "input(\"r\", int)",
+                "input(\"g\", int)",
+                "input(\"b\", int)",
+                "",
+                "output(\"out\", fab.shapes.set_color(shape, r, g, b))",
+                ""
+            ],
+            "uid": 20
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__19.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "164",
+                    "name": "r",
+                    "type": "int",
+                    "uid": 1
+                },
+                {
+                    "expr": "116",
+                    "name": "g",
+                    "type": "int",
+                    "uid": 2
+                },
+                {
+                    "expr": "73",
+                    "name": "b",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125m-*f2f0X__iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf-13.1875a-f-21.3125Y-Yf21.3125a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf-13a-f-21.3125Y-Yf21.3125aa-f-16.3125X-Xf-13.1875a-f-21.5Y-Yf21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf-13.1875q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-0.9375f0.1875-r++q-Xf-13.1875q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf21.3125q-Zf-2.0625f0.1875-r++q-Xf-13.1875q-Yf-21.3125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.3125q-Zf-2.0625f0.1875am__f1-r+q-Xf-13.1875q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-0.9375f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-13.1875q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-13.1875q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-16.3125q-Yf-21.3125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.3125q-Zf-2.0625f0.1875a-f-16.3125X-Xf-13.1875a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-21.3125Y-Yf21.3125iiiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf-15iiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m_-*f2f0Y_iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-16.3125X-Xf16.3125a-f-24.8125Y-Yf-21.6875a-f-2.25Z-Zf-0.75am__f1iaa-f-16.5X-Xf16.5a-f-24.8125Y-Yf-21.6875aa-f-16.3125X-Xf16.3125a-f-25Y-Yf-21.5a-f-2.0625Z-Zf-0.9375-r++q-Xf16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-0.9375f0.1875-r++q-Xf16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-21.6875q-Zf-2.0625f0.1875-r++q-Xf16.3125q-Yf-24.8125q-Zf-2.0625f0.1875-r++q-Xf-16.3125q-Yf-24.8125q-Zf-2.0625f0.1875am__f1-r+q-Xf16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-21.6875f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-0.9375f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-0.9375f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-21.6875q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875am__f1-r+q-Xf-16.3125q-Yf-24.8125f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-24.8125q-Zf-2.0625f0.1875a-f-16.3125X-Xf16.3125a-r+q-Xf-16.3125q-Zf-2.0625f0.1875a-f-24.8125Y-Yf-21.6875m-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf0-Yf46.5-Zf0im-Xf0-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675m-Xf36.5-Yf0-Zf0iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-19.825X-Xf-16.675a-f-24.825Y-Yf-21.675a-f-17.25Z-Zf-0.75am__f1iaa-f-20X-Xf-16.5a-f-24.825Y-Yf-21.675aa-f-19.825X-Xf-16.675a-f-25Y-Yf-21.5a-f-17.075Z-Zf-0.925-r++q-Xf-16.675q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-0.925f0.175-r++q-Xf-16.675q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-21.675q-Zf-17.075f0.175-r++q-Xf-16.675q-Yf-24.825q-Zf-17.075f0.175-r++q-Xf-19.825q-Yf-24.825q-Zf-17.075f0.175am__f1-r+q-Xf-16.675q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-21.675f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-0.925f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-0.925f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-16.675q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-21.675q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-16.675q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675am__f1-r+q-Xf-19.825q-Yf-24.825f0.175a-f-17.075Z-Zf-0.925a-r+q-Yf-24.825q-Zf-17.075f0.175a-f-19.825X-Xf-16.675a-r+q-Xf-19.825q-Zf-17.075f0.175a-f-24.825Y-Yf-21.675iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-12.8125X-Xf12.8125a-f-1.5625Y-Yf1.5625a-f-2.25Z-Zf-0.75am__f1iaa-f-13X-Xf13a-f-1.5625Y-Yf1.5625aa-f-12.8125X-Xf12.8125a-f-1.75Y-Yf1.75a-f-2.0625Z-Zf-0.9375-r++q-Xf12.8125q-Yf1.5625q-Zf-0.9375f0.1875-r++q-Xf-12.8125q-Yf1.5625q-Zf-0.9375f0.1875-r++q-Xf12.8125q-Yf-1.5625q-Zf-0.9375f0.1875-r++q-Xf-12.8125q-Yf-1.5625q-Zf-0.9375f0.1875-r++q-Xf12.8125q-Yf1.5625q-Zf-2.0625f0.1875-r++q-Xf-12.8125q-Yf1.5625q-Zf-2.0625f0.1875-r++q-Xf12.8125q-Yf-1.5625q-Zf-2.0625f0.1875-r++q-Xf-12.8125q-Yf-1.5625q-Zf-2.0625f0.1875am__f1-r+q-Xf12.8125q-Yf1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf1.5625q-Zf-0.9375f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf12.8125q-Zf-0.9375f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf-12.8125q-Yf1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-1.5625q-Zf-0.9375f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf-12.8125q-Zf-0.9375f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf12.8125q-Yf-1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf1.5625q-Zf-2.0625f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf12.8125q-Zf-2.0625f0.1875a-f-1.5625Y-Yf1.5625am__f1-r+q-Xf-12.8125q-Yf-1.5625f0.1875a-f-2.0625Z-Zf-0.9375a-r+q-Yf-1.5625q-Zf-2.0625f0.1875a-f-12.8125X-Xf12.8125a-r+q-Xf-12.8125q-Zf-2.0625f0.1875a-f-1.5625Y-Yf1.5625iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-1.5625X-Xf1.5625a-f-21.3125Y-Yf21.3125a-f-17.25Z-Zf-15.75am__f1iaa-f-1.75X-Xf1.75a-f-21.3125Y-Yf21.3125aa-f-1.5625X-Xf1.5625a-f-21.5Y-Yf21.5a-f-17.0625Z-Zf-15.9375-r++q-Xf1.5625q-Yf21.3125q-Zf-15.9375f0.1875-r++q-Xf-1.5625q-Yf21.3125q-Zf-15.9375f0.1875-r++q-Xf1.5625q-Yf-21.3125q-Zf-15.9375f0.1875-r++q-Xf-1.5625q-Yf-21.3125q-Zf-15.9375f0.1875-r++q-Xf1.5625q-Yf21.3125q-Zf-17.0625f0.1875-r++q-Xf-1.5625q-Yf21.3125q-Zf-17.0625f0.1875-r++q-Xf1.5625q-Yf-21.3125q-Zf-17.0625f0.1875-r++q-Xf-1.5625q-Yf-21.3125q-Zf-17.0625f0.1875am__f1-r+q-Xf1.5625q-Yf21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf21.3125q-Zf-15.9375f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf1.5625q-Zf-15.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-1.5625q-Yf21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf-21.3125q-Zf-15.9375f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf-1.5625q-Zf-15.9375f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf1.5625q-Yf-21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf21.3125q-Zf-17.0625f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf1.5625q-Zf-17.0625f0.1875a-f-21.3125Y-Yf21.3125am__f1-r+q-Xf-1.5625q-Yf-21.3125f0.1875a-f-17.0625Z-Zf-15.9375a-r+q-Yf-21.3125q-Zf-17.0625f0.1875a-f-1.5625X-Xf1.5625a-r+q-Xf-1.5625q-Zf-17.0625f0.1875a-f-21.3125Y-Yf21.3125',float('-20.000000'),float('-25.000000'),float('-17.250000'),float('20.000000'),float('25.000000'),float('-0.750000'),color=(164,116,73))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                3791.1580726832663,
+                2125.4481589071756
+            ],
+            "name": "s1",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Set color (RGB)')",
+                "",
+                "input(\"shape\", fab.types.Shape)",
+                "input(\"r\", int)",
+                "input(\"g\", int)",
+                "input(\"b\", int)",
+                "",
+                "output(\"out\", fab.shapes.set_color(shape, r, g, b))",
+                ""
+            ],
+            "uid": 21
+        },
+        {
+            "datums": [
+                {
+                    "expr": "slab.x+slab.width/2 + 1",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "slab.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "''#'Slab:\\n  '+str(slab.width)+'\" x '+str(slab.height)+'\"\\n\\n4x4 cuts ('+str(g.four_by_four_count)+' boards)\\n  Legs: '+str(g.leg_length)+'\" (x4)\\n2x4 cuts ('+str(g.two_by_four_count)+' boards)\\n  Long Aprons: '+str(g.long_apron)+'\" (x2)\\n  Short Aprons: '+str(g.short_apron)+'\" (x2)\\n  Short Stretchers: '+str(g.stretcher)+'\" (x3)\\n  Long Stretcher: '+str(g.long_stretcher)+'\" (x1)\\n\\nLeftover 2x4s:\\n  '+str(g.leftover_two_by_fours)+'\\nLeftover 4x4s:\\n  '+str(g.leftover_four_by_fours)",
+                    "name": "text",
+                    "type": "str",
+                    "uid": 2
+                },
+                {
+                    "expr": "1",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('=1;')",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -619.9556459164421,
+                2421.690785288792
+            ],
+            "name": "cut_list",
+            "script": [
+                "import fab",
+                "",
+                "title('Text')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('text', str)",
+                "input('scale', float)",
+                "",
+                "output('shape', fab.shapes.text(text, x, y, scale))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x, y, 0), (x, y+scale, 0)])",
+                "sb.ui.point(x, y, 0)",
+                "sb.ui.point(x, y + scale, 0, drag=(None, scale, None))",
+                ""
+            ],
+            "uid": 22
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0",
+                    "name": "zmin",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0.1",
+                    "name": "zmax",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__22.__4]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1=1;a-f0Z-Zf0.1',float('-inf'),float('-inf'),float('0.000000'),float('inf'),float('inf'),float('0.100000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                -184.0001039701769,
+                2474.0254943459927
+            ],
+            "name": "e0",
+            "script": [
+                "import fab",
+                "",
+                "title('Extrude')",
+                "",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('zmin', float)",
+                "input('zmax', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', fab.shapes.extrude_z(shape, zmin, zmax))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(_x, _y, zmin), (_x, _y, zmax)], color=sb.color.green)",
+                "sb.ui.point(_x, _y, zmin, color=sb.color.green)",
+                "sb.ui.point(_x, _y, zmax, color=sb.color.green)",
+                "",
+                ""
+            ],
+            "uid": 23
+        },
+        {
+            "datums": [
+                {
+                    "expr": "40-g.overhang",
+                    "name": "slab_width",
+                    "type": "float",
+                    "uid": 9
+                },
+                {
+                    "expr": "50-g.overhang",
+                    "name": "slab_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "3.5",
+                    "name": "two_by_four_width",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "1.5",
+                    "name": "two_by_four_height",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "3.5",
+                    "name": "four_by_four_width",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "3.5",
+                    "name": "four_by_four_height",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "16.5",
+                    "name": "leg_length",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "0",
+                    "name": "overhang",
+                    "type": "float",
+                    "uid": 20
+                },
+                {
+                    "expr": "\u001250.0",
+                    "name": "long_apron",
+                    "type": "float",
+                    "uid": 7
+                },
+                {
+                    "expr": "\u001233.0",
+                    "name": "short_apron",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u001233.0",
+                    "name": "stretcher",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u001243.0",
+                    "name": "long_stretcher",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "0.25",
+                    "name": "kerf",
+                    "type": "float",
+                    "uid": 14
+                },
+                {
+                    "expr": "\u00124",
+                    "name": "two_by_four_count",
+                    "type": "int",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u00121",
+                    "name": "four_by_four_count",
+                    "type": "int",
+                    "uid": 17
+                },
+                {
+                    "expr": "\u0012[29.0]",
+                    "name": "leftover_four_by_fours",
+                    "type": "list",
+                    "uid": 18
+                },
+                {
+                    "expr": "\u0012[2.5, 12.5, 29.5, 29.5]",
+                    "name": "leftover_two_by_fours",
+                    "type": "list",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0012308.0",
+                    "name": "total_cut_length",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u001274.0",
+                    "name": "total_leftover_length",
+                    "type": "float",
+                    "uid": 15
+                },
+                {
+                    "expr": "\u0012'24%'",
+                    "name": "wasted_material",
+                    "type": "str",
+                    "uid": 16
+                }
+            ],
+            "inspector": [
+                -1327.580472942673,
+                1259.4069307939137
+            ],
+            "name": "g",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Table Materials (inches)')",
+                "input('slab_width', float)",
+                "input('slab_height', float)",
+                "input('two_by_four_width', float)",
+                "input('two_by_four_height', float)",
+                "input('four_by_four_width', float)",
+                "input('four_by_four_height', float)",
+                "input('leg_length', float)",
+                "input('overhang', float)",
+                "",
+                "long_apron = slab_height",
+                "short_apron = slab_width - 2.0 * two_by_four_width",
+                "stretcher = short_apron",
+                "long_stretcher = slab_height - 2.0 * four_by_four_height",
+                "",
+                "cuts = [long_apron, long_apron, short_apron, short_apron, stretcher, stretcher, stretcher, long_stretcher]",
+                "material = []",
+                "",
+                "output('long_apron', long_apron)",
+                "output('short_apron', short_apron)",
+                "output('stretcher', stretcher)",
+                "output('long_stretcher', long_stretcher)",
+                "",
+                "def splitBoard(cuts = [], materials = [], board_length = 96.0, waste = 0.25):",
+                "  for cut in cuts:",
+                "    if cut > board_length:",
+                "      raise 'cut is too long: '+str(cut)",
+                "",
+                "  addtl_boards = 0",
+                "  cuts.sort(reverse=True)",
+                "  for cut in cuts:",
+                "    closeness = []",
+                "    materials.sort()",
+                "    for board in materials:",
+                "      if board - cut > 0:",
+                "        closeness.append(board)",
+                "",
+                "    if len(closeness) == 0:",
+                "      materials.append(board_length-cut-waste)",
+                "      addtl_boards += 1",
+                "    else:",
+                "      closest = min(closeness)",
+                "      del materials[materials.index(closest)]",
+                "      materials.append(closest-cut-waste)",
+                "",
+                "  return addtl_boards",
+                "input('kerf', float)",
+                "output('two_by_four_count', splitBoard(cuts, material, waste = kerf))",
+                "fours = []",
+                "output('four_by_four_count', splitBoard([leg_length]*4, materials=fours, waste = kerf))",
+                "output('leftover_four_by_fours', fours)",
+                "output('leftover_two_by_fours', material)",
+                "output('total_cut_length', sum(cuts))",
+                "output('total_leftover_length', sum(material))",
+                "output('wasted_material', str(math.floor(sum(material)/sum(cuts)*100))+'%')"
+            ],
+            "uid": 24
+        }
+    ],
+    "protocol": 6,
+    "type": "sb"
+}

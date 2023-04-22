@@ -223,13 +223,13 @@
                     "uid": 3
                 },
                 {
-                    "expr": "cutout.r * .5",
+                    "expr": "cutout.r * .30",
                     "name": "r",
                     "type": "float",
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf6.975a-f0Z-Zf1',float('-6.975000'),float('-6.975000'),float('0.000000'),float('6.975000'),float('6.975000'),float('1.000000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf4.185a-f0Z-Zf1',float('-4.185000'),float('-4.185000'),float('0.000000'),float('4.185000'),float('4.185000'),float('1.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -290,7 +290,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('iaam__f1-r+qXqYf15.5a-f0Z-Zf1nam__f1-r+qXqYf13.95a-f0Z-Zf1am__f1-r+qXqYf6.975a-f0Z-Zf1',float('-15.500000'),float('-15.500000'),float('0.000000'),float('15.500000'),float('15.500000'),float('1.000000'))",
+                    "expr": "\u0012fab.types.Shape('iaam__f1-r+qXqYf15.5a-f0Z-Zf1nam__f1-r+qXqYf13.95a-f0Z-Zf1am__f1-r+qXqYf4.185a-f0Z-Zf1',float('-15.500000'),float('-15.500000'),float('0.000000'),float('15.500000'),float('15.500000'),float('1.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -469,7 +469,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('iiaam__f1-r+qXqYf15.5a-f0Z-Zf1nam__f1-r+qXqYf13.95a-f0Z-Zf1am__f1-r+qXqYf6.975a-f0Z-Zf1iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf0.5f0.5a-f0X-Xf14.725m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf0.5f0.5a-f0X-Xf14.725m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf0.5f0.5a-f0X-Xf14.725',float('-15.500000'),float('-15.500000'),float('0.000000'),float('15.500000'),float('15.500000'),float('1.000000'))",
+                    "expr": "\u0012fab.types.Shape('iiaam__f1-r+qXqYf15.5a-f0Z-Zf1nam__f1-r+qXqYf13.95a-f0Z-Zf1am__f1-r+qXqYf4.185a-f0Z-Zf1iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf0.5f0.5a-f0X-Xf14.725m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf0.5f0.5a-f0X-Xf14.725m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf0.5f0.5a-f0X-Xf14.725',float('-15.500000'),float('-15.500000'),float('0.000000'),float('15.500000'),float('15.500000'),float('1.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -491,6 +491,39 @@
                 ""
             ],
             "uid": 7
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__7.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiaam__f1-r+qXqYf15.5a-f0Z-Zf1nam__f1-r+qXqYf13.95a-f0Z-Zf1am__f1-r+qXqYf4.185a-f0Z-Zf1iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf0.5f0.5a-f0X-Xf14.725m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf0.5f0.5a-f0X-Xf14.725m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0a-r+q-Yf0q-Zf0.5f0.5a-f0X-Xf14.725',float('-15.500000'),float('-15.500000'),float('0.000000'),float('15.500000'),float('15.500000'),float('1.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                1959.3980300233818,
+                353.1386563616285
+            ],
+            "name": "m0",
+            "script": [
+                "import fab",
+                "",
+                "title('Mesh (.stl)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', shape)",
+                "",
+                "sb.export.stl(shape)",
+                ""
+            ],
+            "uid": 8
         }
     ],
     "protocol": 6,
