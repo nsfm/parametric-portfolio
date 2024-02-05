@@ -185,7 +185,7 @@
                     "uid": 3
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('im-*f2f0X__iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f0.75Z-Zf1.5iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f0.75Z-Zf1.5',float('-40.000000'),float('-5.000000'),float('0.000000'),float('40.000000'),float('5.000000'),float('1.500000'))",
+                    "expr": "\u0012fab.types.Shape('im-*f2f0X__iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f1.25Z-Zf1.5iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f1.25Z-Zf1.5',float('-40.000000'),float('-5.000000'),float('0.000000'),float('40.000000'),float('5.000000'),float('1.500000'))",
                     "name": "reflected",
                     "type": "_fabtypes.Shape",
                     "uid": 4
@@ -229,13 +229,13 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0011[__8.__6,__2.__4,__4.__6,__5.__6,__11.__4,__14.__4,__12.__4,__16.__5,__19.__4,__21.__6,__20.__6]",
+                    "expr": "\u0011[__8.__6,__2.__4,__4.__6,__5.__6,__11.__4,__14.__4,__12.__4,__16.__5,__19.__4,__21.__6,__20.__6,__6.__6]",
                     "name": "b",
                     "type": "_fabtypes.Shape",
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('aam__f1-r+qXqYf42.5a-f0Z-Zf1.5niiiiiiiiiiam__f1aa-f-2X-Xf2a-f-0.5Y-Yf0.5a-f-3.5Z-Zf6.5im-*f2f0X__iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f0.75Z-Zf1.5iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f0.75Z-Zf1.5am__f1aa-f-12.75X-Xf12.75a-f-37.75Y-Yf37.75a-f-5Z-Zf6.5aam__f1-r+qXqYf28.5a-f0.75Z-Zf1.5nam__f1-r+qXqYf2a-f0.75Z-Zf1.5iiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.900969X*f0.433884Y+*f-0.433884X*f0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f0.781831Y+*f-0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.222521X*f0.974928Y+*f-0.974928X*f0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f0.974928Y+*f-0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.62349X*f0.781831Y+*f-0.781831X*f-0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f0.433884Y+*f-0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f-0.433884Y+*f0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.62349X*f-0.781831Y+*f0.781831X*f-0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f-0.974928Y+*f0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.222521X*f-0.974928Y+*f0.974928X*f0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f-0.781831Y+*f0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.900969X*f-0.433884Y+*f0.433884X*f0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3iiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f0.781831Y+*f-0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f0.974928Y+*f-0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f0.433884Y+*f-0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f-0.433884Y+*f0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f-0.974928Y+*f0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f-0.781831Y+*f0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3iiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3am__f1-r+qXqYf22a-f-2Z-Zf2im_-*f2f0Y_im-*f2f0X__am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2im-*f2f0X__am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2aam__f1-r+qXqYf42.5a-f1Z-Zf1.5nam__f1-r+qXqYf41.5a-f1Z-Zf1.5am__f1aa-f-17.75X-Xf17.75a-f-21Y-Yf21a-f-2Z-Zf2',float('-42.500000'),float('-42.500000'),float('0.000000'),float('42.500000'),float('42.500000'),float('1.500000'))",
+                    "expr": "\u0012fab.types.Shape('aam__f1-r+qXqYf42.5a-f0Z-Zf1.5niiiiiiiiiiiam__f1aa-f-2X-Xf2a-f-0.5Y-Yf0.5a-f-3.5Z-Zf6.5im-*f2f0X__iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f1.25Z-Zf1.5iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f1.25Z-Zf1.5am__f1aa-f-12.75X-Xf12.75a-f-37.75Y-Yf37.75a-f-5Z-Zf6.5aam__f1-r+qXqYf28.5a-f0.75Z-Zf1.5nam__f1-r+qXqYf2a-f0.75Z-Zf1.5iiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.900969X*f0.433884Y+*f-0.433884X*f0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f0.781831Y+*f-0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.222521X*f0.974928Y+*f-0.974928X*f0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f0.974928Y+*f-0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.62349X*f0.781831Y+*f-0.781831X*f-0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f0.433884Y+*f-0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f-0.433884Y+*f0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.62349X*f-0.781831Y+*f0.781831X*f-0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f-0.974928Y+*f0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.222521X*f-0.974928Y+*f0.974928X*f0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f-0.781831Y+*f0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.900969X*f-0.433884Y+*f0.433884X*f0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3iiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f0.781831Y+*f-0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f0.974928Y+*f-0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f0.433884Y+*f-0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f-0.433884Y+*f0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f-0.974928Y+*f0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f-0.781831Y+*f0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3iiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3am__f1-r+qXqYf22a-f-2Z-Zf2im_-*f2f0Y_im-*f2f0X__am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2im-*f2f0X__am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2aam__f1-r+qXqYf42.5a-f1Z-Zf1.5nam__f1-r+qXqYf41.5a-f1Z-Zf1.5am__f1aa-f-17.75X-Xf17.75a-f-21Y-Yf21a-f-2Z-Zf2am__f1aa-f-12.75X-Xf12.75a-f27.75Y-Yf47.75a-f-3Z-Zf3',float('-42.500000'),float('-42.500000'),float('0.000000'),float('42.500000'),float('42.500000'),float('1.500000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -455,7 +455,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "screwhole.zmin+0.75",
+                    "expr": "self.zmax-0.25",
                     "name": "zmin",
                     "type": "float",
                     "uid": 2
@@ -473,7 +473,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+q-Xf-35qYf5a-f0.75Z-Zf1.5',float('-40.000000'),float('-5.000000'),float('0.750000'),float('-30.000000'),float('5.000000'),float('1.500000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+q-Xf-35qYf5a-f1.25Z-Zf1.5',float('-40.000000'),float('-5.000000'),float('1.250000'),float('-30.000000'),float('5.000000'),float('1.500000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -528,7 +528,7 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('aam__f1-r+qXqYf42.5a-f0Z-Zf1.5niiiiiiiiiiam__f1aa-f-2X-Xf2a-f-0.5Y-Yf0.5a-f-3.5Z-Zf6.5im-*f2f0X__iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f0.75Z-Zf1.5iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f0.75Z-Zf1.5am__f1aa-f-12.75X-Xf12.75a-f-37.75Y-Yf37.75a-f-5Z-Zf6.5aam__f1-r+qXqYf28.5a-f0.75Z-Zf1.5nam__f1-r+qXqYf2a-f0.75Z-Zf1.5iiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.900969X*f0.433884Y+*f-0.433884X*f0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f0.781831Y+*f-0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.222521X*f0.974928Y+*f-0.974928X*f0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f0.974928Y+*f-0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.62349X*f0.781831Y+*f-0.781831X*f-0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f0.433884Y+*f-0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f-0.433884Y+*f0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.62349X*f-0.781831Y+*f0.781831X*f-0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f-0.974928Y+*f0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.222521X*f-0.974928Y+*f0.974928X*f0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f-0.781831Y+*f0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.900969X*f-0.433884Y+*f0.433884X*f0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3iiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f0.781831Y+*f-0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f0.974928Y+*f-0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f0.433884Y+*f-0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f-0.433884Y+*f0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f-0.974928Y+*f0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f-0.781831Y+*f0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3iiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3am__f1-r+qXqYf22a-f-2Z-Zf2im_-*f2f0Y_im-*f2f0X__am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2im-*f2f0X__am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2aam__f1-r+qXqYf42.5a-f1Z-Zf1.5nam__f1-r+qXqYf41.5a-f1Z-Zf1.5am__f1aa-f-17.75X-Xf17.75a-f-21Y-Yf21a-f-2Z-Zf2',float('-42.500000'),float('-42.500000'),float('0.000000'),float('42.500000'),float('42.500000'),float('1.500000'))",
+                    "expr": "\u0012fab.types.Shape('aam__f1-r+qXqYf42.5a-f0Z-Zf1.5niiiiiiiiiiiam__f1aa-f-2X-Xf2a-f-0.5Y-Yf0.5a-f-3.5Z-Zf6.5im-*f2f0X__iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f1.25Z-Zf1.5iam__f1-r+q-Xf-35qYf1.5a-f0Z-Zf1.5am__f1-r+q-Xf-35qYf5a-f1.25Z-Zf1.5am__f1aa-f-12.75X-Xf12.75a-f-37.75Y-Yf37.75a-f-5Z-Zf6.5aam__f1-r+qXqYf28.5a-f0.75Z-Zf1.5nam__f1-r+qXqYf2a-f0.75Z-Zf1.5iiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.900969X*f0.433884Y+*f-0.433884X*f0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f0.781831Y+*f-0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.222521X*f0.974928Y+*f-0.974928X*f0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f0.974928Y+*f-0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.62349X*f0.781831Y+*f-0.781831X*f-0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f0.433884Y+*f-0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f-0.433884Y+*f0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.62349X*f-0.781831Y+*f0.781831X*f-0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f-0.974928Y+*f0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.222521X*f-0.974928Y+*f0.974928X*f0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f-0.781831Y+*f0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.900969X*f-0.433884Y+*f0.433884X*f0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1a-f-3Z-Zf3iiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f0.781831Y+*f-0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f0.974928Y+*f-0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f0.433884Y+*f-0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.900969X*f-0.433884Y+*f0.433884X*f-0.900969Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.222521X*f-0.974928Y+*f0.974928X*f-0.222521Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.62349X*f-0.781831Y+*f0.781831X*f0.62349Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3iiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3m-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf-0-Yf-0-Zf0am__f1-r+q-Xf-35qYf1.5a-f-3Z-Zf3am__f1-r+qXqYf22a-f-2Z-Zf2im_-*f2f0Y_im-*f2f0X__am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2im-*f2f0X__am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2am__f1-r+q-Xf12.75q-Yf21f5a-f-2Z-Zf2aam__f1-r+qXqYf42.5a-f1Z-Zf1.5nam__f1-r+qXqYf41.5a-f1Z-Zf1.5am__f1aa-f-17.75X-Xf17.75a-f-21Y-Yf21a-f-2Z-Zf2am__f1aa-f-12.75X-Xf12.75a-f27.75Y-Yf47.75a-f-3Z-Zf3',float('-42.500000'),float('-42.500000'),float('0.000000'),float('42.500000'),float('42.500000'),float('1.500000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 1
@@ -1533,6 +1533,100 @@
                 ""
             ],
             "uid": 8
+        },
+        {
+            "datums": [
+                {
+                    "expr": "slide.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "slide.y+slide.height/2",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "slide.width",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "20",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "6",
+                    "name": "depth",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f-12.75X-Xf12.75a-f27.75Y-Yf47.75a-f-3Z-Zf3',float('-12.750000'),float('27.750000'),float('-3.000000'),float('12.750000'),float('47.750000'),float('3.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                }
+            ],
+            "inspector": [
+                -93.59222186738202,
+                771.8906010106296
+            ],
+            "name": "thumb",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 5/22/15",
+                "",
+                "import fab",
+                "",
+                "title('Cube (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "input('depth', float)",
+                "",
+                "xmin, xmax = x - width/2, x + width/2",
+                "ymin, ymax = y - height/2, y + height/2",
+                "zmin, zmax = z - depth/2, z + depth/2",
+                "",
+                "output('shape', fab.shapes.cube(xmin, xmax, ymin, ymax, zmin, zmax))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmax, ymin, zmin),",
+                "                  (xmax, ymax, zmin), (xmin, ymax, zmin)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmax), (xmax, ymin, zmax),",
+                "                  (xmax, ymax, zmax), (xmin, ymax, zmax)], close=True)",
+                "sb.ui.wireframe([(xmin, ymin, zmin), (xmin, ymax, zmin),",
+                "                  (xmin, ymax, zmax), (xmin, ymin, zmax)], close=True)",
+                "sb.ui.wireframe([(xmax, ymin, zmin), (xmax, ymax, zmin),",
+                "                  (xmax, ymax, zmax), (xmax, ymin, zmax)], close=True)",
+                "",
+                "def drag_hwd(this, dx,dy,dz):",
+                "   this.width += 2*dx",
+                "   this.height += 2*dy",
+                "   this.depth += 2*dz",
+                "",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x + width/2.0, y + height/2.0, z + depth/2.0,",
+                "             drag=drag_hwd)",
+                "",
+                ""
+            ],
+            "uid": 6
         }
     ],
     "protocol": 6,
