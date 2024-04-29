@@ -837,6 +837,12 @@
                     "name": "5ml_vial_r",
                     "type": "float",
                     "uid": 1
+                },
+                {
+                    "expr": "\u00128.75",
+                    "name": "bubble_tube_r",
+                    "type": "float",
+                    "uid": 2
                 }
             ],
             "inspector": [
@@ -849,7 +855,8 @@
                 "",
                 "title('constants')",
                 "output('1ml_vial_r', 11.75/2)",
-                "output('5ml_vial_r', 18.25/2)"
+                "output('5ml_vial_r', 18.25/2)",
+                "output('bubble_tube_r', 17.5/2)"
             ],
             "uid": 11
         }

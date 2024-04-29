@@ -1,0 +1,1886 @@
+{
+    "nodes": [
+        {
+            "datums": [
+                {
+                    "expr": "0",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "settings.girth",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "_a",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('-r+qXqYf10',float('-10.000000'),float('-10.000000'),float('-inf'),float('10.000000'),float('10.000000'),float('inf'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -815.5965586684986,
+                -82.86992250437058
+            ],
+            "name": "body",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 6/11/18",
+                "",
+                "import fab",
+                "import math",
+                "",
+                "title('Circle (center)')",
+                "",
+                "input('x0',float)",
+                "input('y0',float)",
+                "input('r',float)",
+                "input('_a',float)",
+                "",
+                "output('shape', fab.shapes.circle(x0, y0, r))",
+                "",
+                "def drag_r(this,x,y,z):",
+                "    dx = x - this.x0",
+                "    dy = y - this.y0",
+                "    this.r = math.sqrt(dx**2 + dy**2)",
+                "    this._a = math.atan2(dy, dx)",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x0,",
+                "     math.sin(i/36. * 2*math.pi) * r + y0, 0)",
+                "    for i in range(36)], close=True)",
+                "sb.ui.point(x0,y0)",
+                "sb.ui.point(x0 + r*math.cos(_a),",
+                "             y0 + r*math.sin(_a),",
+                "             drag=drag_r, relative=False)",
+                "",
+                ""
+            ],
+            "uid": 25
+        },
+        {
+            "datums": [
+                {
+                    "expr": "body.x0",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "body.y0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "body.y0+15",
+                    "name": "y1",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "1",
+                    "name": "s0",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "settings.taper",
+                    "name": "s1",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0011[__25.__4]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-15.333334'),float('-10.000000'),float('-inf'),float('15.333334'),float('10.000000'),float('inf'))",
+                    "name": "transform",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                }
+            ],
+            "inspector": [
+                -478.5480197964919,
+                -90.11252462062063
+            ],
+            "name": "t0",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 5/31/15",
+                "",
+                "import fab",
+                "",
+                "title('Taper (XY)')",
+                "",
+                "input('x0', float)",
+                "input('y0', float)",
+                "input('y1', float)",
+                "input('s0', float)",
+                "input('s1', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('transform', fab.shapes.taper_x_y(shape, x0, y0, y1, s0, s1))",
+                "",
+                "# UI",
+                "def drag_base(this, dx, dy, dz):",
+                "    this.x0 += dx",
+                "    this.y0 += dy",
+                "    this.y1 += dy",
+                "",
+                "sb.ui.wireframe([(x0 + s0, y0, 0), (x0, y0, 0),",
+                "                  (x0, y1, 0), (x0 + s1, y1, 0)], color=sb.color.teal)",
+                "sb.ui.point(x0, y0, color=sb.color.teal, drag=drag_base)",
+                "sb.ui.point(x0 + s0, y0, color=sb.color.teal, drag=(s0, None, None))",
+                "sb.ui.point(x0 + s1, y1, color=sb.color.teal, drag=(s1, y1, None))",
+                ""
+            ],
+            "uid": 26
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "body.y0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "settings.stretch",
+                    "name": "s",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__26.__6]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-15.333334'),float('-26.000000'),float('-inf'),float('15.333334'),float('26.000000'),float('inf'))",
+                    "name": "scaled",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                -102.48627108712446,
+                -93.30739016504592
+            ],
+            "name": "s3",
+            "script": [
+                "import fab",
+                "",
+                "title('Scale (Y)')",
+                "",
+                "input('_x', float)",
+                "input('y0', float)",
+                "input('_z', float)",
+                "input('s', float)",
+                "input('shape', fab.types.Shape)",
+                "output('scaled', fab.shapes.scale_y(shape, y0, s))",
+                "",
+                "# UI",
+                "kwargs = {'color':sb.color.teal}",
+                "sb.ui.wireframe([(_x + 0.2*s, y0, _z), (_x - 0.2*s, y0, _z)], **kwargs)",
+                "sb.ui.wireframe([(_x, y0, _z), (_x, y0 + s, _z)], **kwargs)",
+                "sb.ui.wireframe([(_x - 0.1*s, y0 + 0.9*s, _z), (_x, y0 + s, _z),",
+                "                  (_x + 0.1*s, y0 + 0.9*s, _z)], **kwargs)",
+                "",
+                "sb.ui.point(_x, y0, _z, color=sb.color.teal)",
+                "sb.ui.point(_x, y0 + s, _z, color=sb.color.teal, drag=(None,s,None))",
+                ""
+            ],
+            "uid": 27
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__27.__5]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "body.x0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-15.333334'),float('-26.000000'),float('-15.333334'),float('15.333334'),float('26.000000'),float('15.333334'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                239.28028920748125,
+                -94.50106973158287
+            ],
+            "name": "r5",
+            "script": [
+                "# Neil Gershenfeld 2/1/15",
+                "# Matt Keeter 6/13/15",
+                "",
+                "import fab",
+                "",
+                "title('Revolve (Y)')",
+                "",
+                "input('a', fab.types.Shape)",
+                "input('x', float)",
+                "",
+                "output('out', fab.shapes.revolve_xy_y(a, x))",
+                "",
+                ""
+            ],
+            "uid": 28
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "body.y0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "90",
+                    "name": "a",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__28.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-15.333334'),float('-15.333334'),float('-26.000000'),float('15.333334'),float('15.333334'),float('26.000000'))",
+                    "name": "rotated",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                544.328174325384,
+                -97.01618672331185
+            ],
+            "name": "rotate",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Rotate (X)')",
+                "",
+                "input('_x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('a', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('rotated', fab.shapes.rotate_x(shape, a, y, z))",
+                "",
+                "# UI",
+                "rad = math.radians(a)",
+                "sb.ui.wireframe([(_x, y + math.cos(rad), z + math.sin(rad)),",
+                "                  (_x, y, z),",
+                "                  (_x, y + 1, z)], color=sb.color.teal)",
+                "",
+                "# Draw a semi-circular arc showing the rotation",
+                "if int(a) % 360 != 0:",
+                "    sb.ui.wireframe([",
+                "        (_x, y + math.cos(math.radians(a_)) * 0.3,",
+                "             z + math.sin(math.radians(a_)) * 0.3)",
+                "        for a_ in range(int(a) % 360)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, y, z, color=sb.color.teal)",
+                "",
+                "def drag_pt(this, x, y, z):",
+                "    this.a = math.degrees(math.atan2(z - this.z, y - this.y))",
+                "sb.ui.point(_x, y + math.cos(rad), z + math.sin(rad),",
+                "             color=sb.color.teal, drag=drag_pt, relative=False)",
+                "",
+                ""
+            ],
+            "uid": 29
+        },
+        {
+            "datums": [
+                {
+                    "expr": "body.x0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "body.y0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "-50",
+                    "name": "zmin",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "50",
+                    "name": "zmax",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "settings.shaft_diameter/2",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf3.85a-f-50Z-Zf50',float('-3.850000'),float('-3.850000'),float('-50.000000'),float('3.850000'),float('3.850000'),float('50.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                558.669957700596,
+                -1351.2372914796415
+            ],
+            "name": "shaft",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Cylinder (Z)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('zmin', float)",
+                "input('zmax', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.cylinder(x, y, zmin, zmax, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x, y, zmin), (x, y, zmax)])",
+                "sb.ui.wireframe([(x, y, zmin), (x+r, y, zmin)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmin)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmax)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(x, y, zmin)",
+                "sb.ui.point(x, y, zmax)",
+                "sb.ui.point(x + r, y, zmin, drag=(r, None, None))",
+                ""
+            ],
+            "uid": 30
+        },
+        {
+            "datums": [
+                {
+                    "expr": "body.x0",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "body.y0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0",
+                    "name": "z0",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "1.2",
+                    "name": "sx",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__31.__3]",
+                    "name": "sy",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "1",
+                    "name": "sz",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0011[__29.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-18.400002'),float('-18.400002'),float('-26.000000'),float('18.400002'),float('18.400002'),float('26.000000'))",
+                    "name": "scaled",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                936.7509371612657,
+                -101.40529178384438
+            ],
+            "name": "s4",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 5/13/15",
+                "",
+                "import fab",
+                "",
+                "title('Scale (3D)')",
+                "",
+                "input('x0', float)",
+                "input('y0', float)",
+                "input('z0', float)",
+                "input('sx', float)",
+                "input('sy', float)",
+                "input('sz', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('scaled', fab.shapes.scale_xyz(",
+                "    shape, x0, y0, z0, sx, sy, sz))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x0 + sx, y0, z0), (x0, y0, z0), (x0, y0 + sy, z0)],",
+                "                 color=sb.color.teal)",
+                "sb.ui.wireframe([(x0, y0, z0), (x0, y0, z0 + sz)],",
+                "                 color=sb.color.teal)",
+                "sb.ui.wireframe([(x0 + sx, y0 + sx/10, z0), (x0 + sx, y0 - sx/10, z0)],",
+                "                 color=sb.color.teal)",
+                "sb.ui.wireframe([(x0 + sy/10, y0 + sy, z0), (x0 - sy/10, y0 + sy, z0)],",
+                "                 color=sb.color.teal)",
+                "sb.ui.wireframe([(x0 + sz/10, y0, z0 + sz), (x0 - sz/10, y0, z0 + sz)],",
+                "                 color=sb.color.teal)",
+                "",
+                "sb.ui.point(x0, y0, z0, color=sb.color.teal)",
+                "sb.ui.point(x0 + sx, y0, z0, color=sb.color.teal, drag=(sx, None, None))",
+                "sb.ui.point(x0, y0 + sy, z0, color=sb.color.teal, drag=(None, sy, None))",
+                "sb.ui.point(x0, y0, z0 + sz, color=sb.color.teal, drag=(None, None, sz))",
+                ""
+            ],
+            "uid": 31
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__31.__7]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "1",
+                    "name": "s",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1',float('-18.400002'),float('-18.400002'),float('-26.000000'),float('18.400002'),float('18.400002'),float('26.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1359.0857870754048,
+                119.44531700792686
+            ],
+            "name": "s5",
+            "script": [
+                "import fab.types",
+                "import fab.shapes",
+                "",
+                "title('Shell')",
+                "input('a', fab.types.Shape)",
+                "input('s', float)",
+                "",
+                "output('shape', fab.shapes.shell(a, s))",
+                ""
+            ],
+            "uid": 32
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__30.__5]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "1",
+                    "name": "o",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1',float('-4.850000'),float('-4.850000'),float('-51.000000'),float('4.850000'),float('4.850000'),float('51.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                930.213946776895,
+                -491.37965738338926
+            ],
+            "name": "o0",
+            "script": [
+                "import fab.types",
+                "import fab.shapes",
+                "",
+                "title('Offset')",
+                "input('a', fab.types.Shape)",
+                "input('o', float)",
+                "",
+                "output('shape', fab.shapes.offset(a, o))",
+                ""
+            ],
+            "uid": 34
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__31.__7]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__34.__2]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1',float('-4.850000'),float('-4.850000'),float('-26.000000'),float('4.850000'),float('4.850000'),float('26.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1353.2466725830288,
+                -362.57919058766674
+            ],
+            "name": "i1",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Intersection')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & b)",
+                ""
+            ],
+            "uid": 35
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__35.__2,__32.__2,__21.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__34.__0,__38.__4]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.400002'),float('-18.400002'),float('-26.000000'),float('18.400002'),float('18.400002'),float('26.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                2709.520879958288,
+                -8.10436264111388
+            ],
+            "name": "d4",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 36
+        },
+        {
+            "datums": [
+                {
+                    "expr": "body.x0+shaft.r+o0.o+6",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "self.xmin+20",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "body.y0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "7",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "settings.hole_radius",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('10.850000'),float('-5.000000'),float('2.000000'),float('30.850000'),float('5.000000'),float('12.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                566.6197038024092,
+                811.5754385542156
+            ],
+            "name": "flute",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Cylinder (X)')",
+                "",
+                "input('xmin', float)",
+                "input('xmax', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.cylinder_x(xmin, xmax, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(xmin, y, z), (xmax, y, z)])",
+                "sb.ui.wireframe([(xmin, y, z), (xmin, y, z + r)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (xmin, math.cos(i/36. * 2*math.pi) * r + y,",
+                "     math.sin(i/36. * 2*math.pi) * r + z)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (xmax, math.cos(i/36. * 2*math.pi) * r + y,",
+                "     math.sin(i/36. * 2*math.pi) * r + z)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(xmin, y, z)",
+                "sb.ui.point(xmax, y, z)",
+                "sb.ui.point(xmin, y, z + r, drag=(None, None, r))",
+                ""
+            ],
+            "uid": 33
+        },
+        {
+            "datums": [
+                {
+                    "expr": "body.x0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "flute.z",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "30",
+                    "name": "a",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__33.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('6.896371'),float('-5.000000'),float('8.094875'),float('29.216871'),float('5.000000'),float('26.755125'))",
+                    "name": "rotated",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                933.6517708265865,
+                903.783082506078
+            ],
+            "name": "r6",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Rotate (Y)')",
+                "",
+                "input('x', float)",
+                "input('_y', float)",
+                "input('z', float)",
+                "input('a', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('rotated', fab.shapes.rotate_y(shape, a, x, z))",
+                "",
+                "# UI",
+                "rad = math.radians(a)",
+                "sb.ui.wireframe([(x + math.cos(rad), _y, z + math.sin(rad)),",
+                "                  (x, _y, z),",
+                "                  (x + 1, _y, z)], color=sb.color.teal)",
+                "",
+                "# Draw a semi-circular arc showing the rotation",
+                "if int(a) % 360 != 0:",
+                "    sb.ui.wireframe([",
+                "        (x + math.cos(math.radians(a_)) * 0.3, _y,",
+                "         z + math.sin(math.radians(a_)) * 0.3)",
+                "        for a_ in range(int(a) % 360)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, _y, z, color=sb.color.teal)",
+                "",
+                "def drag_pt(this, x, y, z):",
+                "    this.a = math.degrees(math.atan2(z - this.z, x - this.x))",
+                "sb.ui.point(x + math.cos(rad), _y, z + math.sin(rad),",
+                "             color=sb.color.teal, drag=drag_pt, relative=False)",
+                "",
+                ""
+            ],
+            "uid": 37
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__37.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "body.x0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "body.y0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "settings.holes",
+                    "name": "n",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.938560'),float('-27.802540'),float('8.094875'),float('29.216871'),float('27.802540'),float('26.755125'))",
+                    "name": "array",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                1355.4266540674644,
+                888.4572159825634
+            ],
+            "name": "a1",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Array (polar)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "input('x', float)",
+                "input('y', float)",
+                "input('n', int)",
+                "",
+                "output('array', fab.shapes.iterate_polar(shape, x, y, n))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * 0.3 + x,",
+                "     math.sin(i/36. * 2*math.pi) * 0.3 + y, 0)",
+                "    for i in range(36)], close=True, color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, 0, color=sb.color.teal)",
+                ""
+            ],
+            "uid": 38
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__15.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf5aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.400002'),float('-18.400002'),float('-21.000000'),float('18.400002'),float('18.400002'),float('31.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                3682.5149005718604,
+                60.750119999628225
+            ],
+            "name": "m1",
+            "script": [
+                "import fab",
+                "",
+                "title('Mesh (.stl)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', shape)",
+                "",
+                "sb.export.stl(shape)",
+                ""
+            ],
+            "uid": 39
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__2.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "255",
+                    "name": "r",
+                    "type": "int",
+                    "uid": 1
+                },
+                {
+                    "expr": "170",
+                    "name": "g",
+                    "type": "int",
+                    "uid": 2
+                },
+                {
+                    "expr": "240",
+                    "name": "b",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1-r+qXqYf3.85a-f-50Z-Zf50nam__f1-r+qXqYf2.85a-f35Z-Zf50',float('-3.850000'),float('-3.850000'),float('-50.000000'),float('3.850000'),float('3.850000'),float('50.000000'),color=(255,170,240))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                1362.1501050285515,
+                -984.2633016980503
+            ],
+            "name": "s0",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Set color (RGB)')",
+                "",
+                "input(\"shape\", fab.types.Shape)",
+                "input(\"r\", int)",
+                "input(\"g\", int)",
+                "input(\"b\", int)",
+                "",
+                "output(\"out\", fab.shapes.set_color(shape, r, g, b))",
+                ""
+            ],
+            "uid": 0
+        },
+        {
+            "datums": [
+                {
+                    "expr": "shaft.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "shaft.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "self.zmax-15",
+                    "name": "zmin",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "shaft.zmax",
+                    "name": "zmax",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "shaft.r-1",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf2.85a-f35Z-Zf50',float('-2.850000'),float('-2.850000'),float('35.000000'),float('2.850000'),float('2.850000'),float('50.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                522.8898790270888,
+                -901.8751905068069
+            ],
+            "name": "shaft_insert",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Cylinder (Z)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('zmin', float)",
+                "input('zmax', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.cylinder(x, y, zmin, zmax, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x, y, zmin), (x, y, zmax)])",
+                "sb.ui.wireframe([(x, y, zmin), (x+r, y, zmin)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmin)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmax)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(x, y, zmin)",
+                "sb.ui.point(x, y, zmax)",
+                "sb.ui.point(x + r, y, zmin, drag=(r, None, None))",
+                ""
+            ],
+            "uid": 1
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__30.__5]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__1.__5]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1-r+qXqYf3.85a-f-50Z-Zf50nam__f1-r+qXqYf2.85a-f35Z-Zf50',float('-3.850000'),float('-3.850000'),float('-50.000000'),float('3.850000'),float('3.850000'),float('50.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                942.5199920278203,
+                -932.6334186848712
+            ],
+            "name": "d0",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 2
+        },
+        {
+            "datums": [
+                {
+                    "expr": "shaft.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "shaft.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "shaft.zmax+7",
+                    "name": "z0",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "self.z0+25",
+                    "name": "z1",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "shaft.r",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m+f0/*-Xf0f25+*f0-Zf57*f1-f82Z+f0/*-Yf0f25+*f0-Zf57*f1-f82Z_am__f1-r+qXqYf3.85a-f57Z-Zf82',float('-3.850000'),float('-3.850000'),float('57.000000'),float('3.850000'),float('3.850000'),float('82.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                565.2717736939471,
+                -2790.22827317328
+            ],
+            "name": "point",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Cone (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z0', float)",
+                "input('z1', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.cone(x, y, z0, z1, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, z0)",
+                "    for i in range(36)], close=True)",
+                "sb.ui.wireframe([(x,y,z0), (x+r,y,z0)])",
+                "sb.ui.wireframe([(x,y,z0), (x,y,z1)])",
+                "",
+                "sb.ui.point(x, y, z0)",
+                "sb.ui.point(x, y, z1)",
+                "sb.ui.point(x + r, y, z0, drag=(r, None, None))",
+                ""
+            ],
+            "uid": 3
+        },
+        {
+            "datums": [
+                {
+                    "expr": "point.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "point.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "point.z0+12",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "2",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__3.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf69m*X-f1xn/r++qXqYqZf2*Y-f1xn/r++qXqYqZf2*Z-f1xn/r++qXqYqZf2m-Xf-0-Yf-0-Zf-69m+f0/*-Xf0f25+*f0-Zf57*f1-f82Z+f0/*-Yf0f25+*f0-Zf57*f1-f82Z_am__f1-r+qXqYf3.85a-f57Z-Zf82',float('-4.585759'),float('-4.585759'),float('56.264240'),float('4.585759'),float('4.585759'),float('82.735756'))",
+                    "name": "repelled",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                913.7124980076483,
+                -2746.1540963642733
+            ],
+            "name": "r0",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Repel')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "input('shape', fab.types.Shape)",
+                "",
+                "output('repelled', fab.shapes.repel(shape, x, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, z)",
+                "    for i in range(36)], close=True, color=sb.color.teal)",
+                "",
+                "sb.ui.wireframe([(x,y,z-r), (x,y,z - 0.2*r)])",
+                "sb.ui.wireframe([(x,y,z+r), (x,y,z + 0.2*r)], color=sb.color.teal)",
+                "sb.ui.wireframe([(x, y + 0.2*r, z - 0.8*r), (x, y, z-r),",
+                "                  (x, y - 0.2*r, z - 0.8*r)], color=sb.color.teal)",
+                "sb.ui.wireframe([(x, y + 0.2*r, z + 0.8*r), (x, y, z+r),",
+                "                  (x, y - 0.2*r, z + 0.8*r)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, z, color=sb.color.teal)",
+                "sb.ui.point(x, y, z + r, drag=(None, None, r), color=sb.color.teal)",
+                "sb.ui.point(x, y, z - r, drag=(None, None, r), color=sb.color.teal)",
+                ""
+            ],
+            "uid": 4
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__7.__5,__4.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "80",
+                    "name": "r",
+                    "type": "int",
+                    "uid": 1
+                },
+                {
+                    "expr": "80",
+                    "name": "g",
+                    "type": "int",
+                    "uid": 2
+                },
+                {
+                    "expr": "80",
+                    "name": "b",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iam__f1-r+qXqYf2a-f42Z-Zf57m-Xf0-Yf0-Zf69m*X-f1xn/r++qXqYqZf2*Y-f1xn/r++qXqYqZf2*Z-f1xn/r++qXqYqZf2m-Xf-0-Yf-0-Zf-69m+f0/*-Xf0f25+*f0-Zf57*f1-f82Z+f0/*-Yf0f25+*f0-Zf57*f1-f82Z_am__f1-r+qXqYf3.85a-f57Z-Zf82',float('-4.585759'),float('-4.585759'),float('42.000000'),float('4.585759'),float('4.585759'),float('82.735756'),color=(80,80,80))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                1352.3037419328436,
+                -2352.8223840321994
+            ],
+            "name": "s1",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Set color (RGB)')",
+                "",
+                "input(\"shape\", fab.types.Shape)",
+                "input(\"r\", int)",
+                "input(\"g\", int)",
+                "input(\"b\", int)",
+                "",
+                "output(\"out\", fab.shapes.set_color(shape, r, g, b))",
+                ""
+            ],
+            "uid": 5
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__39.__1]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "255",
+                    "name": "r",
+                    "type": "int",
+                    "uid": 1
+                },
+                {
+                    "expr": "130",
+                    "name": "g",
+                    "type": "int",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "b",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf5aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.400002'),float('-18.400002'),float('-21.000000'),float('18.400002'),float('18.400002'),float('31.000000'),color=(255,130,0))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                4131.067721242548,
+                5.947091597487656
+            ],
+            "name": "s2",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Set color (RGB)')",
+                "",
+                "input(\"shape\", fab.types.Shape)",
+                "input(\"r\", int)",
+                "input(\"g\", int)",
+                "input(\"b\", int)",
+                "",
+                "output(\"out\", fab.shapes.set_color(shape, r, g, b))",
+                ""
+            ],
+            "uid": 6
+        },
+        {
+            "datums": [
+                {
+                    "expr": "point.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "point.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "self.zmax-15",
+                    "name": "zmin",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "point.z0",
+                    "name": "zmax",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "2",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf2a-f42Z-Zf57',float('-2.000000'),float('-2.000000'),float('42.000000'),float('2.000000'),float('2.000000'),float('57.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                882.3029414615662,
+                -2330.253692494344
+            ],
+            "name": "point_thread",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Cylinder (Z)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('zmin', float)",
+                "input('zmax', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.cylinder(x, y, zmin, zmax, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x, y, zmin), (x, y, zmax)])",
+                "sb.ui.wireframe([(x, y, zmin), (x+r, y, zmin)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmin)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmax)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(x, y, zmin)",
+                "sb.ui.point(x, y, zmax)",
+                "sb.ui.point(x + r, y, zmin, drag=(r, None, None))",
+                ""
+            ],
+            "uid": 7
+        },
+        {
+            "datums": [
+                {
+                    "expr": "shaft.zmax",
+                    "name": "zmin",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "self.zmin+2",
+                    "name": "zmax",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "shaft.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "shaft.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "shaft_insert.r",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "shaft.r",
+                    "name": "R",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1-r+qXqYf3.85a-f50Z-Zf52nam__f1-r+qXqYf2.85a-f50Z-Zf52',float('-3.850000'),float('-3.850000'),float('50.000000'),float('3.850000'),float('3.850000'),float('52.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                }
+            ],
+            "inspector": [
+                933.5119455425702,
+                -1422.1373414022023
+            ],
+            "name": "insert_collar",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Ring (Z)')",
+                "",
+                "input('zmin', float)",
+                "input('zmax', float)",
+                "input('x', float)",
+                "input('y', float)",
+                "input('r', float)",
+                "input('R', float)",
+                "",
+                "output('shape', fab.shapes.cylinder(x,y, zmin, zmax, R) & ~fab.shapes.cylinder(x, y, zmin, zmax,  r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x, y, zmin), (x, y, zmax)])",
+                "sb.ui.wireframe([(x, y, zmax), (x, y, zmax + r)])",
+                "sb.ui.wireframe([(x, y,zmin), (x, y, zmin + R)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * R + x, ",
+                "     math.sin(i/36. * 2*math.pi) * R + y, zmin)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmax)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(x, y, zmin)",
+                "sb.ui.point(x, y, zmax)",
+                "sb.ui.point(x, y, zmin + R, drag=(None, None, R))",
+                "sb.ui.point(x, y, zmax + r, drag=(None, None, r))",
+                ""
+            ],
+            "uid": 8
+        },
+        {
+            "datums": [
+                {
+                    "expr": "shaft_insert.zmin",
+                    "name": "zmin",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "insert_collar.zmin+0.5",
+                    "name": "zmax",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "shaft.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "shaft.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "point_thread.r",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "shaft_insert.r",
+                    "name": "R",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1-r+qXqYf2.85a-f35Z-Zf50.5nam__f1-r+qXqYf2a-f35Z-Zf50.5',float('-2.850000'),float('-2.850000'),float('35.000000'),float('2.850000'),float('2.850000'),float('50.500000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                }
+            ],
+            "inspector": [
+                917.2660883912272,
+                -1971.9971219092042
+            ],
+            "name": "insert_thread",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Ring (Z)')",
+                "",
+                "input('zmin', float)",
+                "input('zmax', float)",
+                "input('x', float)",
+                "input('y', float)",
+                "input('r', float)",
+                "input('R', float)",
+                "",
+                "output('shape', fab.shapes.cylinder(x,y, zmin, zmax, R) & ~fab.shapes.cylinder(x, y, zmin, zmax,  r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x, y, zmin), (x, y, zmax)])",
+                "sb.ui.wireframe([(x, y, zmax), (x, y, zmax + r)])",
+                "sb.ui.wireframe([(x, y,zmin), (x, y, zmin + R)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * R + x, ",
+                "     math.sin(i/36. * 2*math.pi) * R + y, zmin)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmax)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(x, y, zmin)",
+                "sb.ui.point(x, y, zmax)",
+                "sb.ui.point(x, y, zmin + R, drag=(None, None, R))",
+                "sb.ui.point(x, y, zmax + r, drag=(None, None, r))",
+                ""
+            ],
+            "uid": 9
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "0",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "5",
+                    "name": "dz",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0011[__36.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf5aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.400002'),float('-18.400002'),float('-21.000000'),float('18.400002'),float('18.400002'),float('31.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                3193.0320207860736,
+                -22.953154470095175
+            ],
+            "name": "t2",
+            "script": [
+                "import fab",
+                "",
+                "title('Translate')",
+                "",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "input('dz', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', fab.shapes.translate(shape, dx, dy, dz))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(_x, _y, _z),",
+                "                  (_x + dx, _y + dy, _z + dz)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y - 0.3, _z),",
+                "                  (_x, _y + 0.3, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x - 0.3, _y, _z),",
+                "                  (_x + 0.3, _y, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y, _z - 0.3),",
+                "                  (_x, _y, _z + 0.3)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, _z, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y + dy, _z + dz, color=sb.color.teal, drag=(dx, dy, dz))",
+                ""
+            ],
+            "uid": 15
+        },
+        {
+            "datums": [
+                {
+                    "expr": "shaft.x",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "shaft.y",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "self.zmax-10",
+                    "name": "zmin",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "body.r*3",
+                    "name": "zmax",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "body.r",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf10a-f20Z-Zf30',float('-10.000000'),float('-10.000000'),float('20.000000'),float('10.000000'),float('10.000000'),float('30.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                1287.8830453338878,
+                458.3213684462236
+            ],
+            "name": "tip_reinforcer",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Cylinder (Z)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('zmin', float)",
+                "input('zmax', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.cylinder(x, y, zmin, zmax, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x, y, zmin), (x, y, zmax)])",
+                "sb.ui.wireframe([(x, y, zmin), (x+r, y, zmin)])",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmin)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, zmax)",
+                "    for i in range(36)], close=True)",
+                "",
+                "sb.ui.point(x, y, zmin)",
+                "sb.ui.point(x, y, zmax)",
+                "sb.ui.point(x + r, y, zmin, drag=(r, None, None))",
+                ""
+            ],
+            "uid": 20
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__35.__0]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__20.__5]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30',float('-10.000000'),float('-10.000000'),float('20.000000'),float('10.000000'),float('10.000000'),float('26.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1803.6297374139197,
+                340.80957850793686
+            ],
+            "name": "i2",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Intersection')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & b)",
+                ""
+            ],
+            "uid": 21
+        },
+        {
+            "datums": [
+                {
+                    "expr": "7.7",
+                    "name": "shaft_diameter",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "2.6",
+                    "name": "stretch",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "1.8",
+                    "name": "taper",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "10",
+                    "name": "girth",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "3",
+                    "name": "holes",
+                    "type": "int",
+                    "uid": 4
+                },
+                {
+                    "expr": "5",
+                    "name": "hole_radius",
+                    "type": "float",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                3625.3206672793635,
+                -417.91746159842216
+            ],
+            "name": "settings",
+            "script": [
+                "import fab",
+                "",
+                "title('script')",
+                "input('shaft_diameter', float)",
+                "input('stretch', float)",
+                "input('taper', float)",
+                "input('girth', float)",
+                "input('holes', int)",
+                "input('hole_radius', float)"
+            ],
+            "uid": 10
+        }
+    ],
+    "protocol": 6,
+    "type": "sb"
+}
