@@ -27,7 +27,7 @@
                     "uid": 3
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('-r+qXqYf10',float('-10.000000'),float('-10.000000'),float('-inf'),float('10.000000'),float('10.000000'),float('inf'))",
+                    "expr": "\u0012fab.types.Shape('-r+qXqYf11',float('-11.000000'),float('-11.000000'),float('-inf'),float('11.000000'),float('11.000000'),float('inf'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 4
@@ -113,7 +113,7 @@
                     "uid": 5
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-15.333334'),float('-10.000000'),float('-inf'),float('15.333334'),float('10.000000'),float('inf'))",
+                    "expr": "\u0012fab.types.Shape('m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11',float('-17.453333'),float('-11.000000'),float('-inf'),float('17.453333'),float('11.000000'),float('inf'))",
                     "name": "transform",
                     "type": "_fabtypes.Shape",
                     "uid": 6
@@ -189,7 +189,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-15.333334'),float('-26.000000'),float('-inf'),float('15.333334'),float('26.000000'),float('inf'))",
+                    "expr": "\u0012fab.types.Shape('mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11',float('-17.453333'),float('-22.000000'),float('-inf'),float('17.453333'),float('22.000000'),float('inf'))",
                     "name": "scaled",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -240,7 +240,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-15.333334'),float('-26.000000'),float('-15.333334'),float('15.333334'),float('26.000000'),float('15.333334'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11',float('-17.453333'),float('-22.000000'),float('-17.453333'),float('17.453333'),float('22.000000'),float('17.453333'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -301,7 +301,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-15.333334'),float('-15.333334'),float('-26.000000'),float('15.333334'),float('15.333334'),float('26.000000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11',float('-17.453333'),float('-17.453333'),float('-22.000000'),float('17.453333'),float('17.453333'),float('22.000000'))",
                     "name": "rotated",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -474,7 +474,7 @@
                     "uid": 6
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10',float('-18.400002'),float('-18.400002'),float('-26.000000'),float('18.400002'),float('18.400002'),float('26.000000'))",
+                    "expr": "\u0012fab.types.Shape('m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11',float('-20.944000'),float('-20.944000'),float('-22.000000'),float('20.944000'),float('20.944000'),float('22.000000'))",
                     "name": "scaled",
                     "type": "_fabtypes.Shape",
                     "uid": 7
@@ -533,13 +533,13 @@
                     "uid": 0
                 },
                 {
-                    "expr": "1",
+                    "expr": "settings.shell",
                     "name": "s",
                     "type": "float",
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1',float('-18.400002'),float('-18.400002'),float('-26.000000'),float('18.400002'),float('18.400002'),float('26.000000'))",
+                    "expr": "\u0012fab.types.Shape('am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11f-1',float('-20.944000'),float('-20.944000'),float('-22.000000'),float('20.944000'),float('20.944000'),float('22.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -572,7 +572,7 @@
                     "uid": 0
                 },
                 {
-                    "expr": "1",
+                    "expr": "settings.shell",
                     "name": "o",
                     "type": "float",
                     "uid": 1
@@ -617,7 +617,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1',float('-4.850000'),float('-4.850000'),float('-26.000000'),float('4.850000'),float('4.850000'),float('26.000000'))",
+                    "expr": "\u0012fab.types.Shape('am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1',float('-4.850000'),float('-4.850000'),float('-22.000000'),float('4.850000'),float('4.850000'),float('22.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -655,7 +655,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.400002'),float('-18.400002'),float('-26.000000'),float('18.400002'),float('18.400002'),float('26.000000'))",
+                    "expr": "\u0012fab.types.Shape('aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11am__f1-r+qXqYf11a-f23Z-Zf33niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85',float('-20.944000'),float('-20.944000'),float('-22.000000'),float('20.944000'),float('20.944000'),float('22.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -711,7 +711,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('10.850000'),float('-5.000000'),float('2.000000'),float('30.850000'),float('5.000000'),float('12.000000'))",
+                    "expr": "\u0012fab.types.Shape('a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85',float('10.850000'),float('-7.000000'),float('0.000000'),float('30.850000'),float('7.000000'),float('14.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -790,7 +790,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('6.896371'),float('-5.000000'),float('8.094875'),float('29.216871'),float('5.000000'),float('26.755125'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85',float('5.896371'),float('-7.000000'),float('6.362825'),float('30.216871'),float('7.000000'),float('28.487175'))",
                     "name": "rotated",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -866,7 +866,7 @@
                     "uid": 3
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.938560'),float('-27.802540'),float('8.094875'),float('29.216871'),float('27.802540'),float('26.755125'))",
+                    "expr": "\u0012fab.types.Shape('iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85',float('-21.170610'),float('-29.668566'),float('6.362825'),float('30.216871'),float('29.668566'),float('28.487175'))",
                     "name": "array",
                     "type": "_fabtypes.Shape",
                     "uid": 4
@@ -910,7 +910,7 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf5aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.400002'),float('-18.400002'),float('-21.000000'),float('18.400002'),float('18.400002'),float('31.000000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf5aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11am__f1-r+qXqYf11a-f23Z-Zf33niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85',float('-20.944000'),float('-20.944000'),float('-17.000000'),float('20.944000'),float('20.944000'),float('27.000000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 1
@@ -1337,7 +1337,7 @@
                     "uid": 3
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf5aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.400002'),float('-18.400002'),float('-21.000000'),float('18.400002'),float('18.400002'),float('31.000000'),color=(255,130,0))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf5aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11am__f1-r+qXqYf11a-f23Z-Zf33niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85',float('-20.944000'),float('-20.944000'),float('-17.000000'),float('20.944000'),float('20.944000'),float('27.000000'),color=(255,130,0))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 4
@@ -1664,7 +1664,7 @@
                     "uid": 6
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf5aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f5a-f10.85X-Xf30.85',float('-18.400002'),float('-18.400002'),float('-21.000000'),float('18.400002'),float('18.400002'),float('31.000000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf5aiiam+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11-am__f1-r+qXqYf3.85a-f-50Z-Zf50f1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11n-m+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11f-1am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11am__f1-r+qXqYf11a-f23Z-Zf33niam__f1-r+qXqYf3.85a-f-50Z-Zf50iim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0m-Xf0-Yf0-Zf7m+*f0.866025X*f0.5ZY+*f-0.5X*f0.866025Zm-Xf-0-Yf0-Zf-7a-r+q-Yf0q-Zf7f7a-f10.85X-Xf30.85',float('-20.944000'),float('-20.944000'),float('-17.000000'),float('20.944000'),float('20.944000'),float('27.000000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 7
@@ -1739,7 +1739,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf10a-f20Z-Zf30',float('-10.000000'),float('-10.000000'),float('20.000000'),float('10.000000'),float('10.000000'),float('30.000000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf11a-f23Z-Zf33',float('-11.000000'),float('-11.000000'),float('23.000000'),float('11.000000'),float('11.000000'),float('33.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -1800,7 +1800,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2.6_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf10am__f1-r+qXqYf10a-f20Z-Zf30',float('-10.000000'),float('-10.000000'),float('20.000000'),float('10.000000'),float('10.000000'),float('26.000000'))",
+                    "expr": "\u0012fab.types.Shape('am+f0/-Xf0f1.2+f0/-Yf0f1.2+f0/-Zf0f1m-Xf0-Yf0-Zf0m_+*f6.12323e-17Y*f1Z+*f-1Y*f6.12323e-17Zm-Xf0-Yf-0-Zf-0m-Xf0-Yf0-Zf0imr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11mnr+qXqZ__m-Xf-0-Yf0-Zf0mX/Yf2_m+f0/*-Xf0f15-+*Yf0.8f15f0Y_-r+qXqYf11am__f1-r+qXqYf11a-f23Z-Zf33',float('-11.000000'),float('-11.000000'),float('23.000000'),float('11.000000'),float('11.000000'),float('22.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -1826,16 +1826,34 @@
         {
             "datums": [
                 {
+                    "expr": "\u0012'(mm) size of the arrow shaft'",
+                    "name": "shaft_diameter_info",
+                    "type": "str",
+                    "uid": 13
+                },
+                {
                     "expr": "7.7",
                     "name": "shaft_diameter",
                     "type": "float",
                     "uid": 0
                 },
                 {
-                    "expr": "2.6",
+                    "expr": "\u0012'affects length of the whistle'",
+                    "name": "stretch_info",
+                    "type": "str",
+                    "uid": 12
+                },
+                {
+                    "expr": "2",
                     "name": "stretch",
                     "type": "float",
                     "uid": 3
+                },
+                {
+                    "expr": "\u0012'affects shape of the airfoil cross section'",
+                    "name": "taper_info",
+                    "type": "str",
+                    "uid": 11
                 },
                 {
                     "expr": "1.8",
@@ -1844,10 +1862,22 @@
                     "uid": 1
                 },
                 {
-                    "expr": "10",
+                    "expr": "\u0012'affects width of the whistle'",
+                    "name": "girth_info",
+                    "type": "str",
+                    "uid": 10
+                },
+                {
+                    "expr": "11",
                     "name": "girth",
                     "type": "float",
                     "uid": 2
+                },
+                {
+                    "expr": "\u0012'(#) number of openings'",
+                    "name": "holes_info",
+                    "type": "str",
+                    "uid": 9
                 },
                 {
                     "expr": "3",
@@ -1856,27 +1886,53 @@
                     "uid": 4
                 },
                 {
-                    "expr": "5",
+                    "expr": "\u0012'(mm) size of the openings'",
+                    "name": "hole_radius_info",
+                    "type": "str",
+                    "uid": 7
+                },
+                {
+                    "expr": "7",
                     "name": "hole_radius",
                     "type": "float",
                     "uid": 5
+                },
+                {
+                    "expr": "\u0012'(mm) thickness of the final part'",
+                    "name": "shell_info",
+                    "type": "str",
+                    "uid": 8
+                },
+                {
+                    "expr": "1",
+                    "name": "shell",
+                    "type": "float",
+                    "uid": 6
                 }
             ],
             "inspector": [
-                3625.3206672793635,
-                -417.91746159842216
+                3629.3149879790776,
+                317.8345424965046
             ],
             "name": "settings",
             "script": [
                 "import fab",
                 "",
                 "title('script')",
+                "output('shaft_diameter_info', '(mm) size of the arrow shaft')",
                 "input('shaft_diameter', float)",
+                "output('stretch_info', 'affects length of the whistle')",
                 "input('stretch', float)",
+                "output('taper_info', 'affects shape of the airfoil cross section')",
                 "input('taper', float)",
+                "output('girth_info', 'affects width of the whistle')",
                 "input('girth', float)",
+                "output('holes_info', '(#) number of openings')",
                 "input('holes', int)",
-                "input('hole_radius', float)"
+                "output('hole_radius_info', '(mm) size of the openings')",
+                "input('hole_radius', float)",
+                "output('shell_info', '(mm) thickness of the final part')",
+                "input('shell', float)"
             ],
             "uid": 10
         }

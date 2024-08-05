@@ -1,0 +1,1704 @@
+{
+    "nodes": [
+        {
+            "datums": [
+                {
+                    "expr": "142",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "196",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "0.0",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "0.0",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012142.0",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012196.0",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiam__f1aa-f22X-Xf120a-f-5.5Y-Yf6.5a-f25.6Z-Zf76.6am__f1aa-f22X-Xf120a-f-5.5Y-Yf6.5a-f78.9Z-Zf92.5am__f1aa-f41X-Xf101a-f189.5Y-Yf202.5a-f0Z-Zf80am__f1aa-f135.5X-Xf148.5a-f163Y-Yf193.5a-f0Z-Zf80',float('22.000000'),float('-5.500000'),float('0.000000'),float('148.500000'),float('202.500000'),float('92.500000'))",
+                    "name": "cutouts",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iaiaam__f1aa-f-5.5X-Xf147.5a-f-5.5Y-Yf201.5a-f0Z-Zf101nam__f1aa-f0X-Xf142a-f0Y-Yf196a-f0Z-Zf101iiiaam__f1aa-f0X-Xf142a-f0Y-Yf196a-f0Z-Zf11nam__f1aa-f1X-Xf141a-f1Y-Yf195a-f0Z-Zf11aam__f1aa-f0X-Xf142a-f0Y-Yf196a-f21.5Z-Zf25nam__f1aa-f1X-Xf141a-f1Y-Yf195a-f21.5Z-Zf25aam__f1aa-f0X-Xf142a-f0Y-Yf196a-f86Z-Zf89.5nam__f1aa-f1X-Xf141a-f1Y-Yf195a-f86Z-Zf89.5am__f1aa-f18.5X-Xf123.5a-f0Y-Yf1a-f22.1Z-Zf96niiiam__f1aa-f22X-Xf120a-f-5.5Y-Yf6.5a-f25.6Z-Zf76.6am__f1aa-f22X-Xf120a-f-5.5Y-Yf6.5a-f78.9Z-Zf92.5am__f1aa-f41X-Xf101a-f189.5Y-Yf202.5a-f0Z-Zf80am__f1aa-f135.5X-Xf148.5a-f163Y-Yf193.5a-f0Z-Zf80am__f1aa-f17.5X-Xf124.5a-f0Y-Yf2a-f24.6Z-Zf25.6',float('-5.500000'),float('-5.500000'),float('0.000000'),float('147.500000'),float('201.500000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -177.08334842078284,
+                -895.0721404815323
+            ],
+            "name": "studio",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "lower_trim_height = 11.0",
+                "trim_thickness = 1.0",
+                "",
+                "lower_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, 0, lower_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, 0, lower_trim_height)",
+                "",
+                "mid_trim_start = 21.5",
+                "mid_trim_height = 3.5",
+                "",
+                "mid_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, mid_trim_start, mid_trim_start+mid_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, mid_trim_start, mid_trim_start+mid_trim_height)",
+                "",
+                "top_trim_start = 86.0",
+                "top_trim_height = 3.5",
+                "",
+                "top_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, top_trim_start, top_trim_start+top_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, top_trim_start, top_trim_start+top_trim_height)",
+                "",
+                "window_width = 98.0",
+                "window_height = 51.0",
+                "window_start = 25.6",
+                "",
+                "window_cutout = fab.shapes.cube(xmin+width/2-window_width/2, xmin+width/2+window_width/2, ymin-wall_thickness, ymin+wall_thickness+trim_thickness, window_start, window_start+window_height)",
+                "",
+                "upper_window_start = 78.9",
+                "upper_window_height = 13.6",
+                "",
+                "upper_window_cutout = fab.shapes.cube(xmin+width/2-window_width/2, xmin+width/2+window_width/2, ymin-wall_thickness, ymin+wall_thickness+trim_thickness, upper_window_start, upper_window_start+upper_window_height)",
+                "",
+                "window_trim = fab.shapes.cube(xmin+width/2-window_width/2-3.5, xmin+width/2+window_width/2+3.5, ymin, ymin+trim_thickness, window_start-3.5, upper_window_start+upper_window_height+3.5)",
+                "",
+                "window_sill = fab.shapes.cube(xmin+width/2-window_width/2-4.5, xmin+width/2+window_width/2+4.5, ymin, ymin+trim_thickness+1.0, window_start-1.0, window_start)",
+                "",
+                "door_height = 80.0",
+                "door_width = 30.5",
+                "bay_door_width = 60.0",
+                "",
+                "bay_door_cutout = fab.shapes.cube(xmin+width/2-bay_door_width/2, xmin+width/2+bay_door_width/2, ymin+length-wall_thickness-trim_thickness, ymin+length+wall_thickness+trim_thickness, 0, door_height)",
+                "",
+                "door_cutout = fab.shapes.cube(xmax-wall_thickness-trim_thickness, xmax+wall_thickness+trim_thickness, ymax-2.5-door_width, ymax-2.5, 0, door_height)",
+                "",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "trim = (lower_trim | mid_trim | top_trim | window_trim)",
+                "",
+                "output('cutouts', window_cutout | upper_window_cutout | bay_door_cutout | door_cutout)",
+                "",
+                "output('room', (walls | trim) &~ cutouts | window_sill)"
+            ],
+            "uid": 0
+        },
+        {
+            "datums": [
+                {
+                    "expr": "140",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "156",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "studio.xmin+studio.width+studio.wall_thickness",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "0.0",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012287.5",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012156.0",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiam__f1aa-f168.5X-Xf266.5a-f-5.5Y-Yf1a-f25.6Z-Zf76.6am__f1aa-f157.5X-Xf188a-f149.5Y-Yf162.5a-f0Z-Zf80am__f1aa-f247X-Xf277.5a-f149.5Y-Yf162.5a-f0Z-Zf80am__f1aa-f168.5X-Xf266.5a-f-5.5Y-Yf1a-f78.9Z-Zf92.5',float('157.500000'),float('-5.500000'),float('0.000000'),float('277.500000'),float('162.500000'),float('92.500000'))",
+                    "name": "cutouts",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iaiaam__f1aa-f142X-Xf293a-f-5.5Y-Yf161.5a-f0Z-Zf101nam__f1aa-f147.5X-Xf287.5a-f0Y-Yf156a-f0Z-Zf101iiiaam__f1aa-f147.5X-Xf287.5a-f0Y-Yf156a-f0Z-Zf11nam__f1aa-f148.5X-Xf286.5a-f1Y-Yf155a-f0Z-Zf11aam__f1aa-f147.5X-Xf287.5a-f0Y-Yf156a-f21.5Z-Zf25nam__f1aa-f148.5X-Xf286.5a-f1Y-Yf155a-f21.5Z-Zf25aam__f1aa-f147.5X-Xf287.5a-f0Y-Yf156a-f86Z-Zf89.5nam__f1aa-f148.5X-Xf286.5a-f1Y-Yf155a-f86Z-Zf89.5am__f1aa-f165X-Xf270a-f0Y-Yf1a-f22.1Z-Zf96niiiam__f1aa-f168.5X-Xf266.5a-f-5.5Y-Yf1a-f25.6Z-Zf76.6am__f1aa-f157.5X-Xf188a-f149.5Y-Yf162.5a-f0Z-Zf80am__f1aa-f247X-Xf277.5a-f149.5Y-Yf162.5a-f0Z-Zf80am__f1aa-f168.5X-Xf266.5a-f-5.5Y-Yf1a-f78.9Z-Zf92.5am__f1aa-f164X-Xf271a-f0Y-Yf2a-f24.6Z-Zf25.6',float('142.000000'),float('-5.500000'),float('0.000000'),float('293.000000'),float('161.500000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -191.6368415326815,
+                -94.63361159425642
+            ],
+            "name": "bedroom",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "lower_trim_height = 11.0",
+                "trim_thickness = 1.0",
+                "",
+                "lower_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, 0, lower_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, 0, lower_trim_height)",
+                "",
+                "mid_trim_start = 21.5",
+                "mid_trim_height = 3.5",
+                "",
+                "mid_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, mid_trim_start, mid_trim_start+mid_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, mid_trim_start, mid_trim_start+mid_trim_height)",
+                "",
+                "top_trim_start = 86.0",
+                "top_trim_height = 3.5",
+                "",
+                "top_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, top_trim_start, top_trim_start+top_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, top_trim_start, top_trim_start+top_trim_height)",
+                "",
+                "window_width = 98.0",
+                "window_height = 51.0",
+                "window_start = 25.6",
+                "",
+                "window_cutout = fab.shapes.cube(xmin+width/2-window_width/2, xmin+width/2+window_width/2, ymin-wall_thickness, ymin+trim_thickness, window_start, window_start+window_height)",
+                "",
+                "upper_window_start = 78.9",
+                "upper_window_height = 13.6",
+                "",
+                "upper_window_cutout = fab.shapes.cube(xmin+width/2-window_width/2, xmin+width/2+window_width/2, ymin-wall_thickness, ymin+trim_thickness, upper_window_start, upper_window_start+upper_window_height)",
+                "",
+                "window_trim = fab.shapes.cube(xmin+width/2-window_width/2-3.5, xmin+width/2+window_width/2+3.5, ymin, ymin+trim_thickness, window_start-3.5, upper_window_start+upper_window_height+3.5)",
+                "",
+                "window_sill = fab.shapes.cube(xmin+width/2-window_width/2-4.5, xmin+width/2+window_width/2+4.5, ymin, ymin+trim_thickness+1.0, window_start-1.0, window_start)",
+                "",
+                "door_height = 80.0",
+                "door_width = 30.5",
+                "",
+                "door_cutout = fab.shapes.cube(xmin+10, xmin+10+door_width, ymin+length-wall_thickness-trim_thickness, ymin+length+wall_thickness+trim_thickness, 0, door_height)",
+                "",
+                "closet_door_cutout = fab.shapes.cube(xmax-10-door_width, xmax-10, ymin+length-wall_thickness-trim_thickness, ymin+length+wall_thickness+trim_thickness, 0, door_height)",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "trim = (lower_trim | mid_trim | top_trim | window_trim)",
+                "",
+                "output('cutouts', window_cutout | door_cutout | closet_door_cutout | upper_window_cutout)",
+                "",
+                "output('room', (walls | trim) &~ cutouts | window_sill)"
+            ],
+            "uid": 1
+        },
+        {
+            "datums": [
+                {
+                    "expr": "142",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "175",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "0.0",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "studio.ymax+studio.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012142.0",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012376.5",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiam__f1aa-f0X-Xf0a-f0Y-Yf0a-f0Z-Zf0am__f1aa-f135.5X-Xf148.5a-f209.5Y-Yf240a-f0Z-Zf80am__f1aa-f101.5X-Xf132a-f370Y-Yf382a-f0Z-Zf80am__f1aa-f11.5X-Xf62a-f370Y-Yf382a-f24Z-Zf93',float('0.000000'),float('0.000000'),float('0.000000'),float('148.500000'),float('382.000000'),float('93.000000'))",
+                    "name": "cutouts",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aiaam__f1aa-f-5.5X-Xf147.5a-f196Y-Yf382a-f0Z-Zf101nam__f1aa-f0X-Xf142a-f201.5Y-Yf376.5a-f0Z-Zf101iiaam__f1aa-f0X-Xf142a-f201.5Y-Yf376.5a-f0Z-Zf11nam__f1aa-f1X-Xf141a-f202.5Y-Yf375.5a-f0Z-Zf11aam__f1aa-f0X-Xf142a-f201.5Y-Yf376.5a-f21.5Z-Zf25nam__f1aa-f1X-Xf141a-f202.5Y-Yf375.5a-f21.5Z-Zf25aam__f1aa-f0X-Xf142a-f201.5Y-Yf376.5a-f86Z-Zf89.5nam__f1aa-f1X-Xf141a-f202.5Y-Yf375.5a-f86Z-Zf89.5niiiam__f1aa-f0X-Xf0a-f0Y-Yf0a-f0Z-Zf0am__f1aa-f135.5X-Xf148.5a-f209.5Y-Yf240a-f0Z-Zf80am__f1aa-f101.5X-Xf132a-f370Y-Yf382a-f0Z-Zf80am__f1aa-f11.5X-Xf62a-f370Y-Yf382a-f24Z-Zf93',float('-5.500000'),float('196.000000'),float('0.000000'),float('147.500000'),float('382.000000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -189.48940826262523,
+                821.4356393648828
+            ],
+            "name": "livingroom",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "lower_trim_height = 11.0",
+                "trim_thickness = 1.0",
+                "",
+                "lower_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, 0, lower_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, 0, lower_trim_height)",
+                "",
+                "mid_trim_start = 21.5",
+                "mid_trim_height = 3.5",
+                "",
+                "mid_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, mid_trim_start, mid_trim_start+mid_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, mid_trim_start, mid_trim_start+mid_trim_height)",
+                "",
+                "top_trim_start = 86.0",
+                "top_trim_height = 3.5",
+                "",
+                "top_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, top_trim_start, top_trim_start+top_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, top_trim_start, top_trim_start+top_trim_height)",
+                "",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "door_height = 80.0",
+                "door_width = 30.5",
+                "",
+                "door_cutout = fab.shapes.cube(xmax-wall_thickness-trim_thickness, xmax+wall_thickness+trim_thickness, ymin+wall_thickness+2.5, ymin+wall_thickness+2.5+door_width, 0, door_height)",
+                "",
+                "kitchen_door_cutout = fab.shapes.cube(xmax-10-door_width, xmax-10, ymin+length-wall_thickness-trim_thickness, ymin+length+wall_thickness, 0, door_height)",
+                "",
+                "window_width = 50.5",
+                "window_height = 69.0",
+                "window_start = 24.0",
+                "",
+                "window_cutout = fab.shapes.cube(xmin+wall_thickness+6, xmin+wall_thickness+6+window_width, ymin+length-wall_thickness-trim_thickness, ymin+length+wall_thickness, window_start, window_start+window_height)",
+                "",
+                "trim = (lower_trim | mid_trim | top_trim)",
+                "",
+                "hall_door_cutout = fab.shapes.cube(0,0,0,0,0,0)",
+                "",
+                "output('cutouts', hall_door_cutout | door_cutout | kitchen_door_cutout | window_cutout)",
+                "",
+                "output('room', (walls | trim) &~ cutouts)"
+            ],
+            "uid": 4
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__4.__7]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__0.__1]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaiaam__f1aa-f-5.5X-Xf147.5a-f196Y-Yf382a-f0Z-Zf101nam__f1aa-f0X-Xf142a-f201.5Y-Yf376.5a-f0Z-Zf101iiaam__f1aa-f0X-Xf142a-f201.5Y-Yf376.5a-f0Z-Zf11nam__f1aa-f1X-Xf141a-f202.5Y-Yf375.5a-f0Z-Zf11aam__f1aa-f0X-Xf142a-f201.5Y-Yf376.5a-f21.5Z-Zf25nam__f1aa-f1X-Xf141a-f202.5Y-Yf375.5a-f21.5Z-Zf25aam__f1aa-f0X-Xf142a-f201.5Y-Yf376.5a-f86Z-Zf89.5nam__f1aa-f1X-Xf141a-f202.5Y-Yf375.5a-f86Z-Zf89.5niiiam__f1aa-f0X-Xf0a-f0Y-Yf0a-f0Z-Zf0am__f1aa-f135.5X-Xf148.5a-f209.5Y-Yf240a-f0Z-Zf80am__f1aa-f101.5X-Xf132a-f370Y-Yf382a-f0Z-Zf80am__f1aa-f11.5X-Xf62a-f370Y-Yf382a-f24Z-Zf93niiiam__f1aa-f22X-Xf120a-f-5.5Y-Yf6.5a-f25.6Z-Zf76.6am__f1aa-f22X-Xf120a-f-5.5Y-Yf6.5a-f78.9Z-Zf92.5am__f1aa-f41X-Xf101a-f189.5Y-Yf202.5a-f0Z-Zf80am__f1aa-f135.5X-Xf148.5a-f163Y-Yf193.5a-f0Z-Zf80',float('-5.500000'),float('196.000000'),float('0.000000'),float('147.500000'),float('382.000000'),float('101.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                768.6904532950851,
+                817.7948151273067
+            ],
+            "name": "d0",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 6
+        },
+        {
+            "datums": [
+                {
+                    "expr": "72.7",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "107",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "bedroom.xmin",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "bedroom.ymax+bedroom.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012220.2",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012268.5",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iam__f1aa-f149.5X-Xf180a-f262Y-Yf274a-f0Z-Zf80am__f1aa-f186.2X-Xf220.2a-f262Y-Yf275a-f0Z-Zf101',float('149.500000'),float('262.000000'),float('0.000000'),float('220.199997'),float('275.000000'),float('101.000000'))",
+                    "name": "cutouts",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aiaam__f1aa-f142X-Xf225.7a-f156Y-Yf274a-f0Z-Zf101nam__f1aa-f147.5X-Xf220.2a-f161.5Y-Yf268.5a-f0Z-Zf101iiaam__f1aa-f147.5X-Xf220.2a-f161.5Y-Yf268.5a-f0Z-Zf11nam__f1aa-f148.5X-Xf219.2a-f162.5Y-Yf267.5a-f0Z-Zf11aam__f1aa-f147.5X-Xf220.2a-f161.5Y-Yf268.5a-f21.5Z-Zf25nam__f1aa-f148.5X-Xf219.2a-f162.5Y-Yf267.5a-f21.5Z-Zf25aam__f1aa-f147.5X-Xf220.2a-f161.5Y-Yf268.5a-f86Z-Zf89.5nam__f1aa-f148.5X-Xf219.2a-f162.5Y-Yf267.5a-f86Z-Zf89.5niam__f1aa-f149.5X-Xf180a-f262Y-Yf274a-f0Z-Zf80am__f1aa-f186.2X-Xf220.2a-f262Y-Yf275a-f0Z-Zf101',float('142.000000'),float('156.000000'),float('0.000000'),float('225.699997'),float('274.000000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -202.5275509290141,
+                1743.396054026303
+            ],
+            "name": "foyer",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "lower_trim_height = 11.0",
+                "trim_thickness = 1.0",
+                "",
+                "lower_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, 0, lower_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, 0, lower_trim_height)",
+                "",
+                "mid_trim_start = 21.5",
+                "mid_trim_height = 3.5",
+                "",
+                "mid_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, mid_trim_start, mid_trim_start+mid_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, mid_trim_start, mid_trim_start+mid_trim_height)",
+                "",
+                "top_trim_start = 86.0",
+                "top_trim_height = 3.5",
+                "",
+                "top_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, top_trim_start, top_trim_start+top_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, top_trim_start, top_trim_start+top_trim_height)",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "door_height = 80.0",
+                "door_width = 30.5",
+                "door_offset = 2.0",
+                "",
+                "closet_door_cutout = fab.shapes.cube(xmin+door_offset, xmin+door_offset+door_width, ymin+length-wall_thickness-trim_thickness, ymin+length+wall_thickness, 0, door_height)",
+                "",
+                "hall_width = 34.0",
+                "hall_cutout = fab.shapes.cube(xmax-hall_width, xmax, ymin+length-wall_thickness-trim_thickness, ymin+length+wall_thickness+trim_thickness, 0, wall_height)",
+                "",
+                "trim = (lower_trim | mid_trim | top_trim)",
+                "",
+                "hall_door_cutout = fab.shapes.cube(0,0,0,0,0,0)",
+                "",
+                "output('cutouts', closet_door_cutout | hall_cutout)",
+                "",
+                "output('room', (walls | trim) &~ cutouts)"
+            ],
+            "uid": 7
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__7.__7]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__4.__1,__1.__0,__0.__1]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaiaam__f1aa-f142X-Xf225.7a-f156Y-Yf274a-f0Z-Zf101nam__f1aa-f147.5X-Xf220.2a-f161.5Y-Yf268.5a-f0Z-Zf101iiaam__f1aa-f147.5X-Xf220.2a-f161.5Y-Yf268.5a-f0Z-Zf11nam__f1aa-f148.5X-Xf219.2a-f162.5Y-Yf267.5a-f0Z-Zf11aam__f1aa-f147.5X-Xf220.2a-f161.5Y-Yf268.5a-f21.5Z-Zf25nam__f1aa-f148.5X-Xf219.2a-f162.5Y-Yf267.5a-f21.5Z-Zf25aam__f1aa-f147.5X-Xf220.2a-f161.5Y-Yf268.5a-f86Z-Zf89.5nam__f1aa-f148.5X-Xf219.2a-f162.5Y-Yf267.5a-f86Z-Zf89.5niam__f1aa-f149.5X-Xf180a-f262Y-Yf274a-f0Z-Zf80am__f1aa-f186.2X-Xf220.2a-f262Y-Yf275a-f0Z-Zf101niiiiiam__f1aa-f0X-Xf0a-f0Y-Yf0a-f0Z-Zf0am__f1aa-f135.5X-Xf148.5a-f209.5Y-Yf240a-f0Z-Zf80am__f1aa-f101.5X-Xf132a-f370Y-Yf382a-f0Z-Zf80am__f1aa-f11.5X-Xf62a-f370Y-Yf382a-f24Z-Zf93iiiam__f1aa-f168.5X-Xf266.5a-f-5.5Y-Yf1a-f25.6Z-Zf76.6am__f1aa-f157.5X-Xf188a-f149.5Y-Yf162.5a-f0Z-Zf80am__f1aa-f247X-Xf277.5a-f149.5Y-Yf162.5a-f0Z-Zf80am__f1aa-f168.5X-Xf266.5a-f-5.5Y-Yf1a-f78.9Z-Zf92.5iiiam__f1aa-f22X-Xf120a-f-5.5Y-Yf6.5a-f25.6Z-Zf76.6am__f1aa-f22X-Xf120a-f-5.5Y-Yf6.5a-f78.9Z-Zf92.5am__f1aa-f41X-Xf101a-f189.5Y-Yf202.5a-f0Z-Zf80am__f1aa-f135.5X-Xf148.5a-f163Y-Yf193.5a-f0Z-Zf80',float('142.000000'),float('156.000000'),float('0.000000'),float('225.699997'),float('274.000000'),float('101.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                826.2195760952263,
+                1859.966606729855
+            ],
+            "name": "d1",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 9
+        },
+        {
+            "datums": [
+                {
+                    "expr": "34",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "206",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "foyer.xmax-self.width",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "foyer.ymax+foyer.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012220.2",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012480.0",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iaam__f1aa-f180.7X-Xf225.7a-f268.5Y-Yf485.5a-f0Z-Zf101nam__f1aa-f186.2X-Xf220.2a-f274Y-Yf480a-f0Z-Zf101iiaam__f1aa-f186.2X-Xf220.2a-f274Y-Yf480a-f0Z-Zf11nam__f1aa-f187.2X-Xf219.2a-f275Y-Yf479a-f0Z-Zf11aam__f1aa-f186.2X-Xf220.2a-f274Y-Yf480a-f21.5Z-Zf25nam__f1aa-f187.2X-Xf219.2a-f275Y-Yf479a-f21.5Z-Zf25aam__f1aa-f186.2X-Xf220.2a-f274Y-Yf480a-f86Z-Zf89.5nam__f1aa-f187.2X-Xf219.2a-f275Y-Yf479a-f86Z-Zf89.5',float('180.699997'),float('268.500000'),float('0.000000'),float('225.699997'),float('485.500000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -307.9640949102088,
+                2686.922859418368
+            ],
+            "name": "hallway",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "lower_trim_height = 11.0",
+                "trim_thickness = 1.0",
+                "",
+                "lower_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, 0, lower_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, 0, lower_trim_height)",
+                "",
+                "mid_trim_start = 21.5",
+                "mid_trim_height = 3.5",
+                "",
+                "mid_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, mid_trim_start, mid_trim_start+mid_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, mid_trim_start, mid_trim_start+mid_trim_height)",
+                "",
+                "top_trim_start = 86.0",
+                "top_trim_height = 3.5",
+                "",
+                "top_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, top_trim_start, top_trim_start+top_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, top_trim_start, top_trim_start+top_trim_height)",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "",
+                "trim = (lower_trim | mid_trim | top_trim)",
+                "",
+                "output('room', (walls | trim))"
+            ],
+            "uid": 10
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__10.__7]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__7.__1,__16.__1]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aiaam__f1aa-f180.7X-Xf225.7a-f268.5Y-Yf485.5a-f0Z-Zf101nam__f1aa-f186.2X-Xf220.2a-f274Y-Yf480a-f0Z-Zf101iiaam__f1aa-f186.2X-Xf220.2a-f274Y-Yf480a-f0Z-Zf11nam__f1aa-f187.2X-Xf219.2a-f275Y-Yf479a-f0Z-Zf11aam__f1aa-f186.2X-Xf220.2a-f274Y-Yf480a-f21.5Z-Zf25nam__f1aa-f187.2X-Xf219.2a-f275Y-Yf479a-f21.5Z-Zf25aam__f1aa-f186.2X-Xf220.2a-f274Y-Yf480a-f86Z-Zf89.5nam__f1aa-f187.2X-Xf219.2a-f275Y-Yf479a-f86Z-Zf89.5niiam__f1aa-f149.5X-Xf180a-f262Y-Yf274a-f0Z-Zf80am__f1aa-f186.2X-Xf220.2a-f262Y-Yf275a-f0Z-Zf101iam__f1aa-f186.2X-Xf220.2a-f399.5Y-Yf411.5a-f0Z-Zf101am__f1aa-f186.2X-Xf251.2a-f406Y-Yf480a-f0Z-Zf101',float('180.699997'),float('268.500000'),float('0.000000'),float('225.699997'),float('485.500000'),float('101.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                871.4695614481853,
+                3181.427696599198
+            ],
+            "name": "d2",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 12
+        },
+        {
+            "datums": [
+                {
+                    "expr": "bedroom.width-foyer.width-bedroom.wall_thickness",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "58",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "bedroom.xmax-self.width",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "bedroom.ymax+bedroom.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012287.5",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012219.5",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1aa-f220.2X-Xf293a-f156Y-Yf225a-f0Z-Zf101nam__f1aa-f225.7X-Xf287.5a-f161.5Y-Yf219.5a-f0Z-Zf101',float('220.199997'),float('156.000000'),float('0.000000'),float('293.000000'),float('225.000000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                569.3584039205147,
+                -839.3400276184987
+            ],
+            "name": "bedroom_closet",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "output('room', walls)"
+            ],
+            "uid": 2
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__2.__7]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__1.__0]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaam__f1aa-f220.2X-Xf293a-f156Y-Yf225a-f0Z-Zf101nam__f1aa-f225.7X-Xf287.5a-f161.5Y-Yf219.5a-f0Z-Zf101niiiam__f1aa-f168.5X-Xf266.5a-f-5.5Y-Yf1a-f25.6Z-Zf76.6am__f1aa-f157.5X-Xf188a-f149.5Y-Yf162.5a-f0Z-Zf80am__f1aa-f247X-Xf277.5a-f149.5Y-Yf162.5a-f0Z-Zf80am__f1aa-f168.5X-Xf266.5a-f-5.5Y-Yf1a-f78.9Z-Zf92.5',float('220.199997'),float('156.000000'),float('0.000000'),float('293.000000'),float('225.000000'),float('101.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1093.0925676338898,
+                220.91372101787275
+            ],
+            "name": "d3",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 3
+        },
+        {
+            "datums": [
+                {
+                    "expr": "foyer.width-hallway.width-foyer.wall_thickness",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "26",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "foyer.xmin",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "foyer.ymax+foyer.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012180.7",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012300.0",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1aa-f142X-Xf186.2a-f268.5Y-Yf305.5a-f0Z-Zf101nam__f1aa-f147.5X-Xf180.7a-f274Y-Yf300a-f0Z-Zf101',float('142.000000'),float('268.500000'),float('0.000000'),float('186.199997'),float('305.500000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                1196.6036024679836,
+                1252.1260952830778
+            ],
+            "name": "foyer_closet",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "output('room', walls)"
+            ],
+            "uid": 5
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__5.__7]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__7.__1]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaam__f1aa-f142X-Xf186.2a-f268.5Y-Yf305.5a-f0Z-Zf101nam__f1aa-f147.5X-Xf180.7a-f274Y-Yf300a-f0Z-Zf101niam__f1aa-f149.5X-Xf180a-f262Y-Yf274a-f0Z-Zf80am__f1aa-f186.2X-Xf220.2a-f262Y-Yf275a-f0Z-Zf101',float('142.000000'),float('268.500000'),float('0.000000'),float('186.199997'),float('305.500000'),float('101.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1587.4493242016224,
+                2295.6959457684993
+            ],
+            "name": "d4",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 8
+        },
+        {
+            "datums": [
+                {
+                    "expr": "foyer.width-hallway.width-foyer.wall_thickness",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "71",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "foyer.xmin",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "foyer_closet.ymax+foyer_closet.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012180.7",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012376.5",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1aa-f142X-Xf186.2a-f300Y-Yf382a-f0Z-Zf101nam__f1aa-f147.5X-Xf180.7a-f305.5Y-Yf376.5a-f0Z-Zf101',float('142.000000'),float('300.000000'),float('0.000000'),float('186.199997'),float('382.000000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                1293.5716524655734,
+                2604.1562395153965
+            ],
+            "name": "coat_closet",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "output('room', walls)"
+            ],
+            "uid": 13
+        },
+        {
+            "datums": [
+                {
+                    "expr": "bedroom.width-foyer.width-bedroom.wall_thickness",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "50",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "bedroom_closet.xmin",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "bedroom_closet.ymax+bedroom_closet.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012287.5",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012275.0",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1aa-f220.2X-Xf293a-f219.5Y-Yf280.5a-f0Z-Zf101nam__f1aa-f225.7X-Xf287.5a-f225Y-Yf275a-f0Z-Zf101',float('220.199997'),float('219.500000'),float('0.000000'),float('293.000000'),float('280.500000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                1152.6838908239642,
+                -1060.362113557779
+            ],
+            "name": "hall_closet",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "output('room', walls)"
+            ],
+            "uid": 14
+        },
+        {
+            "datums": [
+                {
+                    "expr": "61.8",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "120",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "hall_closet.xmin",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "hall_closet.ymax+hall_closet.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012287.5",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012400.5",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1aa-f220.2X-Xf293a-f275Y-Yf406a-f0Z-Zf101nam__f1aa-f225.7X-Xf287.5a-f280.5Y-Yf400.5a-f0Z-Zf101',float('220.199997'),float('275.000000'),float('0.000000'),float('293.000000'),float('406.000000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                1635.3461542945042,
+                -210.20494023889432
+            ],
+            "name": "bathroom",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "output('room', walls)"
+            ],
+            "uid": 15
+        },
+        {
+            "datums": [
+                {
+                    "expr": "65",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "74",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "hallway.xmin",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "hallway.ymax-self.length",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012251.2",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012480.0",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iam__f1aa-f186.2X-Xf220.2a-f399.5Y-Yf411.5a-f0Z-Zf101am__f1aa-f186.2X-Xf251.2a-f406Y-Yf480a-f0Z-Zf101',float('186.199997'),float('399.500000'),float('0.000000'),float('251.199997'),float('480.000000'),float('101.000000'))",
+                    "name": "cutouts",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aiaam__f1aa-f180.7X-Xf256.7a-f400.5Y-Yf485.5a-f0Z-Zf101nam__f1aa-f186.2X-Xf251.2a-f406Y-Yf480a-f0Z-Zf101iiaam__f1aa-f186.2X-Xf251.2a-f406Y-Yf480a-f0Z-Zf11nam__f1aa-f187.2X-Xf250.2a-f407Y-Yf479a-f0Z-Zf11aam__f1aa-f186.2X-Xf251.2a-f406Y-Yf480a-f21.5Z-Zf25nam__f1aa-f187.2X-Xf250.2a-f407Y-Yf479a-f21.5Z-Zf25aam__f1aa-f186.2X-Xf251.2a-f406Y-Yf480a-f86Z-Zf89.5nam__f1aa-f187.2X-Xf250.2a-f407Y-Yf479a-f86Z-Zf89.5nam__f1aa-f186.2X-Xf220.2a-f399.5Y-Yf411.5a-f0Z-Zf101',float('180.699997'),float('400.500000'),float('0.000000'),float('256.700012'),float('485.500000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -220.66560311295888,
+                3634.3694822390717
+            ],
+            "name": "mudroom",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "lower_trim_height = 11.0",
+                "trim_thickness = 1.0",
+                "",
+                "lower_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, 0, lower_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, 0, lower_trim_height)",
+                "",
+                "mid_trim_start = 21.5",
+                "mid_trim_height = 3.5",
+                "",
+                "mid_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, mid_trim_start, mid_trim_start+mid_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, mid_trim_start, mid_trim_start+mid_trim_height)",
+                "",
+                "top_trim_start = 86.0",
+                "top_trim_height = 3.5",
+                "",
+                "top_trim = fab.shapes.cube(xmin, xmax, ymin, ymax, top_trim_start, top_trim_start+top_trim_height) & ~fab.shapes.cube(xmin+trim_thickness, xmax-trim_thickness, ymin+trim_thickness, ymax-trim_thickness, top_trim_start, top_trim_start+top_trim_height)",
+                "",
+                "wall_cutout = fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~wall_cutout",
+                "",
+                "hall_width = 34",
+                "",
+                "hall_cutout = fab.shapes.cube(xmin, xmin+hall_width, ymin-wall_thickness-trim_thickness, ymin + wall_thickness, 0, wall_height)",
+                "",
+                "trim = (lower_trim | mid_trim | top_trim)",
+                "",
+                "output('cutouts', hall_cutout | wall_cutout)",
+                "",
+                "output('room', (walls | trim) &~ hall_cutout)"
+            ],
+            "uid": 16
+        },
+        {
+            "datums": [
+                {
+                    "expr": "107.5",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "140",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "hallway.xmin-self.width-hallway.wall_thickness",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "livingroom.ymax+foyer_closet.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012180.7",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012522.0",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1aa-f67.7X-Xf186.2a-f376.5Y-Yf527.5a-f0Z-Zf101nam__f1aa-f73.2X-Xf180.7a-f382Y-Yf522a-f0Z-Zf101',float('67.699997'),float('376.500000'),float('0.000000'),float('186.199997'),float('527.500000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                1880.2695786905815,
+                684.2215992223597
+            ],
+            "name": "kitchen",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "output('room', walls)"
+            ],
+            "uid": 11
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__11.__7]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__4.__1]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aaam__f1aa-f67.7X-Xf186.2a-f376.5Y-Yf527.5a-f0Z-Zf101nam__f1aa-f73.2X-Xf180.7a-f382Y-Yf522a-f0Z-Zf101niiiam__f1aa-f0X-Xf0a-f0Y-Yf0a-f0Z-Zf0am__f1aa-f135.5X-Xf148.5a-f209.5Y-Yf240a-f0Z-Zf80am__f1aa-f101.5X-Xf132a-f370Y-Yf382a-f0Z-Zf80am__f1aa-f11.5X-Xf62a-f370Y-Yf382a-f24Z-Zf93',float('67.699997'),float('376.500000'),float('0.000000'),float('186.199997'),float('527.500000'),float('101.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                2368.19571149726,
+                1637.850502732516
+            ],
+            "name": "d5",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 17
+        },
+        {
+            "datums": [
+                {
+                    "expr": "48",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "74.5",
+                    "name": "length",
+                    "type": "float",
+                    "uid": 21
+                },
+                {
+                    "expr": "hallway.xmin-self.width-hallway.wall_thickness",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "kitchen.ymax+kitchen.wall_thickness",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 11
+                },
+                {
+                    "expr": "\u0012101.0",
+                    "name": "wall_height",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "\u00125.5",
+                    "name": "wall_thickness",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u001212.0",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "\u0012180.7",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 10
+                },
+                {
+                    "expr": "\u0012602.0",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 12
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aam__f1aa-f127.2X-Xf186.2a-f522Y-Yf607.5a-f0Z-Zf101nam__f1aa-f132.7X-Xf180.7a-f527.5Y-Yf602a-f0Z-Zf101',float('127.199997'),float('522.000000'),float('0.000000'),float('186.199997'),float('607.500000'),float('101.000000'))",
+                    "name": "room",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                2476.515571487765,
+                455.3390922675803
+            ],
+            "name": "pantry",
+            "script": [
+                "import fab",
+                "",
+                "title('Room')",
+                "",
+                "input('width', float)",
+                "input('length', float)",
+                "",
+                "input('xmin', float)",
+                "input('ymin', float)",
+                "",
+                "output('wall_height', 101.0)",
+                "output('wall_thickness', 5.5)",
+                "output('scale', 12.0)",
+                "",
+                "",
+                "output('xmax', xmin + width)",
+                "output('ymax', ymin + length)",
+                "",
+                "z = 0",
+                "zmax = z + wall_height",
+                "",
+                "walls = fab.shapes.cube(xmin-wall_thickness, xmax+wall_thickness, ymin-wall_thickness, ymax+wall_thickness, 0, zmax) & ~fab.shapes.cube(xmin, xmax, ymin, ymax, 0, zmax)",
+                "",
+                "output('room', walls)"
+            ],
+            "uid": 18
+        }
+    ],
+    "protocol": 6,
+    "type": "sb"
+}
