@@ -33,7 +33,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0-r+q-f18.25r+qXqYqZf4',float('-22.250000'),float('-22.250000'),float('-4.000000'),float('22.250000'),float('22.250000'),float('4.000000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0-r+q-f9.125r+qXqYqZf4',float('-13.125000'),float('-13.125000'),float('-4.000000'),float('13.125000'),float('13.125000'),float('4.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -120,7 +120,7 @@
                     "uid": 5
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1aa-f-22.25X-Xf22.25a-f-22.25Y-Yf22.25a-f-4Z-Zf0',float('-22.250000'),float('-22.250000'),float('-4.000000'),float('22.250000'),float('22.250000'),float('0.000000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f-13.125X-Xf13.125a-f-13.125Y-Yf13.125a-f-4Z-Zf0',float('-13.125000'),float('-13.125000'),float('-4.000000'),float('13.125000'),float('13.125000'),float('0.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 6
@@ -190,7 +190,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am-Xf0-Yf0-Zf0-r+q-f18.25r+qXqYqZf4niiam__f1aa-f-22.25X-Xf22.25a-f-22.25Y-Yf22.25a-f-4Z-Zf0am__f1-r+qXqYf18.25a-f3.4Z-Zf4am__f1-r+qXqYf17.25a-f-4Z-Zf4',float('-22.250000'),float('-22.250000'),float('-4.000000'),float('22.250000'),float('22.250000'),float('4.000000'))",
+                    "expr": "\u0012fab.types.Shape('am-Xf0-Yf0-Zf0-r+q-f9.125r+qXqYqZf4niiam__f1aa-f-13.125X-Xf13.125a-f-13.125Y-Yf13.125a-f-4Z-Zf0am__f1-r+qXqYf9.125a-f3.4Z-Zf4am__f1-r+qXqYf8.125a-f-4Z-Zf4',float('-13.125000'),float('-13.125000'),float('-4.000000'),float('13.125000'),float('13.125000'),float('4.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -240,13 +240,13 @@
                     "uid": 3
                 },
                 {
-                    "expr": "18.25",
+                    "expr": "18.25/2",
                     "name": "r",
                     "type": "float",
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf18.25a-f3.4Z-Zf4',float('-18.250000'),float('-18.250000'),float('3.400000'),float('18.250000'),float('18.250000'),float('4.000000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf9.125a-f3.4Z-Zf4',float('-9.125000'),float('-9.125000'),float('3.400000'),float('9.125000'),float('9.125000'),float('4.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -325,7 +325,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf17.25a-f-4Z-Zf4',float('-17.250000'),float('-17.250000'),float('-4.000000'),float('17.250000'),float('17.250000'),float('4.000000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf8.125a-f-4Z-Zf4',float('-8.125000'),float('-8.125000'),float('-4.000000'),float('8.125000'),float('8.125000'),float('4.000000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -404,7 +404,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('mXY/Zf0.5am-Xf0-Yf0-Zf0-r+q-f18.25r+qXqYqZf4niiam__f1aa-f-22.25X-Xf22.25a-f-22.25Y-Yf22.25a-f-4Z-Zf0am__f1-r+qXqYf18.25a-f3.4Z-Zf4am__f1-r+qXqYf17.25a-f-4Z-Zf4',float('-22.250000'),float('-22.250000'),float('-2.000000'),float('22.250000'),float('22.250000'),float('2.000000'))",
+                    "expr": "\u0012fab.types.Shape('mXY/Zf0.5am-Xf0-Yf0-Zf0-r+q-f9.125r+qXqYqZf4niiam__f1aa-f-13.125X-Xf13.125a-f-13.125Y-Yf13.125a-f-4Z-Zf0am__f1-r+qXqYf9.125a-f3.4Z-Zf4am__f1-r+qXqYf8.125a-f-4Z-Zf4',float('-13.125000'),float('-13.125000'),float('-2.000000'),float('13.125000'),float('13.125000'),float('2.000000'))",
                     "name": "scaled",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -449,7 +449,7 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('mXY/Zf0.5am-Xf0-Yf0-Zf0-r+q-f18.25r+qXqYqZf4niiam__f1aa-f-22.25X-Xf22.25a-f-22.25Y-Yf22.25a-f-4Z-Zf0am__f1-r+qXqYf18.25a-f3.4Z-Zf4am__f1-r+qXqYf17.25a-f-4Z-Zf4',float('-22.250000'),float('-22.250000'),float('-2.000000'),float('22.250000'),float('22.250000'),float('2.000000'))",
+                    "expr": "\u0012fab.types.Shape('mXY/Zf0.5am-Xf0-Yf0-Zf0-r+q-f9.125r+qXqYqZf4niiam__f1aa-f-13.125X-Xf13.125a-f-13.125Y-Yf13.125a-f-4Z-Zf0am__f1-r+qXqYf9.125a-f3.4Z-Zf4am__f1-r+qXqYf8.125a-f-4Z-Zf4',float('-13.125000'),float('-13.125000'),float('-2.000000'),float('13.125000'),float('13.125000'),float('2.000000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 1

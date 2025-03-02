@@ -1,0 +1,1969 @@
+{
+    "nodes": [
+        {
+            "datums": [
+                {
+                    "expr": "0",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "30",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "_a",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('-r+qXqYf30',float('-30.000000'),float('-30.000000'),float('-inf'),float('30.000000'),float('30.000000'),float('inf'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -121.73365947872549,
+                20.532681042548944
+            ],
+            "name": "c0",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 6/11/18",
+                "",
+                "import fab",
+                "import math",
+                "",
+                "title('Circle (center)')",
+                "",
+                "input('x0',float)",
+                "input('y0',float)",
+                "input('r',float)",
+                "input('_a',float)",
+                "",
+                "output('shape', fab.shapes.circle(x0, y0, r))",
+                "",
+                "def drag_r(this,x,y,z):",
+                "    dx = x - this.x0",
+                "    dy = y - this.y0",
+                "    this.r = math.sqrt(dx**2 + dy**2)",
+                "    this._a = math.atan2(dy, dx)",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x0,",
+                "     math.sin(i/36. * 2*math.pi) * r + y0, 0)",
+                "    for i in range(36)], close=True)",
+                "sb.ui.point(x0,y0)",
+                "sb.ui.point(x0 + r*math.cos(_a),",
+                "             y0 + r*math.sin(_a),",
+                "             drag=drag_r, relative=False)",
+                "",
+                ""
+            ],
+            "uid": 1
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__3.__4,__1.__4]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30m_nr+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30',float('-46.669064'),float('-46.669064'),float('-46.669064'),float('46.669064'),float('46.669064'),float('46.669064'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                238.8587519219825,
+                346.16242391710637
+            ],
+            "name": "r0",
+            "script": [
+                "# Neil Gershenfeld 2/1/15",
+                "# Matt Keeter 6/13/2015",
+                "",
+                "import fab",
+                "",
+                "title('Revolve (X)')",
+                "",
+                "input('a',fab.types.Shape)",
+                "input('y', float)",
+                "output('out', fab.shapes.revolve_xy_x(a, y))",
+                "",
+                ""
+            ],
+            "uid": 0
+        },
+        {
+            "datums": [
+                {
+                    "expr": "33",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0",
+                    "name": "x1",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "33",
+                    "name": "y1",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "c0.x0",
+                    "name": "x2",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "c0.y0",
+                    "name": "y2",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0',float('0.000000'),float('0.000000'),float('-inf'),float('33.000000'),float('33.000000'),float('inf'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                }
+            ],
+            "inspector": [
+                -468.0881734131611,
+                347.0126846878534
+            ],
+            "name": "t0",
+            "script": [
+                "import fab",
+                "",
+                "title('Triangle')",
+                "",
+                "input('x0', float)",
+                "input('y0', float)",
+                "input('x1', float)",
+                "input('y1', float)",
+                "input('x2', float)",
+                "input('y2', float)",
+                "",
+                "output('shape', fab.shapes.triangle(x0, y0, x1, y1, x2, y2))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x0, y0, 0), (x1, y1, 0), (x2, y2, 0)], close=True)",
+                "sb.ui.point(x0, y0, 0)",
+                "sb.ui.point(x1, y1, 0)",
+                "sb.ui.point(x2, y2, 0)",
+                ""
+            ],
+            "uid": 2
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__2.__6]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "24",
+                    "name": "n",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0',float('-46.669064'),float('-46.669064'),float('-inf'),float('46.669064'),float('46.669064'),float('inf'))",
+                    "name": "array",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -121.89873250190738,
+                348.928116747098
+            ],
+            "name": "a0",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Array (polar)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "input('x', float)",
+                "input('y', float)",
+                "input('n', int)",
+                "",
+                "output('array', fab.shapes.iterate_polar(shape, x, y, n))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * 0.3 + x,",
+                "     math.sin(i/36. * 2*math.pi) * 0.3 + y, 0)",
+                "    for i in range(36)], close=True, color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, 0, color=sb.color.teal)",
+                ""
+            ],
+            "uid": 3
+        },
+        {
+            "datums": [
+                {
+                    "expr": "80",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "30",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "_a",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('-r+q-Xf80qYf30',float('50.000000'),float('-30.000000'),float('-inf'),float('110.000000'),float('30.000000'),float('inf'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -597.290996255205,
+                1146.2201376833889
+            ],
+            "name": "c1",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 6/11/18",
+                "",
+                "import fab",
+                "import math",
+                "",
+                "title('Circle (center)')",
+                "",
+                "input('x0',float)",
+                "input('y0',float)",
+                "input('r',float)",
+                "input('_a',float)",
+                "",
+                "output('shape', fab.shapes.circle(x0, y0, r))",
+                "",
+                "def drag_r(this,x,y,z):",
+                "    dx = x - this.x0",
+                "    dy = y - this.y0",
+                "    this.r = math.sqrt(dx**2 + dy**2)",
+                "    this._a = math.atan2(dy, dx)",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x0,",
+                "     math.sin(i/36. * 2*math.pi) * r + y0, 0)",
+                "    for i in range(36)], close=True)",
+                "sb.ui.point(x0,y0)",
+                "sb.ui.point(x0 + r*math.cos(_a),",
+                "             y0 + r*math.sin(_a),",
+                "             drag=drag_r, relative=False)",
+                "",
+                ""
+            ],
+            "uid": 4
+        },
+        {
+            "datums": [
+                {
+                    "expr": "160",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "9",
+                    "name": "N",
+                    "type": "int",
+                    "uid": 2
+                },
+                {
+                    "expr": "30",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Y',float('130.000000'),float('-30.000000'),float('-inf'),float('190.000000'),float('30.000000'),float('inf'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -242.7269978812485,
+                2539.828667850786
+            ],
+            "name": "p0",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "import math",
+                "",
+                "title('Polygon')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('N', int)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.move(fab.shapes.polygon_radius(x, y, r, N), x, y))",
+                "",
+                "# UI",
+                "# (we need to do a bit of work to make the UI work for both even and",
+                "#  odd vertex counts; otherwise it will be off for one or the other)",
+                "a_ = 0 if (N % 2) else (math.pi / N)",
+                "sb.ui.wireframe([",
+                "    (x + r * math.sin(a_ + a * math.pi * 2/N),",
+                "     y + r * math.cos(a_ + a * math.pi * 2/N), 0)",
+                "    for a in range(N)], close=True)",
+                "sb.ui.point(x, y)",
+                "sb.ui.point(x + r * math.sin(a_), y + r * math.cos(a_),",
+                "             drag=(None, r, None))",
+                ""
+            ],
+            "uid": 5
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__5.__4]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym_nr+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Y',float('130.000000'),float('-30.000000'),float('-30.000000'),float('190.000000'),float('30.000000'),float('30.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                132.3122248320122,
+                2571.8797620182127
+            ],
+            "name": "r1",
+            "script": [
+                "# Neil Gershenfeld 2/1/15",
+                "# Matt Keeter 6/13/2015",
+                "",
+                "import fab",
+                "",
+                "title('Revolve (X)')",
+                "",
+                "input('a',fab.types.Shape)",
+                "input('y', float)",
+                "output('out', fab.shapes.revolve_xy_x(a, y))",
+                "",
+                ""
+            ],
+            "uid": 6
+        },
+        {
+            "datums": [
+                {
+                    "expr": "c1.x0-c1.r+self.width",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "40",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "5",
+                    "name": "width",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "c1.r*2",
+                    "name": "height",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('aa-f52.5X-Xf57.5a-f10Y-Yf70',float('52.500000'),float('10.000000'),float('-inf'),float('57.500000'),float('70.000000'),float('inf'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -1356.6379020821207,
+                1480.8154895098123
+            ],
+            "name": "r2",
+            "script": [
+                "# Neil Gershenfeld 1/24/15",
+                "# Matt Keeter 6/11/15",
+                "",
+                "import fab",
+                "",
+                "title('Rectangle (center)')",
+                "",
+                "input('x0', float)",
+                "input('y0', float)",
+                "input('width', float)",
+                "input('height', float)",
+                "",
+                "xmin, xmax = x0 - width/2, x0 + width/2",
+                "ymin, ymax = y0 - height/2, y0 + height/2",
+                "",
+                "output('shape', fab.shapes.rectangle(xmin, xmax, ymin, ymax))",
+                "",
+                "def drag_hw(this, x, y, z):",
+                "   this.width = abs(2 * (x - this.x0))",
+                "   this.height = abs(2 * (y - this.y0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe(",
+                "        [(xmin, ymin, 0), (xmax, ymin, 0), (xmax, ymax, 0), (xmin, ymax, 0)],",
+                "        close=True)",
+                "sb.ui.point(x0, y0)",
+                "sb.ui.point(xmax, ymax, drag=drag_hw, relative=False)",
+                ""
+            ],
+            "uid": 7
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__7.__4]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "c1.r/r2.width",
+                    "name": "i",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "1",
+                    "name": "j",
+                    "type": "int",
+                    "uid": 4
+                },
+                {
+                    "expr": "r2.width*2",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "0",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70',float('52.500000'),float('10.000000'),float('-inf'),float('107.500000'),float('70.000000'),float('inf'))",
+                    "name": "array",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                -989.5476853007306,
+                1474.0989229606753
+            ],
+            "name": "a1",
+            "script": [
+                "import fab",
+                "",
+                "title('Array (2D)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('i', int)",
+                "input('j', int)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "",
+                "output('array', fab.shapes.iterate3d(shape, i, j, 1, dx, dy, 0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (_x + dx, _y, 0), (_x, _y, 0), (_x, _y + dy, 0)], color=sb.color.teal)",
+                "sb.ui.wireframe([",
+                "    (_x + dx, _y - 0.3, 0), (_x + dx, _y + 0.3, 0)], color=sb.color.teal)",
+                "sb.ui.wireframe([",
+                "    (_x + 0.3, _y + dy, 0), (_x - 0.3, _y + dy, 0)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, 0, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y, 0, color=sb.color.teal, drag=(dx, None, None))",
+                "sb.ui.point(_x, _y + dy, 0, color=sb.color.teal, drag=(None, dy, None))",
+                ""
+            ],
+            "uid": 8
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__4.__4]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__9.__4]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70',float('50.000000'),float('-30.000000'),float('-inf'),float('110.000000'),float('30.000000'),float('inf'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                -234.0903284259013,
+                1472.1009382431378
+            ],
+            "name": "d0",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Difference')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & ~b)",
+                ""
+            ],
+            "uid": 10
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y0",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0011[__8.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('im_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70',float('52.500000'),float('-70.000000'),float('-inf'),float('107.500000'),float('70.000000'),float('inf'))",
+                    "name": "reflected",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -630.5239100904448,
+                1469.3935029874394
+            ],
+            "name": "m1",
+            "script": [
+                "import fab",
+                "",
+                "title('Mirror (Y)')",
+                "",
+                "input('_x', float)",
+                "input('y0', float)",
+                "input('_z', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('reflected', fab.shapes.reflect_y(shape, y0) | shape)",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (_x - 1, y0, _z + 1),",
+                "    (_x + 1, y0, _z + 1),",
+                "    (_x + 1, y0, _z - 1),",
+                "    (_x - 1, y0, _z - 1)], color=sb.color.teal, close=True)",
+                "",
+                "sb.ui.point(_x, y0, _z, color=sb.color.teal)",
+                "",
+                ""
+            ],
+            "uid": 9
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__10.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m_nr+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70',float('50.000000'),float('-30.000000'),float('-30.000000'),float('110.000000'),float('30.000000'),float('30.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                122.28680327048465,
+                1470.3444894551844
+            ],
+            "name": "r3",
+            "script": [
+                "# Neil Gershenfeld 2/1/15",
+                "# Matt Keeter 6/13/2015",
+                "",
+                "import fab",
+                "",
+                "title('Revolve (X)')",
+                "",
+                "input('a',fab.types.Shape)",
+                "input('y', float)",
+                "output('out', fab.shapes.revolve_xy_x(a, y))",
+                "",
+                ""
+            ],
+            "uid": 11
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "80",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "0",
+                    "name": "dz",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0011[__13.__0]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym_nr+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Y',float('130.000000'),float('50.000000'),float('-30.000000'),float('190.000000'),float('110.000000'),float('30.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                799.4148076682337,
+                3057.4110188013146
+            ],
+            "name": "t1",
+            "script": [
+                "import fab",
+                "",
+                "title('Translate')",
+                "",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "input('dz', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', fab.shapes.translate(shape, dx, dy, dz))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(_x, _y, _z),",
+                "                  (_x + dx, _y + dy, _z + dz)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y - 0.3, _z),",
+                "                  (_x, _y + 0.3, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x - 0.3, _y, _z),",
+                "                  (_x + 0.3, _y, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y, _z - 0.3),",
+                "                  (_x, _y, _z + 0.3)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, _z, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y + dy, _z + dz, color=sb.color.teal, drag=(dx, dy, dz))",
+                ""
+            ],
+            "uid": 12
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__6.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym_nr+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Y',float('130.000000'),float('-30.000000'),float('-30.000000'),float('190.000000'),float('30.000000'),float('30.000000'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                438.2756620988123,
+                2549.0112507666922
+            ],
+            "name": "c2",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 13
+        },
+        {
+            "datums": [
+                {
+                    "expr": "160",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "80",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "90",
+                    "name": "a",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__12.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf160-Yf80-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-160-Yf-80-Zf0m-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym_nr+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Y',float('130.000000'),float('50.000000'),float('-30.000000'),float('190.000000'),float('110.000000'),float('30.000000'))",
+                    "name": "rotated",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                1217.8219730852331,
+                3060.917224098105
+            ],
+            "name": "r4",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Rotate (Z)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('_z', float)",
+                "input('a', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('rotated', fab.shapes.rotate_z(shape, a, x, y))",
+                "",
+                "# UI",
+                "rad = math.radians(a)",
+                "sb.ui.wireframe([(x + math.cos(rad), y + math.sin(rad), _z),",
+                "                  (x, y, _z),",
+                "                  (x + 1, y, _z)], color=sb.color.teal)",
+                "",
+                "# Draw a semi-circular arc showing the rotation",
+                "if int(a) % 360 != 0:",
+                "    sb.ui.wireframe([",
+                "        (x + math.cos(math.radians(a_)) * 0.3,",
+                "         y + math.sin(math.radians(a_)) * 0.3, _z)",
+                "        for a_ in range(int(a) % 360)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, _z, color=sb.color.teal)",
+                "",
+                "def drag_pt(this, x, y, z):",
+                "    this.a = math.degrees(math.atan2(y - this.y, x - this.x))",
+                "sb.ui.point(x + math.cos(rad), y + math.sin(rad), _z,",
+                "             color=sb.color.teal, drag=drag_pt, relative=False)",
+                "",
+                ""
+            ],
+            "uid": 14
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__14.__4]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__14.__5]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('im-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym_nr+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf160-Yf80-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-160-Yf-80-Zf0m-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym_nr+qYqZ_m-Xf0-Yf-0-Zf0m-Xf160-Yf0-Zf0aaaaaaaam-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f0.642788Y+*f-0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f0.984808Y+*f-0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f0.34202Y+*f-0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.939693X*f-0.34202Y+*f0.34202X*f-0.939693Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.173648X*f-0.984808Y+*f0.984808X*f0.173648Y_m-Xf0-Yf0-Zf0-f-28.1908Ym-Xf0-Yf0-Zf0m+*f0.766044X*f-0.642788Y+*f0.642788X*f0.766044Y_m-Xf0-Yf0-Zf0-f-28.1908Y',float('130.000000'),float('50.000000'),float('-30.000000'),float('190.000000'),float('110.000000'),float('30.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1640.9040788979532,
+                3118.1852439456834
+            ],
+            "name": "u0",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 15
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "80",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "0",
+                    "name": "dz",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0011[__17.__0]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m_nr+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70',float('50.000000'),float('50.000000'),float('-30.000000'),float('110.000000'),float('110.000000'),float('30.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                957.4163423017856,
+                1754.0339460659836
+            ],
+            "name": "t2",
+            "script": [
+                "import fab",
+                "",
+                "title('Translate')",
+                "",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "input('dz', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', fab.shapes.translate(shape, dx, dy, dz))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(_x, _y, _z),",
+                "                  (_x + dx, _y + dy, _z + dz)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y - 0.3, _z),",
+                "                  (_x, _y + 0.3, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x - 0.3, _y, _z),",
+                "                  (_x + 0.3, _y, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y, _z - 0.3),",
+                "                  (_x, _y, _z + 0.3)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, _z, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y + dy, _z + dz, color=sb.color.teal, drag=(dx, dy, dz))",
+                ""
+            ],
+            "uid": 16
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__11.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m_nr+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70',float('50.000000'),float('-30.000000'),float('-30.000000'),float('110.000000'),float('30.000000'),float('30.000000'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                477.9705622585186,
+                1492.9203981654964
+            ],
+            "name": "c3",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 17
+        },
+        {
+            "datums": [
+                {
+                    "expr": "80",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "80",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "45",
+                    "name": "a",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__16.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf80-Yf80-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-80-Yf-80-Zf0m-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m_nr+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70',float('37.573578'),float('37.573578'),float('-30.000000'),float('122.426422'),float('122.426422'),float('30.000000'))",
+                    "name": "rotated",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                1324.7455707041656,
+                1726.0048081557616
+            ],
+            "name": "r5",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Rotate (Z)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('_z', float)",
+                "input('a', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('rotated', fab.shapes.rotate_z(shape, a, x, y))",
+                "",
+                "# UI",
+                "rad = math.radians(a)",
+                "sb.ui.wireframe([(x + math.cos(rad), y + math.sin(rad), _z),",
+                "                  (x, y, _z),",
+                "                  (x + 1, y, _z)], color=sb.color.teal)",
+                "",
+                "# Draw a semi-circular arc showing the rotation",
+                "if int(a) % 360 != 0:",
+                "    sb.ui.wireframe([",
+                "        (x + math.cos(math.radians(a_)) * 0.3,",
+                "         y + math.sin(math.radians(a_)) * 0.3, _z)",
+                "        for a_ in range(int(a) % 360)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, _z, color=sb.color.teal)",
+                "",
+                "def drag_pt(this, x, y, z):",
+                "    this.a = math.degrees(math.atan2(y - this.y, x - this.x))",
+                "sb.ui.point(x + math.cos(rad), y + math.sin(rad), _z,",
+                "             color=sb.color.teal, drag=drag_pt, relative=False)",
+                "",
+                ""
+            ],
+            "uid": 18
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__18.__4]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__18.__5]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('im-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m_nr+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf80-Yf80-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-80-Yf-80-Zf0m-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m_nr+qYqZ_m-Xf0-Yf-0-Zf0a-r+q-Xf80qYf30nim_-*f2f0Y_m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf0-Yf0-Zf0m-Xf0-Yf0-Zf0iiiiim-Xf0-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf10-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf20-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf30-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf40-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70m-Xf50-Yf0-Zf0aa-f52.5X-Xf57.5a-f10Y-Yf70',float('37.573578'),float('37.573578'),float('-30.000000'),float('122.426422'),float('122.426422'),float('30.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1706.826976954031,
+                1768.7861239134686
+            ],
+            "name": "u1",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 19
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__0.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30m_nr+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30',float('-46.669064'),float('-46.669064'),float('-46.669064'),float('46.669064'),float('46.669064'),float('46.669064'))",
+                    "name": "copy",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                593.7249921610293,
+                375.74482262523554
+            ],
+            "name": "c4",
+            "script": [
+                "# Neil Gershenfeld 2/14/15",
+                "# Matt Keeter 6/12/15",
+                "",
+                "import fab",
+                "",
+                "title('Copy')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('copy', shape)",
+                "",
+                ""
+            ],
+            "uid": 20
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "80",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "0",
+                    "name": "dz",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0011[__20.__0]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30m_nr+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30',float('-46.669064'),float('33.330936'),float('-46.669064'),float('46.669064'),float('126.669067'),float('46.669064'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                994.7603316937325,
+                526.283613741115
+            ],
+            "name": "t3",
+            "script": [
+                "import fab",
+                "",
+                "title('Translate')",
+                "",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "input('dz', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', fab.shapes.translate(shape, dx, dy, dz))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(_x, _y, _z),",
+                "                  (_x + dx, _y + dy, _z + dz)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y - 0.3, _z),",
+                "                  (_x, _y + 0.3, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x - 0.3, _y, _z),",
+                "                  (_x + 0.3, _y, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y, _z - 0.3),",
+                "                  (_x, _y, _z + 0.3)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, _z, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y + dy, _z + dz, color=sb.color.teal, drag=(dx, dy, dz))",
+                ""
+            ],
+            "uid": 21
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "80",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "15",
+                    "name": "a",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0011[__21.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf80-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-80-Zf0m-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30m_nr+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30',float('-57.157703'),float('22.842297'),float('-46.669064'),float('57.157703'),float('137.157715'),float('46.669064'))",
+                    "name": "rotated",
+                    "type": "_fabtypes.Shape",
+                    "uid": 5
+                }
+            ],
+            "inspector": [
+                1331.967223793303,
+                543.1439583460937
+            ],
+            "name": "r6",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Rotate (Z)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('_z', float)",
+                "input('a', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('rotated', fab.shapes.rotate_z(shape, a, x, y))",
+                "",
+                "# UI",
+                "rad = math.radians(a)",
+                "sb.ui.wireframe([(x + math.cos(rad), y + math.sin(rad), _z),",
+                "                  (x, y, _z),",
+                "                  (x + 1, y, _z)], color=sb.color.teal)",
+                "",
+                "# Draw a semi-circular arc showing the rotation",
+                "if int(a) % 360 != 0:",
+                "    sb.ui.wireframe([",
+                "        (x + math.cos(math.radians(a_)) * 0.3,",
+                "         y + math.sin(math.radians(a_)) * 0.3, _z)",
+                "        for a_ in range(int(a) % 360)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(x, y, _z, color=sb.color.teal)",
+                "",
+                "def drag_pt(this, x, y, z):",
+                "    this.a = math.degrees(math.atan2(y - this.y, x - this.x))",
+                "sb.ui.point(x + math.cos(rad), y + math.sin(rad), _z,",
+                "             color=sb.color.teal, drag=drag_pt, relative=False)",
+                "",
+                ""
+            ],
+            "uid": 22
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__22.__4]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__22.__5]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('im-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30m_nr+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30m-Xf0-Yf80-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-80-Zf0m-Xf0-Yf80-Zf0m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30m_nr+qYqZ_m-Xf0-Yf-0-Zf0iiiiiiiiiiiiiiiiiiiiiiiim-Xf0-Yf0-Zf0m+*f1X*f0Y+*f-0X*f1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f0.258819Y+*f-0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f0.5Y+*f-0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f0.707107Y+*f-0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f0.866025Y+*f-0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f0.965926Y+*f-0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f6.12323e-17X*f1Y+*f-1X*f6.12323e-17Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f0.965926Y+*f-0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f0.866025Y+*f-0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f0.707107Y+*f-0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f0.5Y+*f-0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f0.258819Y+*f-0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1X*f1.22465e-16Y+*f-1.22465e-16X*f-1Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.965926X*f-0.258819Y+*f0.258819X*f-0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.866025X*f-0.5Y+*f0.5X*f-0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.707107X*f-0.707107Y+*f0.707107X*f-0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.5X*f-0.866025Y+*f0.866025X*f-0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-0.258819X*f-0.965926Y+*f0.965926X*f-0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f-1.83697e-16X*f-1Y+*f1X*f-1.83697e-16Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.258819X*f-0.965926Y+*f0.965926X*f0.258819Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.5X*f-0.866025Y+*f0.866025X*f0.5Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.707107X*f-0.707107Y+*f0.707107X*f0.707107Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.866025X*f-0.5Y+*f0.5X*f0.866025Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0m-Xf0-Yf0-Zf0m+*f0.965926X*f-0.258819Y+*f0.258819X*f0.965926Y_m-Xf-0-Yf-0-Zf0ni-*f-33-Xf0*f33-Yf33i-*f0-Xf33*f-33-Yf0-*f33-Xf0*f0-Yf0-r+qXqYf30',float('-57.157703'),float('22.842297'),float('-46.669064'),float('57.157703'),float('137.157715'),float('46.669064'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                1740.2284252995685,
+                568.4344752535615
+            ],
+            "name": "u2",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Union')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a | b)",
+                ""
+            ],
+            "uid": 23
+        },
+        {
+            "datums": [
+                {
+                    "expr": "-100",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "'w'",
+                    "name": "text",
+                    "type": "str",
+                    "uid": 2
+                },
+                {
+                    "expr": "60",
+                    "name": "scale",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf-100-Yf0-Zf0m+f0/-Xf0f60+f0/-Yf0f60_m-Xf0-Yf1-Zf0m-Xf0-Yf-1-Zf0iiiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0m-*f2f0.4X__iiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0',float('-100.000000'),float('0.000000'),float('-inf'),float('-52.000000'),float('33.000000'),float('inf'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -331.9461988165561,
+                -665.380945609868
+            ],
+            "name": "t4",
+            "script": [
+                "import fab",
+                "",
+                "title('Text')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('text', str)",
+                "input('scale', float)",
+                "",
+                "output('shape', fab.shapes.text(text, x, y, scale))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(x, y, 0), (x, y+scale, 0)])",
+                "sb.ui.point(x, y, 0)",
+                "sb.ui.point(x, y + scale, 0, drag=(None, scale, None))",
+                ""
+            ],
+            "uid": 24
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__24.__4]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0m-Xf-100-Yf0-Zf0m+f0/-Xf0f60+f0/-Yf0f60_m-Xf0-Yf1-Zf0m-Xf0-Yf-1-Zf0iiiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0m-*f2f0.4X__iiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0m_nr+qYqZ_m-Xf0-Yf-0-Zf0m-Xf-100-Yf0-Zf0m+f0/-Xf0f60+f0/-Yf0f60_m-Xf0-Yf1-Zf0m-Xf0-Yf-1-Zf0iiiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0m-*f2f0.4X__iiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0',float('-100.000000'),float('-33.000000'),float('-33.000000'),float('-52.000000'),float('33.000000'),float('33.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                94.80044962189237,
+                -651.0392323431163
+            ],
+            "name": "r7",
+            "script": [
+                "# Neil Gershenfeld 2/1/15",
+                "# Matt Keeter 6/13/2015",
+                "",
+                "import fab",
+                "",
+                "title('Revolve (X)')",
+                "",
+                "input('a',fab.types.Shape)",
+                "input('y', float)",
+                "output('out', fab.shapes.revolve_xy_x(a, y))",
+                "",
+                ""
+            ],
+            "uid": 25
+        },
+        {
+            "datums": [
+                {
+                    "expr": "-180",
+                    "name": "xmin",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "-120",
+                    "name": "xmax",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "-30",
+                    "name": "ymin",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "30",
+                    "name": "ymax",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "-1",
+                    "name": "zmin",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "1",
+                    "name": "zmax",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "2",
+                    "name": "x_period",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "2",
+                    "name": "y_period",
+                    "type": "float",
+                    "uid": 7
+                },
+                {
+                    "expr": "0.1",
+                    "name": "z_period",
+                    "type": "float",
+                    "uid": 8
+                },
+                {
+                    "expr": "0.4",
+                    "name": "thickness",
+                    "type": "float",
+                    "uid": 9
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('a= abs( sin(X / 3.141592653589793)*cos(Y / 3.141592653589793) + sin(Y / 3.141592653589793)*cos(Z /62.83185307179586) + sin(Z / 62.83185307179586)*cos(X / 3.141592653589793)) - 0.4;am__f1aa-f-180X-Xf-120a-f-30Y-Yf30a-f-1Z-Zf1',float('-180.000000'),float('-30.000000'),float('-1.000000'),float('-120.000000'),float('30.000000'),float('1.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 10
+                }
+            ],
+            "inspector": [
+                -388.96146042320515,
+                -1334.4370103749961
+            ],
+            "name": "g0",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "#https://en.wikipedia.org/wiki/Gyroid",
+                "title('Gyroid')",
+                "",
+                "input('xmin', float)",
+                "input('xmax', float)",
+                "input('ymin', float)",
+                "input('ymax', float)",
+                "input('zmin', float)",
+                "input('zmax', float)",
+                "",
+                "input('x_period', float)",
+                "input('y_period', float)",
+                "input('z_period', float)",
+                "input('thickness', float)",
+                "",
+                "x_factor = 2 * math.pi / x_period",
+                "y_factor = 2 * math.pi / y_period",
+                "z_factor = 2 * math.pi / z_period",
+                "",
+                "fn = \"= abs( sin(X / %(x_factor)s)*cos(Y / %(y_factor)s) + sin(Y / %(y_factor)s)*cos(Z /%(z_factor)s) + sin(Z / %(z_factor)s)*cos(X / %(x_factor)s)) - %(thickness)s;\" % locals()",
+                "",
+                "output('shape', fab.shapes.function_prefix_xyz(fn, xmin, xmax,",
+                "                                                   ymin, ymax,",
+                "                                                   zmin, zmax))",
+                ""
+            ],
+            "uid": 26
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__28.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0mXYf0a= abs( sin(X / 3.141592653589793)*cos(Y / 3.141592653589793) + sin(Y / 3.141592653589793)*cos(Z /62.83185307179586) + sin(Z / 62.83185307179586)*cos(X / 3.141592653589793)) - 0.4;am__f1aa-f-180X-Xf-120a-f-30Y-Yf30a-f-1Z-Zf1m_nr+qYqZ_m-Xf0-Yf-0-Zf0mXYf0a= abs( sin(X / 3.141592653589793)*cos(Y / 3.141592653589793) + sin(Y / 3.141592653589793)*cos(Z /62.83185307179586) + sin(Z / 62.83185307179586)*cos(X / 3.141592653589793)) - 0.4;am__f1aa-f-180X-Xf-120a-f-30Y-Yf30a-f-1Z-Zf1',float('-180.000000'),float('-30.000000'),float('-30.000000'),float('-120.000000'),float('30.000000'),float('30.000000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                378.5246926494392,
+                -1175.9355005074794
+            ],
+            "name": "r8",
+            "script": [
+                "# Neil Gershenfeld 2/1/15",
+                "# Matt Keeter 6/13/2015",
+                "",
+                "import fab",
+                "",
+                "title('Revolve (X)')",
+                "",
+                "input('a',fab.types.Shape)",
+                "input('y', float)",
+                "output('out', fab.shapes.revolve_xy_x(a, y))",
+                "",
+                ""
+            ],
+            "uid": 27
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__26.__10]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "0",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('mXYf0a= abs( sin(X / 3.141592653589793)*cos(Y / 3.141592653589793) + sin(Y / 3.141592653589793)*cos(Z /62.83185307179586) + sin(Z / 62.83185307179586)*cos(X / 3.141592653589793)) - 0.4;am__f1aa-f-180X-Xf-120a-f-30Y-Yf30a-f-1Z-Zf1',float('-180.000000'),float('-30.000000'),float('-inf'),float('-120.000000'),float('30.000000'),float('inf'))",
+                    "name": "slice",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                14.1810403586245,
+                -1158.4819123737877
+            ],
+            "name": "s0",
+            "script": [
+                "# Neil Gershenfeld 7/12/15",
+                "",
+                "import fab",
+                "from fab.types import Shape",
+                "",
+                "title('Slice (XY)')",
+                "",
+                "def slice_xy(shape,z):",
+                "    return Shape(('mXYf%g' % z) + shape.math,",
+                "       shape.bounds.xmin,shape.bounds.ymin,",
+                "       shape.bounds.xmax,shape.bounds.ymax)",
+                "",
+                "input('shape',fab.types.Shape)",
+                "input('z',float)",
+                "",
+                "output('slice',slice_xy(shape,z))",
+                "",
+                ""
+            ],
+            "uid": 28
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__30.__4]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__27.__2]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('a-r++q-Xf-150qYqZf30m-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0mXYf0a= abs( sin(X / 3.141592653589793)*cos(Y / 3.141592653589793) + sin(Y / 3.141592653589793)*cos(Z /62.83185307179586) + sin(Z / 62.83185307179586)*cos(X / 3.141592653589793)) - 0.4;am__f1aa-f-180X-Xf-120a-f-30Y-Yf30a-f-1Z-Zf1m_nr+qYqZ_m-Xf0-Yf-0-Zf0mXYf0a= abs( sin(X / 3.141592653589793)*cos(Y / 3.141592653589793) + sin(Y / 3.141592653589793)*cos(Z /62.83185307179586) + sin(Z / 62.83185307179586)*cos(X / 3.141592653589793)) - 0.4;am__f1aa-f-180X-Xf-120a-f-30Y-Yf30a-f-1Z-Zf1',float('-180.000000'),float('-30.000000'),float('-30.000000'),float('-120.000000'),float('30.000000'),float('30.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                727.5964553232734,
+                -1335.1994922274164
+            ],
+            "name": "i0",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Intersection')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & b)",
+                ""
+            ],
+            "uid": 29
+        },
+        {
+            "datums": [
+                {
+                    "expr": "-150",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "30",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('-r++q-Xf-150qYqZf30',float('-180.000000'),float('-30.000000'),float('-30.000000'),float('-120.000000'),float('30.000000'),float('30.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                365.4345015491703,
+                -1564.2778364821202
+            ],
+            "name": "s1",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Sphere (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.sphere(x, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, z)",
+                "    for i in range(36)], close=True)",
+                "sb.ui.wireframe([(x,y,z-r), (x,y,z+r)])",
+                "",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x, y, z + r, drag=(None, None, r))",
+                "sb.ui.point(x, y, z - r, drag=(None, None, r))",
+                ""
+            ],
+            "uid": 30
+        },
+        {
+            "datums": [
+                {
+                    "expr": "-75",
+                    "name": "x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "30",
+                    "name": "r",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('-r++q-Xf-75qYqZf30',float('-105.000000'),float('-30.000000'),float('-30.000000'),float('-45.000000'),float('30.000000'),float('30.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                92.72218696023725,
+                -392.70573300806365
+            ],
+            "name": "s2",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Sphere (center)')",
+                "",
+                "input('x', float)",
+                "input('y', float)",
+                "input('z', float)",
+                "input('r', float)",
+                "",
+                "output('shape', fab.shapes.sphere(x, y, z, r))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (math.cos(i/36. * 2*math.pi) * r + x,",
+                "     math.sin(i/36. * 2*math.pi) * r + y, z)",
+                "    for i in range(36)], close=True)",
+                "sb.ui.wireframe([(x,y,z-r), (x,y,z+r)])",
+                "",
+                "sb.ui.point(x, y, z)",
+                "sb.ui.point(x, y, z + r, drag=(None, None, r))",
+                "sb.ui.point(x, y, z - r, drag=(None, None, r))",
+                ""
+            ],
+            "uid": 31
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__25.__2]",
+                    "name": "a",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0011[__31.__4]",
+                    "name": "b",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am-Xf0-Yf0-Zf0im_r+qYqZ_m-Xf0-Yf-0-Zf0m-Xf-100-Yf0-Zf0m+f0/-Xf0f60+f0/-Yf0f60_m-Xf0-Yf1-Zf0m-Xf0-Yf-1-Zf0iiiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0m-*f2f0.4X__iiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0m_nr+qYqZ_m-Xf0-Yf-0-Zf0m-Xf-100-Yf0-Zf0m+f0/-Xf0f60+f0/-Yf0f60_m-Xf0-Yf1-Zf0m-Xf0-Yf-1-Zf0iiiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0m-*f2f0.4X__iiini-*f0-Xf0*f0.1-Yf0.55i-*f-0.55-Xf0.1*f0.15-Yf0.55-*f0.55-Xf0.25*f-0.25-Yf0ni-*f0-Xf0.25*f-0.1-Yf0i-*f0.55-Xf0.15*f-0.15-Yf0-*f-0.55-Xf0*f0.25-Yf0.55ni-*f0.5-Xf0.15*f0.2-Yf0i-*f0-Xf0.35*f0.1-Yf0.5-*f-0.5-Xf0.45*f-0.3-Yf0.5ni-*f-0.5-Xf0.45*f-0.2-Yf0.5i-*f0-Xf0.25*f-0.1-Yf0-*f0.5-Xf0.15*f0.3-Yf0-r++q-Xf-75qYqZf30',float('-100.000000'),float('-30.000000'),float('-30.000000'),float('-52.000000'),float('30.000000'),float('30.000000'))",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 2
+                }
+            ],
+            "inspector": [
+                530.152739560886,
+                -569.4233128616922
+            ],
+            "name": "i1",
+            "script": [
+                "import fab.types",
+                "",
+                "title('Intersection')",
+                "input('a', fab.types.Shape)",
+                "input('b', fab.types.Shape)",
+                "",
+                "output('shape', a & b)",
+                ""
+            ],
+            "uid": 32
+        }
+    ],
+    "protocol": 6,
+    "type": "sb"
+}
