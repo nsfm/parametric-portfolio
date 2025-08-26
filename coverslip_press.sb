@@ -21,33 +21,33 @@
                     "uid": 2
                 },
                 {
-                    "expr": "75.25",
+                    "expr": "settings.slide_width+settings.fit_allowance",
                     "name": "width",
                     "type": "float",
                     "uid": 3
                 },
                 {
-                    "expr": "25.25",
+                    "expr": "settings.slide_height+settings.fit_allowance",
                     "name": "height",
                     "type": "float",
                     "uid": 4
                 },
                 {
-                    "expr": "1",
+                    "expr": "settings.slide_thickness",
                     "name": "depth",
                     "type": "float",
                     "uid": 5
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5',float('-37.625000'),float('-12.625000'),float('-0.500000'),float('37.625000'),float('12.625000'),float('0.500000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475',float('-37.950001'),float('-12.625000'),float('-0.475000'),float('37.950001'),float('12.625000'),float('0.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 6
                 }
             ],
             "inspector": [
-                -643.1828166570881,
-                -628.288031966888
+                -1065.3574495167659,
+                -593.41160033375763
             ],
             "name": "slide",
             "script": [
@@ -139,7 +139,7 @@
                     "uid": 6
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625',float('-39.125000'),float('-14.125000'),float('-0.500000'),float('-19.125000'),float('14.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('iiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312',float('-39.450001'),float('-14.125000'),float('-0.475000'),float('-19.450001'),float('14.125000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 7
@@ -214,33 +214,33 @@
                     "uid": 0
                 },
                 {
-                    "expr": "160",
+                    "expr": "200",
                     "name": "r",
                     "type": "int",
                     "uid": 1
                 },
                 {
-                    "expr": "160",
+                    "expr": "200",
                     "name": "g",
                     "type": "int",
                     "uid": 2
                 },
                 {
-                    "expr": "200",
+                    "expr": "255",
                     "name": "b",
                     "type": "int",
                     "uid": 3
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5',float('-37.625000'),float('-12.625000'),float('-0.500000'),float('37.625000'),float('12.625000'),float('0.500000'),color=(160,160,200))",
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475',float('-37.950001'),float('-12.625000'),float('-0.475000'),float('37.950001'),float('12.625000'),float('0.475000'),color=(200,200,255))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 4
                 }
             ],
             "inspector": [
-                -202.57630800707483,
-                25.85689676457595
+                -746.7181933233669,
+                -254.99052791480068
             ],
             "name": "s0",
             "script": [
@@ -280,27 +280,27 @@
                     "uid": 2
                 },
                 {
-                    "expr": "self.zmin+0.17",
+                    "expr": "self.zmin+settings.coverslip_thickness",
                     "name": "zmax",
                     "type": "float",
                     "uid": 3
                 },
                 {
-                    "expr": "12/2",
+                    "expr": "settings.coverslip_diameter/2",
                     "name": "r",
                     "type": "float",
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf6a-f0.5Z-Zf0.67',float('-6.000000'),float('-6.000000'),float('0.500000'),float('6.000000'),float('6.000000'),float('0.670000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf6a-f0.475Z-Zf0.645',float('-6.000000'),float('-6.000000'),float('0.475000'),float('6.000000'),float('6.000000'),float('0.645000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
                 }
             ],
             "inspector": [
-                -639.2077138913082,
-                -91.8304436577513
+                -1054.6278628962193,
+                -47.948033551598769
             ],
             "name": "coverslip",
             "script": [
@@ -365,13 +365,13 @@
                     "uid": 3
                 },
                 {
-                    "expr": "2.5",
+                    "expr": "3.75",
                     "name": "r",
                     "type": "float",
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf2.5a-f1.17Z-Zf3.5',float('-2.500000'),float('-2.500000'),float('1.170000'),float('2.500000'),float('2.500000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf3.75a-f1.145Z-Zf3.475',float('-3.750000'),float('-3.750000'),float('1.145000'),float('3.750000'),float('3.750000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -456,15 +456,15 @@
                     "uid": 5
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0',float('-20.125000'),float('-13.125000'),float('-inf'),float('2.500000'),float('13.125000'),float('inf'))",
+                    "expr": "\u0012fab.types.Shape('ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0',float('-20.450001'),float('-13.125000'),float('-inf'),float('3.750000'),float('13.125000'),float('inf'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 6
                 }
             ],
             "inspector": [
-                -334.64347494157823,
-                827.7864682477635
+                -301.25465981700575,
+                1076.1157807367722
             ],
             "name": "arm",
             "script": [
@@ -505,7 +505,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "self.zmax-1",
+                    "expr": "self.zmax-1.5",
                     "name": "zmin",
                     "type": "float",
                     "uid": 2
@@ -523,7 +523,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-20.125000'),float('-13.125000'),float('2.500000'),float('2.500000'),float('13.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475',float('-20.450001'),float('-13.125000'),float('1.975000'),float('3.750000'),float('13.125000'),float('3.475000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -531,7 +531,7 @@
             ],
             "inspector": [
                 160.91615805187843,
-                1153.20247377781
+                1153.2024737778099
             ],
             "name": "e0",
             "script": [
@@ -589,7 +589,7 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5',float('-2.500000'),float('-2.500000'),float('0.670000'),float('2.500000'),float('2.500000'),float('1.670000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5',float('-3.750000'),float('-3.750000'),float('0.645000'),float('3.750000'),float('3.750000'),float('1.645000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
@@ -597,7 +597,7 @@
             ],
             "inspector": [
                 152.02326432916158,
-                313.4612188798409
+                313.46121887984089
             ],
             "name": "press_bevel",
             "script": [
@@ -670,15 +670,15 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf2a-f0.67Z-Zf1.67',float('-2.000000'),float('-2.000000'),float('0.670000'),float('2.000000'),float('2.000000'),float('1.670000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645',float('-3.250000'),float('-3.250000'),float('0.645000'),float('3.250000'),float('3.250000'),float('1.645000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
                 }
             ],
             "inspector": [
-                85.37973373691239,
-                721.8241812435383
+                85.379733736912385,
+                721.82418124353831
             ],
             "name": "press_bevel_fill",
             "script": [
@@ -731,7 +731,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('aiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5',float('-39.125000'),float('-14.125000'),float('-0.500000'),float('-19.125000'),float('14.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('aiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475',float('-39.450001'),float('-14.125000'),float('-0.475000'),float('-19.450001'),float('14.125000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -739,7 +739,7 @@
             ],
             "inspector": [
                 141.87390084823545,
-                -466.2630410688403
+                -466.26304106884032
             ],
             "name": "d0",
             "script": [
@@ -769,14 +769,14 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-39.125000'),float('-14.125000'),float('-0.500000'),float('2.500000'),float('14.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475',float('-39.450001'),float('-14.125000'),float('-0.475000'),float('3.750000'),float('14.125000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
                 }
             ],
             "inspector": [
-                672.3988374373026,
+                672.39883743730263,
                 -235.74586470226313
             ],
             "name": "u0",
@@ -831,15 +831,15 @@
                     "uid": 5
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.5Z-Zf3.5',float('-46.750000'),float('-18.125000'),float('-3.500000'),float('8.500000'),float('18.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.475Z-Zf3.475',float('-47.400002'),float('-18.125000'),float('-3.475000'),float('8.500000'),float('18.125000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 6
                 }
             ],
             "inspector": [
-                679.8715376399766,
-                120.11305352938172
+                625.45926354641369,
+                399.59427955540929
             ],
             "name": "mold",
             "script": [
@@ -901,15 +901,15 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('aam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.5Z-Zf3.5niaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-46.750000'),float('-18.125000'),float('-3.500000'),float('8.500000'),float('18.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('aam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.475Z-Zf3.475niaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475',float('-47.400002'),float('-18.125000'),float('-3.475000'),float('8.500000'),float('18.125000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
                 }
             ],
             "inspector": [
-                1142.5311057906265,
-                143.36880013633177
+                1088.1188316970633,
+                422.85002616235931
             ],
             "name": "d1",
             "script": [
@@ -969,15 +969,15 @@
                     "uid": 6
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf30-Zf0iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-39.125000'),float('15.875000'),float('-0.500000'),float('2.500000'),float('44.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf30-Zf0iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475',float('-39.450001'),float('15.875000'),float('-0.475000'),float('3.750000'),float('44.125000'),float('3.475000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 7
                 }
             ],
             "inspector": [
-                1522.2154761350623,
-                -55.763944019805535
+                1467.8032020414994,
+                223.71728200622204
             ],
             "name": "t0",
             "script": [
@@ -1056,15 +1056,15 @@
                     "uid": 6
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf-40-Zf0aaam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.5Z-Zf3.5niaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5niaiam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f3.5Z-Zf6.5iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5nam__f1-r+q-Xf-34.5qYf2.05a-f2Z-Zf8-iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5f0.2',float('-46.750000'),float('-58.125000'),float('-3.500000'),float('8.500000'),float('-21.875000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf-40-Zf0aaam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.475Z-Zf3.475niaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475n-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2',float('-47.400002'),float('-58.125000'),float('-3.475000'),float('8.500000'),float('-21.875000'),float('3.475000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 7
                 }
             ],
             "inspector": [
-                2726.278109101073,
-                -112.07663224204043
+                2777.4918109227997,
+                569.70577325970294
             ],
             "name": "t1",
             "script": [
@@ -1125,7 +1125,7 @@
                     "uid": 3
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-2.500000'),float('-14.125000'),float('-0.500000'),float('39.125000'),float('14.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475',float('-3.750000'),float('-14.125000'),float('-0.475000'),float('39.450001'),float('14.125000'),float('3.475000'))",
                     "name": "reflected",
                     "type": "_fabtypes.Shape",
                     "uid": 4
@@ -1133,7 +1133,7 @@
             ],
             "inspector": [
                 1109.4169438109109,
-                -357.9513094025589
+                -357.95130940255888
             ],
             "name": "r0",
             "script": [
@@ -1175,7 +1175,7 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('iiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-39.125000'),float('-14.125000'),float('-0.500000'),float('39.125000'),float('14.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('iiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475',float('-39.450001'),float('-14.125000'),float('-0.475000'),float('39.450001'),float('14.125000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
@@ -1219,7 +1219,7 @@
                     "uid": 2
                 },
                 {
-                    "expr": "slide.width+10",
+                    "expr": "slide.width+19",
                     "name": "width",
                     "type": "float",
                     "uid": 3
@@ -1237,7 +1237,7 @@
                     "uid": 5
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1aa-f-42.625X-Xf42.625a-f-17.625Y-Yf17.625a-f-3.5Z-Zf3.5',float('-42.625000'),float('-17.625000'),float('-3.500000'),float('42.625000'),float('17.625000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f-47.45X-Xf47.45a-f-17.625Y-Yf17.625a-f-3.475Z-Zf3.475',float('-47.450001'),float('-17.625000'),float('-3.475000'),float('47.450001'),float('17.625000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 6
@@ -1245,7 +1245,7 @@
             ],
             "inspector": [
                 1459.677322077526,
-                -839.6342179723
+                -839.63421797230001
             ],
             "name": "large_mold",
             "script": [
@@ -1301,21 +1301,21 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0011[__16.__2]",
+                    "expr": "\u0011[__16.__2,__37.__3,__37.__4]",
                     "name": "b",
                     "type": "_fabtypes.Shape",
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('aam__f1aa-f-42.625X-Xf42.625a-f-17.625Y-Yf17.625a-f-3.5Z-Zf3.5niiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-42.625000'),float('-17.625000'),float('-3.500000'),float('42.625000'),float('17.625000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('aam__f1aa-f-47.45X-Xf47.45a-f-17.625Y-Yf17.625a-f-3.475Z-Zf3.475niiiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2m-*f2f0X__-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2',float('-47.450001'),float('-17.625000'),float('-3.475000'),float('47.450001'),float('17.625000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
                 }
             ],
             "inspector": [
-                1921.586751789121,
-                -484.2006791154216
+                1921.5867517891211,
+                -484.20067911542162
             ],
             "name": "d2",
             "script": [
@@ -1375,7 +1375,7 @@
                     "uid": 6
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf-80-Zf0aam__f1aa-f-42.625X-Xf42.625a-f-17.625Y-Yf17.625a-f-3.5Z-Zf3.5niiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-42.625000'),float('-97.625000'),float('-3.500000'),float('42.625000'),float('-62.375000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf-80-Zf0aam__f1aa-f-47.45X-Xf47.45a-f-17.625Y-Yf17.625a-f-3.475Z-Zf3.475niiiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2m-*f2f0X__-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2',float('-47.450001'),float('-97.625000'),float('-3.475000'),float('47.450001'),float('-62.375000'),float('3.475000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 7
@@ -1426,15 +1426,15 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf30-Zf0iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-39.125000'),float('15.875000'),float('-0.500000'),float('2.500000'),float('44.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf30-Zf0iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475',float('-39.450001'),float('15.875000'),float('-0.475000'),float('3.750000'),float('44.125000'),float('3.475000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 1
                 }
             ],
             "inspector": [
-                1963.3724700500889,
-                30.06495793019444
+                1908.9601959565257,
+                309.54618395622202
             ],
             "name": "single_press",
             "script": [
@@ -1495,7 +1495,7 @@
                     "uid": 6
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf63-Zf0iiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-39.125000'),float('48.875000'),float('-0.500000'),float('39.125000'),float('77.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf63-Zf0iiiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2m-*f2f0X__-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2',float('-45.350002'),float('47.674999'),float('-0.475000'),float('45.350002'),float('78.324997'),float('5.175000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 7
@@ -1503,7 +1503,7 @@
             ],
             "inspector": [
                 2338.5792590614656,
-                -921.1118968252028
+                -921.11189682520285
             ],
             "name": "t3",
             "script": [
@@ -1576,15 +1576,15 @@
                     "uid": 5
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f3.5Z-Zf6.5',float('-46.750000'),float('-18.125000'),float('3.500000'),float('8.500000'),float('18.125000'),float('6.500000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475',float('-47.400002'),float('-18.125000'),float('3.475000'),float('8.500000'),float('18.125000'),float('6.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 6
                 }
             ],
             "inspector": [
-                682.5965396588649,
-                709.0025953516644
+                663.12173562321118,
+                1349.6576316006112
             ],
             "name": "mold_lid",
             "script": [
@@ -1664,15 +1664,15 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5',float('-44.500000'),float('-2.000000'),float('1.000000'),float('-40.500000'),float('2.000000'),float('5.000000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975',float('-45.150002'),float('-2.000000'),float('0.975000'),float('-41.150002'),float('2.000000'),float('4.975000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
                 }
             ],
             "inspector": [
-                1047.178262173041,
-                1200.7911807851935
+                1031.5103969124318,
+                1713.9137680701579
             ],
             "name": "peg_l",
             "script": [
@@ -1713,7 +1713,7 @@
         {
             "datums": [
                 {
-                    "expr": "mold_lid.x+mold_lid.width/2-self.r-3",
+                    "expr": "slide.x",
                     "name": "x",
                     "type": "float",
                     "uid": 0
@@ -1743,15 +1743,15 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5',float('1.500000'),float('11.125000'),float('1.000000'),float('5.500000'),float('15.125000'),float('5.000000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975',float('-2.000000'),float('11.125000'),float('0.975000'),float('2.000000'),float('15.125000'),float('4.975000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
                 }
             ],
             "inspector": [
-                684.7320947286807,
-                1409.6244296174016
+                669.06422946807129,
+                1922.7470169023659
             ],
             "name": "peg_r",
             "script": [
@@ -1816,15 +1816,15 @@
                     "uid": 3
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5',float('1.500000'),float('-15.125000'),float('1.000000'),float('5.500000'),float('-11.125000'),float('5.000000'))",
+                    "expr": "\u0012fab.types.Shape('m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975',float('-2.000000'),float('-15.125000'),float('0.975000'),float('2.000000'),float('-11.125000'),float('4.975000'))",
                     "name": "reflected",
                     "type": "_fabtypes.Shape",
                     "uid": 4
                 }
             ],
             "inspector": [
-                1025.0901300850194,
-                1718.8582788497085
+                1019.6949726047897,
+                2202.8748607569314
             ],
             "name": "r1",
             "script": [
@@ -1867,15 +1867,15 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('iam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f3.5Z-Zf6.5iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5',float('-46.750000'),float('-18.125000'),float('1.000000'),float('8.500000'),float('18.125000'),float('6.500000'))",
+                    "expr": "\u0012fab.types.Shape('iam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975',float('-47.400002'),float('-18.125000'),float('0.975000'),float('8.500000'),float('18.125000'),float('6.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
                 }
             ],
             "inspector": [
-                1464.514998701369,
-                1052.3320327587137
+                1448.8471334407593,
+                1565.454620043678
             ],
             "name": "u2",
             "script": [
@@ -1899,21 +1899,21 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0011[__32.__2,__33.__2]",
+                    "expr": "\u0011[__33.__2]",
                     "name": "b",
                     "type": "_fabtypes.Shape",
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('aaam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.5Z-Zf3.5niaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5niaiam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f3.5Z-Zf6.5iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5nam__f1-r+q-Xf-34.5qYf2.05a-f2Z-Zf8-iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5f0.2',float('-46.750000'),float('-18.125000'),float('-3.500000'),float('8.500000'),float('18.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('aaam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.475Z-Zf3.475niaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475n-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2',float('-47.400002'),float('-18.125000'),float('-3.475000'),float('8.500000'),float('18.125000'),float('3.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
                 }
             ],
             "inspector": [
-                2343.7851762009286,
-                242.35151509094067
+                2326.8756504126759,
+                608.44091459521587
             ],
             "name": "d3",
             "script": [
@@ -1949,7 +1949,7 @@
                     "uid": 2
                 },
                 {
-                    "expr": "80",
+                    "expr": "60",
                     "name": "dx",
                     "type": "float",
                     "uid": 3
@@ -1967,21 +1967,21 @@
                     "uid": 5
                 },
                 {
-                    "expr": "\u0011[__27.__1]",
+                    "expr": "\u0011[__32.__2]",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 6
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf80-Yf-40-Zf0iaiam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f3.5Z-Zf6.5iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5nam__f1-r+q-Xf-34.5qYf2.05a-f2Z-Zf8-iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5f0.2',float('33.250000'),float('-58.125000'),float('0.800000'),float('88.500000'),float('-21.875000'),float('6.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf60-Yf-40-Zf0aiam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975nam__f1-r+q-Xf-35.15qYf2.05a-f1.975Z-Zf7.975',float('12.599998'),float('-58.125000'),float('0.975000'),float('68.500000'),float('-21.875000'),float('6.475000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 7
                 }
             ],
             "inspector": [
-                2726.3114637253093,
-                248.3755511149467
+                2777.5251655470361,
+                930.15795661669006
             ],
             "name": "t4",
             "script": [
@@ -2024,15 +2024,15 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf-40-Zf0aaam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.5Z-Zf3.5niaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5niaiam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f3.5Z-Zf6.5iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5nam__f1-r+q-Xf-34.5qYf2.05a-f2Z-Zf8-iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5f0.2',float('-46.750000'),float('-58.125000'),float('-3.500000'),float('8.500000'),float('-21.875000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf-40-Zf0aaam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f-3.475Z-Zf3.475niaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475n-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2',float('-47.400002'),float('-58.125000'),float('-3.475000'),float('8.500000'),float('-21.875000'),float('3.475000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 1
                 }
             ],
             "inspector": [
-                3091.7696491816723,
-                -54.83426209335471
+                3142.9833510033991,
+                626.94814340838866
             ],
             "name": "single_press_mold",
             "script": [
@@ -2057,15 +2057,15 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf80-Yf-40-Zf0iaiam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f3.5Z-Zf6.5iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5nam__f1-r+q-Xf-34.5qYf2.05a-f2Z-Zf8-iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5f0.2',float('33.250000'),float('-58.125000'),float('0.800000'),float('88.500000'),float('-21.875000'),float('6.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf60-Yf-40-Zf0aiam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975nam__f1-r+q-Xf-35.15qYf2.05a-f1.975Z-Zf7.975',float('12.599998'),float('-58.125000'),float('0.975000'),float('68.500000'),float('-21.875000'),float('6.475000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 1
                 }
             ],
             "inspector": [
-                3101.809709221682,
-                293.5558212949916
+                3153.0234110434089,
+                975.33822679673483
             ],
             "name": "single_press_mold_lid",
             "script": [
@@ -2114,15 +2114,15 @@
                     "uid": 4
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('am__f1-r+q-Xf-34.5qYf2.05a-f2Z-Zf8',float('-36.549999'),float('-2.050000'),float('2.000000'),float('-32.450001'),float('2.050000'),float('8.000000'))",
+                    "expr": "\u0012fab.types.Shape('am__f1-r+q-Xf-35.15qYf2.05a-f1.975Z-Zf7.975',float('-37.200001'),float('-2.050000'),float('1.975000'),float('-33.099998'),float('2.050000'),float('7.975000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 5
                 }
             ],
             "inspector": [
-                1538.1371981295285,
-                1449.784669777441
+                1522.4693328689189,
+                1962.9072570624053
             ],
             "name": "injection_port",
             "script": [
@@ -2175,15 +2175,15 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('aiam__f1aa-f-46.75X-Xf8.5a-f-18.125Y-Yf18.125a-f3.5Z-Zf6.5iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5nam__f1-r+q-Xf-34.5qYf2.05a-f2Z-Zf8',float('-46.750000'),float('-18.125000'),float('1.000000'),float('8.500000'),float('18.125000'),float('6.500000'))",
+                    "expr": "\u0012fab.types.Shape('aiam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975nam__f1-r+q-Xf-35.15qYf2.05a-f1.975Z-Zf7.975',float('-47.400002'),float('-18.125000'),float('0.975000'),float('8.500000'),float('18.125000'),float('6.475000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
                 }
             ],
             "inspector": [
-                1975.8838158739638,
-                1139.5468145411326
+                1960.2159506133546,
+                1652.6694018260969
             ],
             "name": "d4",
             "script": [
@@ -2213,15 +2213,15 @@
                     "uid": 1
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('-iiam__f1-r+q-Xf-42.5qYf2a-f1Z-Zf5am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5m_-*f2f0Y_am__f1-r+q-Xf3.5q-Yf13.125f2a-f1Z-Zf5f0.2',float('-44.700001'),float('-15.325000'),float('0.800000'),float('5.700000'),float('15.325000'),float('5.200000'))",
+                    "expr": "\u0012fab.types.Shape('-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2',float('-45.350002'),float('-15.325000'),float('0.775000'),float('2.200000'),float('15.325000'),float('5.175000'))",
                     "name": "shape",
                     "type": "_fabtypes.Shape",
                     "uid": 2
                 }
             ],
             "inspector": [
-                1857.491531252448,
-                862.7335753881885
+                1841.8236659918387,
+                1375.856162673153
             ],
             "name": "o0",
             "script": [
@@ -2246,15 +2246,15 @@
                     "uid": 0
                 },
                 {
-                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf63-Zf0iiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.625X-Xf-19.625a-f-13.625Y-Yf13.625a-f-0.5Z-Zf3.5am__f1iaa-f-39.125X-Xf-19.125a-f-13.625Y-Yf13.625aa-f-38.625X-Xf-19.625a-f-14.125Y-Yf14.125a-f0Z-Zf3-r++q-Xf-19.625q-Yf13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-38.625q-Yf-13.625q-Zf3f0.5-r++q-Xf-19.625q-Yf13.625qZf0.5-r++q-Xf-38.625q-Yf13.625qZf0.5-r++q-Xf-19.625q-Yf-13.625qZf0.5-r++q-Xf-38.625q-Yf-13.625qZf0.5am__f1-r+q-Xf-19.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf3f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf3f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-19.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-19.625q-Zf0f0.5a-f-13.625Y-Yf13.625am__f1-r+q-Xf-38.625q-Yf-13.625f0.5a-f0Z-Zf3a-r+q-Yf-13.625q-Zf0f0.5a-f-38.625X-Xf-19.625a-r+q-Xf-38.625q-Zf0f0.5a-f-13.625Y-Yf13.625nam__f1aa-f-37.625X-Xf37.625a-f-12.625Y-Yf12.625a-f-0.5Z-Zf0.5iiiam__f1-r+qXqYf2.5a-f1.17Z-Zf3.5m-Xf0-Yf0-Zf1.17-r+q-f2r+qXqYqZf0.5am__f1-r+qXqYf2a-f0.67Z-Zf1.67am__f1ni-*f26.25-Xf-20.125*f0-Yf-13.125i-*f-13.125-Xf-20.125*f22.625-Yf13.125-*f-13.125-Xf2.5*f-22.625-Yf0a-f2.5Z-Zf3.5',float('-39.125000'),float('48.875000'),float('-0.500000'),float('39.125000'),float('77.125000'),float('3.500000'))",
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf63-Zf0iiiiaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475m-*f2f0X__iaiiiiiiiiiiiiiiiiiiiiiam__f1aa-f-38.9563X-Xf-19.9438a-f-13.6312Y-Yf13.6312a-f-0.475Z-Zf3.475am__f1iaa-f-39.45X-Xf-19.45a-f-13.6312Y-Yf13.6312aa-f-38.9563X-Xf-19.9438a-f-14.125Y-Yf14.125a-f0.01875Z-Zf2.98125-r++q-Xf-19.9438q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf2.98125f0.49375-r++q-Xf-19.9438q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf13.6312q-Zf0.01875f0.49375-r++q-Xf-19.9438q-Yf-13.6312q-Zf0.01875f0.49375-r++q-Xf-38.9563q-Yf-13.6312q-Zf0.01875f0.49375am__f1-r+q-Xf-19.9438q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf2.98125f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf2.98125f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-19.9438q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-19.9438q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312am__f1-r+q-Xf-38.9563q-Yf-13.6312f0.49375a-f0.01875Z-Zf2.98125a-r+q-Yf-13.6312q-Zf0.01875f0.49375a-f-38.9563X-Xf-19.9438a-r+q-Xf-38.9563q-Zf0.01875f0.49375a-f-13.6312Y-Yf13.6312nam__f1aa-f-37.95X-Xf37.95a-f-12.625Y-Yf12.625a-f-0.475Z-Zf0.475iiiam__f1-r+qXqYf3.75a-f1.145Z-Zf3.475m-Xf0-Yf0-Zf1.145-r+q-f3.25r+qXqYqZf0.5am__f1-r+qXqYf3.25a-f0.645Z-Zf1.645am__f1ni-*f26.25-Xf-20.45*f0-Yf-13.125i-*f-13.125-Xf-20.45*f24.2-Yf13.125-*f-13.125-Xf3.75*f-24.2-Yf0a-f1.975Z-Zf3.475-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2m-*f2f0X__-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2',float('-45.350002'),float('47.674999'),float('-0.475000'),float('45.350002'),float('78.324997'),float('5.175000'))",
                     "name": "out",
                     "type": "_fabtypes.Shape",
                     "uid": 1
                 }
             ],
             "inspector": [
-                2779.047850417104,
-                -908.484598325441
+                2779.0478504171042,
+                -908.48459832544097
             ],
             "name": "double_press",
             "script": [
@@ -2269,6 +2269,375 @@
                 ""
             ],
             "uid": 34
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0012'millimeters'",
+                    "name": "unit",
+                    "type": "str",
+                    "uid": 3
+                },
+                {
+                    "expr": "75.75",
+                    "name": "slide_width",
+                    "type": "float",
+                    "uid": 13
+                },
+                {
+                    "expr": "25.10",
+                    "name": "slide_height",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.95",
+                    "name": "slide_thickness",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "12.0",
+                    "name": "coverslip_diameter",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "0.17",
+                    "name": "coverslip_thickness",
+                    "type": "float",
+                    "uid": 6
+                },
+                {
+                    "expr": "0.0",
+                    "name": "preparation_thickness",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "0.15",
+                    "name": "fit_allowance",
+                    "type": "float",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                -1103.7107652514601,
+                -1090.6636890714508
+            ],
+            "name": "settings",
+            "script": [
+                "import fab",
+                "",
+                "title('script')",
+                "output('unit', 'millimeters')",
+                "input('slide_width', float)",
+                "input('slide_height', float)",
+                "input('slide_thickness', float)",
+                "input('coverslip_diameter', float)",
+                "input('coverslip_thickness', float)",
+                "input('preparation_thickness', float)",
+                "input('fit_allowance', float)"
+            ],
+            "uid": 35
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__3.__5]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "160",
+                    "name": "r",
+                    "type": "int",
+                    "uid": 1
+                },
+                {
+                    "expr": "160",
+                    "name": "g",
+                    "type": "int",
+                    "uid": 2
+                },
+                {
+                    "expr": "255",
+                    "name": "b",
+                    "type": "int",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('am__f1-r+qXqYf6a-f0.475Z-Zf0.645',float('-6.000000'),float('-6.000000'),float('0.475000'),float('6.000000'),float('6.000000'),float('0.645000'),color=(160,160,255))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                -739.62472441428781,
+                -34.267023823035039
+            ],
+            "name": "s1",
+            "script": [
+                "import fab",
+                "import math",
+                "",
+                "title('Set color (RGB)')",
+                "",
+                "input(\"shape\", fab.types.Shape)",
+                "input(\"r\", int)",
+                "input(\"g\", int)",
+                "input(\"b\", int)",
+                "",
+                "output(\"out\", fab.shapes.set_color(shape, r, g, b))",
+                ""
+            ],
+            "uid": 36
+        },
+        {
+            "datums": [
+                {
+                    "expr": "slide.x",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0011[__33.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-*f2f0X__-iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975f0.2',float('-2.200000'),float('-15.325000'),float('0.775000'),float('45.350002'),float('15.325000'),float('5.175000'))",
+                    "name": "reflected",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                1728.1805599537706,
+                817.41955460472127
+            ],
+            "name": "r2",
+            "script": [
+                "import fab",
+                "",
+                "title('Reflect (X)')",
+                "",
+                "input('x0', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('reflected', fab.shapes.reflect_x(shape, x0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (x0, _y - 1, _z + 1),",
+                "    (x0, _y + 1, _z + 1),",
+                "    (x0, _y + 1, _z - 1),",
+                "    (x0, _y - 1, _z - 1)], color=sb.color.teal, close=True)",
+                "",
+                "sb.ui.point(x0, _y, _z, color=sb.color.teal)",
+                ""
+            ],
+            "uid": 37
+        },
+        {
+            "datums": [
+                {
+                    "expr": "slide.x",
+                    "name": "x0",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "\u0011[__32.__2]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 3
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-*f2f0X__aiam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975nam__f1-r+q-Xf-35.15qYf2.05a-f1.975Z-Zf7.975',float('-8.500000'),float('-18.125000'),float('0.975000'),float('47.400002'),float('18.125000'),float('6.475000'))",
+                    "name": "reflected",
+                    "type": "_fabtypes.Shape",
+                    "uid": 4
+                }
+            ],
+            "inspector": [
+                2382.787197108054,
+                1736.5288158436256
+            ],
+            "name": "r3",
+            "script": [
+                "import fab",
+                "",
+                "title('Reflect (X)')",
+                "",
+                "input('x0', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('reflected', fab.shapes.reflect_x(shape, x0))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([",
+                "    (x0, _y - 1, _z + 1),",
+                "    (x0, _y + 1, _z + 1),",
+                "    (x0, _y + 1, _z - 1),",
+                "    (x0, _y - 1, _z - 1)], color=sb.color.teal, close=True)",
+                "",
+                "sb.ui.point(x0, _y, _z, color=sb.color.teal)",
+                ""
+            ],
+            "uid": 38
+        },
+        {
+            "datums": [
+                {
+                    "expr": "0.0",
+                    "name": "_x",
+                    "type": "float",
+                    "uid": 0
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_y",
+                    "type": "float",
+                    "uid": 1
+                },
+                {
+                    "expr": "0.0",
+                    "name": "_z",
+                    "type": "float",
+                    "uid": 2
+                },
+                {
+                    "expr": "0",
+                    "name": "dx",
+                    "type": "float",
+                    "uid": 3
+                },
+                {
+                    "expr": "-120",
+                    "name": "dy",
+                    "type": "float",
+                    "uid": 4
+                },
+                {
+                    "expr": "0",
+                    "name": "dz",
+                    "type": "float",
+                    "uid": 5
+                },
+                {
+                    "expr": "\u0011[__38.__3,__38.__4]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 6
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf-120-Zf0iaiam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975nam__f1-r+q-Xf-35.15qYf2.05a-f1.975Z-Zf7.975m-*f2f0X__aiam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975nam__f1-r+q-Xf-35.15qYf2.05a-f1.975Z-Zf7.975',float('-47.400002'),float('-138.125000'),float('0.975000'),float('47.400002'),float('-101.875000'),float('6.475000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 7
+                }
+            ],
+            "inspector": [
+                2733.8124329747038,
+                1697.009418428175
+            ],
+            "name": "t5",
+            "script": [
+                "import fab",
+                "",
+                "title('Translate')",
+                "",
+                "input('_x', float)",
+                "input('_y', float)",
+                "input('_z', float)",
+                "input('dx', float)",
+                "input('dy', float)",
+                "input('dz', float)",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', fab.shapes.translate(shape, dx, dy, dz))",
+                "",
+                "# UI",
+                "sb.ui.wireframe([(_x, _y, _z),",
+                "                  (_x + dx, _y + dy, _z + dz)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y - 0.3, _z),",
+                "                  (_x, _y + 0.3, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x - 0.3, _y, _z),",
+                "                  (_x + 0.3, _y, _z)], color=sb.color.teal)",
+                "sb.ui.wireframe([(_x, _y, _z - 0.3),",
+                "                  (_x, _y, _z + 0.3)], color=sb.color.teal)",
+                "",
+                "sb.ui.point(_x, _y, _z, color=sb.color.teal)",
+                "sb.ui.point(_x + dx, _y + dy, _z + dz, color=sb.color.teal, drag=(dx, dy, dz))",
+                ""
+            ],
+            "uid": 39
+        },
+        {
+            "datums": [
+                {
+                    "expr": "\u0011[__39.__7]",
+                    "name": "shape",
+                    "type": "_fabtypes.Shape",
+                    "uid": 0
+                },
+                {
+                    "expr": "\u0012fab.types.Shape('m-Xf0-Yf-120-Zf0iaiam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975nam__f1-r+q-Xf-35.15qYf2.05a-f1.975Z-Zf7.975m-*f2f0X__aiam__f1aa-f-47.4X-Xf8.5a-f-18.125Y-Yf18.125a-f3.475Z-Zf6.475iiam__f1-r+q-Xf-43.15qYf2a-f0.975Z-Zf4.975am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975m_-*f2f0Y_am__f1-r+qXq-Yf13.125f2a-f0.975Z-Zf4.975nam__f1-r+q-Xf-35.15qYf2.05a-f1.975Z-Zf7.975',float('-47.400002'),float('-138.125000'),float('0.975000'),float('47.400002'),float('-101.875000'),float('6.475000'))",
+                    "name": "out",
+                    "type": "_fabtypes.Shape",
+                    "uid": 1
+                }
+            ],
+            "inspector": [
+                3133.6557480016163,
+                1736.5288158436258
+            ],
+            "name": "double_press_mold_lid",
+            "script": [
+                "import fab",
+                "",
+                "title('Mesh (.stl)')",
+                "",
+                "input('shape', fab.types.Shape)",
+                "output('out', shape)",
+                "",
+                "sb.export.stl(shape)",
+                ""
+            ],
+            "uid": 40
         }
     ],
     "protocol": 6,
